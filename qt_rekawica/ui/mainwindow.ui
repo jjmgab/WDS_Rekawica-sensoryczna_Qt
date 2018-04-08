@@ -31,6 +31,10 @@
   <property name="windowTitle">
    <string>Rekawica_sensoryczna</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../res/icons.qrc">
+    <normaloff>:/button_connect/icons/connect</normaloff>:/button_connect/icons/connect</iconset>
+  </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
   </property>
