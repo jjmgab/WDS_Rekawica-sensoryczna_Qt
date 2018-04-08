@@ -1,8 +1,8 @@
 NAZWA_APLIKACJI=glowneokno
 URUCHOMIENIE_APLIKACJI=./${NAZWA_APLIKACJI}
-ZRODLA_PROJEKTU=`/bin/pwd`/src/*.cpp `/bin/pwd`/inc/*.hpp
+ZRODLA_PROJEKTU=`/bin/pwd`/src/*.cpp `/bin/pwd`/inc/*.hh
 PODSTAWIENIA=OBJECTS_DIR=${KATALOG_OBJ} INCLUDEPATH=inc\
-                         QT+=widgets QMAKE_CXXFLAGS=-std=c++11
+                         QT+=widgets QT+=serialport RESOURCES=res/icons.qrc QMAKE_CXXFLAGS=-std=c++11
 KATALOG_OBJ=./obj
 
 

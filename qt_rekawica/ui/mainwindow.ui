@@ -352,7 +352,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="main" resource="res/icons.qrc">
+    <iconset theme="main" resource="../res/icons.qrc">
      <normaloff>:/button_connect/icons/connect</normaloff>:/button_connect/icons/connect</iconset>
    </property>
    <property name="text">
@@ -367,8 +367,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="res/icons.qrc">
-     <normaloff>:/button_connect/icons/disconnect</normaloff>:/button_connect/icons/disconnect</iconset>
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/button_disconnect/icons/disconnect</normaloff>:/button_disconnect/icons/disconnect</iconset>
    </property>
    <property name="text">
     <string>&amp;Rozłącz</string>
@@ -379,8 +379,8 @@
   </action>
   <action name="action_exit">
    <property name="icon">
-    <iconset resource="res/icons.qrc">
-     <normaloff>:/button_connect/icons/exit</normaloff>:/button_connect/icons/exit</iconset>
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/button_exit/icons/exit</normaloff>:/button_exit/icons/exit</iconset>
    </property>
    <property name="text">
     <string>&amp;Wyjdź</string>
@@ -391,17 +391,17 @@
   </action>
   <action name="action_info">
    <property name="icon">
-    <iconset resource="res/icons.qrc">
-     <normaloff>:/button_connect/icons/about</normaloff>:/button_connect/icons/about</iconset>
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/button_about/icons/about</normaloff>:/button_about/icons/about</iconset>
    </property>
    <property name="text">
-    <string>Info</string>
+    <string>&amp;Info</string>
    </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="res/icons.qrc"/>
+  <include location="../res/icons.qrc"/>
  </resources>
  <connections/>
 </ui>
