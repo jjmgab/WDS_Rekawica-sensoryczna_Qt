@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="button_connect">
+    <file>icons/about</file>
+    <file>icons/exit</file>
+    <file>icons/disconnect</file>
+    <file>icons/connect</file>
+  </qresource>
+</RCC>
