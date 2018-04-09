@@ -19,7 +19,6 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
@@ -45,7 +44,7 @@ public:
     QComboBox *parity;
     QHBoxLayout *layout_portName;
     QLabel *label_portName;
-    QLineEdit *portName;
+    QComboBox *portName;
     QHBoxLayout *layout_flowControl;
     QLabel *label_flowControl;
     QComboBox *flowControl;
@@ -143,7 +142,7 @@ public:
 
         layout_portName->addWidget(label_portName);
 
-        portName = new QLineEdit(verticalLayoutWidget);
+        portName = new QComboBox(verticalLayoutWidget);
         portName->setObjectName(QStringLiteral("portName"));
 
         layout_portName->addWidget(portName);

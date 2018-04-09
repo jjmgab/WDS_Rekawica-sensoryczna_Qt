@@ -148,7 +148,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="portName"/>
+       <widget class="QComboBox" name="portName"/>
       </item>
      </layout>
     </item>

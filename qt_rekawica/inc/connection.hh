@@ -2,6 +2,7 @@
 #define CONNECTION_HH
 
 #include <QDialog>
+#include <QtSerialPort/QSerialPortInfo>
 #include "ui_connection.hh"
 
 class Connection : public QDialog {

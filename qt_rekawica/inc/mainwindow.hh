@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QCoreApplication>
+#include <QFile>
 #include <QtSerialPort/QSerialPort>
 
 #include <stdio.h>
@@ -13,6 +14,7 @@
 
 #define DEVICE_HANDSHAKE "01\n"
 #define DEVICE_HANDSHAKE_RESPONSE 0x10
+#define DEVICE_FIRST_WORD 0xF005
 
 namespace Ui {
 class MainWindow;
@@ -69,6 +71,7 @@ private:
 
     bool flag_isConnected;
     bool device_isReady;
+    bool device_firstWord;
 };
 
 #endif // MAINWINDOW_H

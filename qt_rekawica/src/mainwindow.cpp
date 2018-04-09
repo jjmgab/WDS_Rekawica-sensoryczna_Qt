@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     serial = new QSerialPort(this);
 
     device_isReady = false;
+    device_firstWord = false;
 
     // wyswietl poczatkowy status
     ui->statusBar->showMessage(tr("Status: Rozłączony"));
@@ -21,8 +22,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(this, SIGNAL(disconnect_me()), this, SLOT(action_disconnect_click()));
 
     // Laczenie reakcji na sygnaly portu szeregowego
-    QObject::connect(serial, SIGNAL(readyRead()), this, SLOT(serial_dataAvailable()));
-    QObject::connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(serial_errorOccurred(QSerialPort::SerialPortError)));
+    //QObject::connect(serial, SIGNAL(readyRead()), this, SLOT(serial_dataAvailable()));
+    //QObject::connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(serial_errorOccurred(QSerialPort::SerialPortError)));
 
 }
 
@@ -37,8 +38,24 @@ void MainWindow::action_connect_click() {
     // otwieranie ustawien polaczenia
     connectionWindow = new Connection(this);
     if (connectionWindow->exec() == QDialog::Accepted) {
+        
+        // czyszczenie poprzedniego portu - przy rozlaczeniu i ponownym laczeniu
+        if (serial != nullptr) {
+            if (serial->isOpen()) {
+                serial->close();
+            }
+            delete serial;
+        }
+        
+        serial = new QSerialPort(this);
 
-        serial->setPortName(connectionWindow->ui->portName->text());
+        // laczenie reakcji na sygnaly portu szeregowego
+        QObject::connect(serial, SIGNAL(readyRead()), this, SLOT(serial_dataAvailable()));
+        QObject::connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(serial_errorOccurred(QSerialPort::SerialPortError)));
+
+
+        QString portName = connectionWindow->ui->portName->currentText().simplified();
+        serial->setPortName(portName);
 
         if(!serial->setBaudRate((QSerialPort::BaudRate) connectionWindow->ui->baudRate->currentText().toInt()))
             ui->terminal->append(tr("QSerialError: błąd ustawienia BaudRate"));
@@ -66,13 +83,22 @@ void MainWindow::action_connect_click() {
     serial->open(SERIAL_OPEN_MODE);
     // sukces
     if (serial->isOpen()) ui->statusBar->showMessage(tr("Status: Połączony"));
-
-    // proba powitania
-    serial->write(DEVICE_HANDSHAKE);
 }
 
 void MainWindow::action_disconnect_click() {
     
+    /**
+     *  Tu jest dosc duzy problem dotyczacy blokowania portu (zasoby niedostepne)
+     *  tworzy sie plik blokujacy port pod "/var/lock/LCK..nazwaportu"
+     * 
+     *  NALEZY TO BEZZWLOCZNIE ROZWIAZAC
+     */
+
+    // std::string portName;
+    // if (serial->portName() != ""){
+    //     portName = "//var//lock//LCK.."+serial->portName().toStdString();
+    // }
+
     if (serial->isOpen()) {
         ui->terminal->append(tr("Rozłączanie urządzenia. . ."));
         serial->close();
@@ -102,13 +128,24 @@ void MainWindow::serial_dataAvailable() {
 
         if (!device_isReady) {
             int value;
-            sscanf(datas.toStdString().c_str(), "%02X", &value);
-            if (value == DEVICE_HANDSHAKE_RESPONSE) emit device_ready();
+            if (!device_firstWord) {
+                sscanf(datas.toStdString().c_str(), "%04X", &value);
+                if (value == DEVICE_FIRST_WORD) device_firstWord = true;
+                
+                // proba powitania
+                serial->write(DEVICE_HANDSHAKE);
+            } else {
+                sscanf(datas.toStdString().c_str(), "%02X", &value);
+                if (value == DEVICE_HANDSHAKE_RESPONSE) emit device_ready();
+            }
         }
     }
 }
 
 void MainWindow::serial_errorOccurred(QSerialPort::SerialPortError error) {
+    char code[4];
+    sprintf(code, "%d", (int)error);
+
     if (flag_isConnected) {
         switch (error) {
             case QSerialPort::SerialPortError::NoError:
@@ -120,7 +157,12 @@ void MainWindow::serial_errorOccurred(QSerialPort::SerialPortError error) {
                 break;
 
             default:
-                ui->terminal->append(tr("QSerialError: Błąd"));
+                ui->terminal->append(serial->portName());
+                ui->terminal->append(tr("QSerialError: Błąd "));
+                ui->terminal->moveCursor(QTextCursor::End);
+                ui->terminal->insertPlainText(code);
+                ui->terminal->moveCursor(QTextCursor::End);
+                ui->terminal->append(serial->errorString());
                 ui->statusBar->showMessage(tr("QSerialError: Błąd"));
         }
         
