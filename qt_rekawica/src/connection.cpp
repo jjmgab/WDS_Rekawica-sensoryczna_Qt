@@ -1,5 +1,18 @@
 #include "connection.hh"
 
+/*!
+ * \file
+ * \brief Definicja metod klasy Connection
+ * 
+ * Definiuje wszystkie metody klasy Connection.
+ */
+
+/*!
+ * \brief Konstruktor parametryczny klasy.
+ * 
+ * Inicjalizuje wszystkie graficzne elementy okna
+ * oraz definiuje połączenia między wykorzystywanymi sygnałami i slotami.
+ */
 Connection::Connection(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::dialog_connection)
@@ -13,12 +26,16 @@ Connection::Connection(QWidget* parent) :
         QObject::connect(ui->button_ok, SIGNAL(clicked()), this, SLOT(accepted()));
     }
 
+/*!
+ * \brief Destruktor klasy Connection.
+ */
 Connection::~Connection() {
     delete ui;
 }
 
+/*!
+ * \brief Reakcja na wciśnięcie przycisku zatwierdzenia ustawień.
+ */
 void Connection::accepted() {
-    //if (ui->portName->text() != QString("")) {
-        this->accept();
-    //}
+    this->accept();
 }

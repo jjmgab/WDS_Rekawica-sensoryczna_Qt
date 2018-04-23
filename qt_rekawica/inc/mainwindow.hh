@@ -20,47 +20,60 @@ namespace Ui {
 class MainWindow;
 }
 
-/**
+/*! 
+ * \brief Klasa definiujaca glowne okno.
  * 
- * Klasa definiujaca glowne okno.
- * 
+ * Klasa modeluje pojęcie głównego okna programu.
  */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
+    /*!
+     * \brief Konstruktor parametryczny klasy MainWindow
+     */
     explicit MainWindow(QWidget *parent = nullptr);
+    /*!
+     * \brief Destruktor klasy MainWindow
+     */
     ~MainWindow();
 
 public slots:
-    /**
-     * Reakcja na wcisniecie opcji "Polacz"
+    /*!
+     * \brief Reakcja na wcisniecie opcji "Polacz"
      */
     void action_connect_click();
-    /**
-     * Reakcja na wcisniecie opcji "Rozlacz"
+    /*!
+     * \brief Reakcja na wcisniecie opcji "Rozlacz"
      */
     void action_disconnect_click();
-    /**
-     * Reakcja na wcisniecie opcji "Wyjdz"
+    /*!
+     * \brief Reakcja na wcisniecie opcji "Wyjdz"
      */
     void action_exit_click();
 
-    /**
-     * Reakcja na pojawienie sie danych na porcie szeregowym
+    /*!
+     * \brief Reakcja na pojawienie sie danych na porcie szeregowym
      */
     void serial_dataAvailable();
-    /**
-     * Reakcja na pojawienie sie bledu na porcie szeregowym
+
+    /*!
+     * \brief Reakcja na pojawienie sie bledu na porcie szeregowym
      * 
-     * @param kod bledu
+     * \param[in] kod bledu
      */
     void serial_errorOccurred(QSerialPort::SerialPortError error);
 
+    /*!
+     * \brief Slot określający gotowość urządzenia do pracy
+     */
     void device_ready();
 
 signals:
+    /*!
+     * \brief Sygnal emitowany w celu realizacji rozłączenia urządzenia
+     */
     void disconnect_me();
 
 private:

@@ -1,6 +1,19 @@
 #include "mainwindow.hh"
 #include "ui_mainwindow.hh"
 
+/*!
+ * \file
+ * \brief Definicja metod klasy MainWindow
+ * 
+ * Definiuje wszystkie metody klasy MainWindow.
+ */
+
+/*!
+ * \brief Konstruktor parametryczny klasy.
+ * 
+ * Inicjalizuje wszystkie graficzne elementy okna
+ * oraz definiuje połączenia między wykorzystywanymi sygnałami i slotami.
+ */
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -27,11 +40,20 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 
+/*!
+ * \brief Destruktor klasy MainWindow.
+ */
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
+/*!
+ * \brief Slot określający reakcję na wciśnięcie przycisku "Połącz"
+ * 
+ * Uruchamia dodatkowe okno klasy Connection, w którym użytkownik
+ * określa ustawienia połączenia. Następnie podejmuje próbę połączenia.
+ */
 void MainWindow::action_connect_click() {
     ui->terminal->append(tr("Próba połączenia. . .\n"));
 
@@ -85,6 +107,11 @@ void MainWindow::action_connect_click() {
     if (serial->isOpen()) ui->statusBar->showMessage(tr("Status: Połączony"));
 }
 
+/*!
+ * \brief Slot określający reakcję na wciśnięcie przycisku "Rozłącz"
+ * 
+ * Podejmuje próbę rozłączenia.
+ */
 void MainWindow::action_disconnect_click() {
     
     /**
@@ -113,12 +140,22 @@ void MainWindow::action_disconnect_click() {
     ui->statusBar->showMessage(tr("Status: Rozłączony"));
 }
 
+/*!
+ * \brief Slot określający reakcję na wciśnięcie przycisku "Wyjdź"
+ * 
+ * Emituje sygnał załączający slot rozłączenia i wychodzi z programu.
+ */
 void MainWindow::action_exit_click() {
     ui->terminal->append(tr("Wyjście. . ."));
     emit disconnect_me();   // trzeba rozlaczyc urzadzenie
     qApp->exit();
 }
 
+/*!
+ * \brief Slot określający reakcję na pojawienie się danych na porcie szeregowym.
+ * 
+ * Rozwiązana tu jest kwestia komunikacji między urządzeniem a komputerem.
+ */
 void MainWindow::serial_dataAvailable() {
     if (flag_isConnected) {
         QByteArray datas = serial->readAll();
@@ -142,6 +179,11 @@ void MainWindow::serial_dataAvailable() {
     }
 }
 
+/*!
+ * \brief Slot określający reakcję na pojawienie się błędu portu szeregowego.
+ * 
+ * Wyświetla w terminalu treść błędu.
+ */
 void MainWindow::serial_errorOccurred(QSerialPort::SerialPortError error) {
     char code[4];
     sprintf(code, "%d", (int)error);
@@ -175,6 +217,11 @@ void MainWindow::serial_errorOccurred(QSerialPort::SerialPortError error) {
     }
 }
 
+/*!
+ * \brief Slot określający gotowość urządzenia do pracy.
+ * 
+ * Wypisuje w terminalu i na pasku stanu informację o gotowości urządzenia.
+ */
 void MainWindow::device_ready() {
     ui->terminal->append(tr("QSerial: Urządzenie gotowe do pracy."));
     ui->statusBar->showMessage(tr("QSerial: Urządzenie gotowe do pracy"));
