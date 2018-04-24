@@ -23,6 +23,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     device_isReady = false;
     device_firstWord = false;
+    flag_isConnected = false;
+
+    timeout_counter = 0;
 
     // wyswietl poczatkowy status
     ui->statusBar->showMessage(tr("Status: Rozłączony"));
@@ -33,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->action_exit, SIGNAL(triggered()), this, SLOT(action_exit_click()));
 
     QObject::connect(this, SIGNAL(disconnect_me()), this, SLOT(action_disconnect_click()));
+    QObject::connect(this, SIGNAL(reconnect()), this, SLOT(action_connect_click()));
 
     // Laczenie reakcji na sygnaly portu szeregowego
     //QObject::connect(serial, SIGNAL(readyRead()), this, SLOT(serial_dataAvailable()));
@@ -55,8 +59,9 @@ MainWindow::~MainWindow()
  * określa ustawienia połączenia. Następnie podejmuje próbę połączenia.
  */
 void MainWindow::action_connect_click() {
-    ui->terminal->append(tr("Próba połączenia. . .\n"));
+    ui->terminal->append(tr("Próba połączenia nr ") + QString::number(timeout_counter) + ". . .\n");
 
+    if (timeout_counter < 1) {
     // otwieranie ustawien polaczenia
     connectionWindow = new Connection(this);
     if (connectionWindow->exec() == QDialog::Accepted) {
@@ -96,16 +101,41 @@ void MainWindow::action_connect_click() {
 
     }
     delete connectionWindow;
+    }
 
-    flag_isConnected = true;
-    ui->action_connect->setEnabled(false);
-    ui->action_disconnect->setEnabled(true);
+    
 
     // proba polaczenia
     serial->open(SERIAL_OPEN_MODE);
     // sukces
-    if (serial->isOpen()) ui->statusBar->showMessage(tr("Status: Połączony"));
+    if (serial->isOpen()) {
+        flag_isConnected = true;
+        ui->action_connect->setEnabled(false);
+        ui->action_disconnect->setEnabled(true);
+
+        ui->statusBar->showMessage(tr("Status: Połączony"));
+    }
+    // ponawianie polaczenia
+    else if (timeout_counter < MAX_CONNECTION_TRIES) {
+
+        ui->terminal->append(tr("Ponawianie próby połączenia"));
+        for (int i = 0; i < RECONNECT_SECONDS; i++) {
+            delay_seconds(1);
+            ui->terminal->moveCursor(QTextCursor::End);
+            ui->terminal->insertPlainText(". ");
+            ui->terminal->moveCursor(QTextCursor::End);
+        }
+        
+        timeout_counter++;
+        emit reconnect();
+    }
+    // porazka
+    else {
+        timeout_counter = 0;
+        ui->terminal->append(tr("Próba połączenia: niepowodzenie. . ."));
+    }
 }
+
 
 /*!
  * \brief Slot określający reakcję na wciśnięcie przycisku "Rozłącz"
@@ -113,18 +143,6 @@ void MainWindow::action_connect_click() {
  * Podejmuje próbę rozłączenia.
  */
 void MainWindow::action_disconnect_click() {
-    
-    /**
-     *  Tu jest dosc duzy problem dotyczacy blokowania portu (zasoby niedostepne)
-     *  tworzy sie plik blokujacy port pod "/var/lock/LCK..nazwaportu"
-     * 
-     *  NALEZY TO BEZZWLOCZNIE ROZWIAZAC
-     */
-
-    // std::string portName;
-    // if (serial->portName() != ""){
-    //     portName = "//var//lock//LCK.."+serial->portName().toStdString();
-    // }
 
     if (serial->isOpen()) {
         ui->terminal->append(tr("Rozłączanie urządzenia. . ."));
@@ -135,6 +153,8 @@ void MainWindow::action_disconnect_click() {
 
     flag_isConnected = false;
     device_isReady = false;
+    device_firstWord = false;
+
     ui->action_connect->setEnabled(true);
     ui->action_disconnect->setEnabled(false);
     ui->statusBar->showMessage(tr("Status: Rozłączony"));

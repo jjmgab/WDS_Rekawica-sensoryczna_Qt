@@ -9,6 +9,10 @@
 #include <stdio.h>
 
 #include "connection.hh"
+#include "time.hh"
+
+#define MAX_CONNECTION_TRIES 3
+#define RECONNECT_SECONDS 5
 
 #define SERIAL_OPEN_MODE QIODevice::ReadWrite
 
@@ -75,6 +79,7 @@ signals:
      * \brief Sygnal emitowany w celu realizacji rozłączenia urządzenia
      */
     void disconnect_me();
+    void reconnect();
 
 private:
     Ui::MainWindow *ui;
@@ -85,6 +90,8 @@ private:
     bool flag_isConnected;
     bool device_isReady;
     bool device_firstWord;
+
+    int timeout_counter;
 };
 
 #endif // MAINWINDOW_H
