@@ -2,6 +2,9 @@
   <qresource prefix="button_connect">
     <file>icons/connect</file>
   </qresource>
+  <qresource prefix="button_testrun">
+    <file>icons/testrun.png</file>
+  </qresource>
   <qresource prefix="button_disconnect">
     <file>icons/disconnect</file>
   </qresource>

@@ -21,11 +21,20 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     serial = new QSerialPort(this);
 
+    connectionWindow = nullptr;
+
     device_isReady = false;
     device_firstWord = false;
     flag_isConnected = false;
 
     timeout_counter = 0;
+    time_now = 0.0f;
+
+    pointers_bendSensor.append(&sensor_bend_01);
+    pointers_bendSensor.append(&sensor_bend_02);
+    pointers_bendSensor.append(&sensor_bend_03);
+    pointers_bendSensor.append(&sensor_bend_04);
+    pointers_bendSensor.append(&sensor_bend_05);
 
     // wyswietl poczatkowy status
     ui->statusBar->showMessage(tr("Status: Rozłączony"));
@@ -38,18 +47,64 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(this, SIGNAL(disconnect_me()), this, SLOT(action_disconnect_click()));
     QObject::connect(this, SIGNAL(reconnect()), this, SLOT(action_connect_click()));
 
-    // Laczenie reakcji na sygnaly portu szeregowego
-    //QObject::connect(serial, SIGNAL(readyRead()), this, SLOT(serial_dataAvailable()));
-    //QObject::connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(serial_errorOccurred(QSerialPort::SerialPortError)));
+    // opcje do debugowania
+    debugTimer = new QTimer(this);
+    debug_on = false;
+    qsrand(qrand());
+
+    // KONFIGURACJA WYKRESOW
+    QPen p_thumb,
+         p_index,
+         p_middle,
+         p_ring,
+         p_pinky;
+
+    p_thumb.setColor(Qt::black);
+    p_index.setColor(Qt::red);
+    p_middle.setColor(Qt::blue);
+    p_ring.setColor(Qt::green);
+    p_pinky.setColor(Qt::magenta);
+
+    pens.append(p_thumb);
+    pens.append(p_index);
+    pens.append(p_middle);
+    pens.append(p_ring);
+    pens.append(p_pinky);
+
+    ui->graph_bending->yAxis->setRange(SENSOR_RANGE_BEND_MIN, SENSOR_RANGE_BEND_MAX);
+    ui->graph_bending->xAxis->setLabel(tr("Czas pomiaru, s"));
+    ui->graph_bending->yAxis->setLabel(tr("Wartosc zgiecia"));
+    ui->graph_bending->setBackground(QBrush(Qt::white));
+
+    for (int i = 0; i < MAX_SENSORS_BEND; i++) {
+        ui->graph_bending->addGraph();
+        ui->graph_bending->graph(i)->setPen(pens.at(i));
+    }
+
+    QObject::connect(ui->action_testrun, SIGNAL(triggered()), this, SLOT(testrun_begin()));
+    QObject::connect(debugTimer, SIGNAL(timeout()), this, SLOT(testrun_timeoutHandler()));
 
 }
 
 /*!
  * \brief Destruktor klasy MainWindow.
  */
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
+    debugTimer->stop();
+
+    std::cout << "~serial" << std::endl;
+    if (serial != nullptr) delete serial;
+
+    std::cout << "~connectionWindow" << std::endl;
+    if (connectionWindow != nullptr) delete connectionWindow;
+
+    std::cout << "~debugTimer" << std::endl;
+    if (debugTimer != nullptr) delete debugTimer;
+
+    std::cout << "~ui" << std::endl;
     delete ui;
+
+    std::cout << "destruktory - sukces!" << std::endl;
 }
 
 /*!
@@ -136,7 +191,6 @@ void MainWindow::action_connect_click() {
     }
 }
 
-
 /*!
  * \brief Slot określający reakcję na wciśnięcie przycisku "Rozłącz"
  * 
@@ -166,6 +220,7 @@ void MainWindow::action_disconnect_click() {
  * Emituje sygnał załączający slot rozłączenia i wychodzi z programu.
  */
 void MainWindow::action_exit_click() {
+    debugTimer->stop();
     ui->terminal->append(tr("Wyjście. . ."));
     emit disconnect_me();   // trzeba rozlaczyc urzadzenie
     qApp->exit();
@@ -191,10 +246,12 @@ void MainWindow::serial_dataAvailable() {
                 
                 // proba powitania
                 serial->write(DEVICE_HANDSHAKE);
-            } else {
+            } else if (!device_isReady) {
                 sscanf(datas.toStdString().c_str(), "%02X", &value);
                 if (value == DEVICE_HANDSHAKE_RESPONSE) emit device_ready();
             }
+        } else {
+
         }
     }
 }
@@ -246,4 +303,204 @@ void MainWindow::device_ready() {
     ui->terminal->append(tr("QSerial: Urządzenie gotowe do pracy."));
     ui->statusBar->showMessage(tr("QSerial: Urządzenie gotowe do pracy"));
     device_isReady = true;
+}
+
+/*!
+ * \brief Uruchomienie testowego zbierania danych
+ * 
+ * Wypisuje w terminalu i na pasku stanu informacje o uruchomieniu testowego przebiegu.
+ * Ignoruje wbudowane flagi -- sluzy za test parsowania ramki i wyswietlania na wykresie danych.
+ */
+void MainWindow::testrun_begin() {
+    ui->terminal->append(tr("Testrun: Uruchomiono przebieg testowy"));
+    ui->statusBar->showMessage(tr("Testrun: Uruchomiono przebieg testowy"));
+
+    device_isReady = true;
+    debug_on = true;
+    
+    debugTimer->start(TIMER_TIMEOUT_MS);
+}
+
+/*!
+ * \brief Reakcja na timeout timera testowego
+ * 
+ * Generuje dane dla wszystkich mozliwych czujnikow, nastepnie parsuje je
+ * i wyswietla na wykresach.
+ */
+void MainWindow::testrun_timeoutHandler() {
+
+    // GENEROWANIE DANYCH
+    std::string data = "";
+    qsrand(qrand());
+
+    // ilosc sensorow
+    char devices[3];
+    sprintf(devices, "%02X", MAX_SENSORS);
+    std::string devs(devices);
+
+    // dodaje do ramki zakodowana liczbe sensorow
+    data += devs;
+
+    // generuje i dodaje dane
+    // "czujniki" zgiecia
+    data += generate_data(SENSOR_TYPE_BEND, SENSOR_ID_FINGER_THUMB, random_value(SENSOR_RANGE_BEND_MIN, SENSOR_RANGE_BEND_MAX));
+    data += generate_data(SENSOR_TYPE_BEND, SENSOR_ID_FINGER_INDEX, random_value(SENSOR_RANGE_BEND_MIN, SENSOR_RANGE_BEND_MAX));
+    data += generate_data(SENSOR_TYPE_BEND, SENSOR_ID_FINGER_MIDDLE, random_value(SENSOR_RANGE_BEND_MIN, SENSOR_RANGE_BEND_MAX));
+    data += generate_data(SENSOR_TYPE_BEND, SENSOR_ID_FINGER_RING, random_value(SENSOR_RANGE_BEND_MIN, SENSOR_RANGE_BEND_MAX));
+    data += generate_data(SENSOR_TYPE_BEND, SENSOR_ID_FINGER_PINKY, random_value(SENSOR_RANGE_BEND_MIN, SENSOR_RANGE_BEND_MAX));
+
+    // "czujniki" dotyku
+    data += generate_data(SENSOR_TYPE_TOUCH, SENSOR_ID_FINGER_THUMB, random_value(SENSOR_RANGE_TOUCH_MIN, SENSOR_RANGE_TOUCH_MAX));
+    data += generate_data(SENSOR_TYPE_TOUCH, SENSOR_ID_FINGER_INDEX, random_value(SENSOR_RANGE_TOUCH_MIN, SENSOR_RANGE_TOUCH_MAX));
+    data += generate_data(SENSOR_TYPE_TOUCH, SENSOR_ID_FINGER_MIDDLE, random_value(SENSOR_RANGE_TOUCH_MIN, SENSOR_RANGE_TOUCH_MAX));
+    data += generate_data(SENSOR_TYPE_TOUCH, SENSOR_ID_FINGER_RING, random_value(SENSOR_RANGE_TOUCH_MIN, SENSOR_RANGE_TOUCH_MAX));
+    data += generate_data(SENSOR_TYPE_TOUCH, SENSOR_ID_FINGER_PINKY, random_value(SENSOR_RANGE_TOUCH_MIN, SENSOR_RANGE_TOUCH_MAX));
+
+    // ------------------------------------------------
+
+    // WCZYTYWANIE I WYSWIETLANIE DANYCH
+
+    // czy punktow jest wiecej niz zalozony zakres
+    bool full_range = (time_now > ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)));
+
+    // (do wczytywania) liczba sensorow
+    int devices_no = -1;
+    sscanf(data.c_str(), "%02X", &devices_no);
+
+    // wczytuje i parsuje po 4*4 bity z ramki
+    for (int i = 0; i < MAX_SENSORS; i++) {
+        parse(data.substr(2 + 4 * i, 4));
+    }
+
+    
+
+    // weryfikuje, czy przekroczony zostal zalozony zakres na osi x
+    if (full_range) { 
+        graph_time.pop_front();
+        graph_time.append(time_now);
+        // przesuwa wykres wzdluz osi x po przekroczeniu zakresu
+        ui->graph_bending->xAxis->setRange(-1.0f * ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)) + time_now, time_now);
+    }
+    else {
+        graph_time.append(time_now);
+        // skaluje zakres, poki nie zostal przekroczony
+        ui->graph_bending->xAxis->setRange(0, time_now);
+    }
+
+    // laduje wczytane dane do wykresow,
+    // odnosi sie do poszczegolnych danych poprzez wektor wskaznikow na wektory danych
+    for (int i = 0; i < pointers_bendSensor.size(); i++)
+        ui->graph_bending->graph(i)->setData(graph_time, *(pointers_bendSensor.at(i)));
+    
+    // rysuje wykres
+    ui->graph_bending->replot();
+
+    // czas pomiarow sie zwieksza
+    time_now += (double)TIMER_TIMEOUT_MS / 1000.0f;
+}
+
+void MainWindow::parse(const std::string& dataframe_chunk) {
+    int sensor_type = -1,
+        sensor_id = -1,
+        sensor_value = -1;
+
+    // wczytuje dane z ramki
+    sscanf(dataframe_chunk.c_str(), "%01X%01X%02X", &sensor_type, &sensor_id, &sensor_value);
+
+    // sprawdza, czy przekroczony zostal zalozony zakres
+    bool full_range = (time_now > ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)));
+
+    // zagniezdzone switch'e:
+    // najpierw sprawdza typ czujnika (bend, touch, acc)
+    // nastepnie jego id (dany palec/os akc.)
+    // i laduje w odpowiedni wektor
+    switch(sensor_type) {
+        case SENSOR_TYPE_BEND:
+            switch(sensor_id) {
+                case SENSOR_ID_FINGER_THUMB:
+                    if (full_range) sensor_bend_01.pop_front();  
+                    sensor_bend_01.append(sensor_value);
+                    break;
+
+                case SENSOR_ID_FINGER_INDEX:
+                    if (full_range) sensor_bend_02.pop_front();  
+                    sensor_bend_02.append(sensor_value);
+                    break;
+
+                case SENSOR_ID_FINGER_MIDDLE:
+                    if (full_range) sensor_bend_03.pop_front();  
+                    sensor_bend_03.append(sensor_value);
+                    break;
+
+                case SENSOR_ID_FINGER_RING:
+                    if (full_range) sensor_bend_04.pop_front();  
+                    sensor_bend_04.append(sensor_value);
+                    break;
+
+                case SENSOR_ID_FINGER_PINKY:
+                    if (full_range) sensor_bend_05.pop_front();  
+                    sensor_bend_05.append(sensor_value);
+                    break;
+
+                default:
+                    exit(-1);
+                    break;
+            }
+            break;
+
+        case SENSOR_TYPE_TOUCH:
+            switch(sensor_id) {
+                case SENSOR_ID_FINGER_THUMB:
+                    if (full_range) sensor_touch_01.pop_front();  
+                    sensor_touch_01.append(sensor_value);
+                    break;
+
+                case SENSOR_ID_FINGER_INDEX:
+                    if (full_range) sensor_touch_02.pop_front();  
+                    sensor_touch_02.append(sensor_value);
+                    break;
+
+                case SENSOR_ID_FINGER_MIDDLE:
+                    if (full_range) sensor_touch_03.pop_front();  
+                    sensor_touch_03.append(sensor_value);
+                    break;
+
+                case SENSOR_ID_FINGER_RING:
+                    if (full_range) sensor_touch_04.pop_front();  
+                    sensor_touch_04.append(sensor_value);
+                    break;
+
+                case SENSOR_ID_FINGER_PINKY:
+                    if (full_range) sensor_touch_05.pop_front();  
+                    sensor_touch_05.append(sensor_value);
+                    break;
+
+                default:
+                    exit(-1);
+                    break;
+            }
+            break;
+
+        case SENSOR_TYPE_ACC:
+            switch(sensor_id) {
+                case SENSOR_ID_ACC_XAXIS:
+                    if (full_range) sensor_acc_x.pop_front();  
+                    sensor_acc_x.append(sensor_value);
+                    break;
+
+                case SENSOR_ID_ACC_YAXIS:
+                    if (full_range) sensor_acc_y.pop_front();  
+                    sensor_acc_y.append(sensor_value);
+                    break;
+
+                default:
+                    exit(-1);
+                    break;
+            }
+            break;
+
+        default:
+            exit(-1);
+            break;
+    }
 }

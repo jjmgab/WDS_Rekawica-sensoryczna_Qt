@@ -61,51 +61,6 @@
     </size>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <layout class="QHBoxLayout" name="layout_handVisualization" stretch="0,0">
-      <item>
-       <widget class="QGraphicsView" name="graphics_handVisualization">
-        <property name="minimumSize">
-         <size>
-          <width>240</width>
-          <height>400</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>240</width>
-          <height>400</height>
-         </size>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="baseSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="cursor" stdset="0">
-         <cursorShape>ForbiddenCursor</cursorShape>
-        </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="Line" name="line_vertical_1">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
     <item row="0" column="1">
      <layout class="QVBoxLayout" name="layout_mainInfo">
       <item>
@@ -180,20 +135,7 @@
          </layout>
         </item>
         <item>
-         <spacer name="horizontalSpacer_1">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Maximum</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>320</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
+         <widget class="QCustomPlot" name="graph_orientation" native="true"/>
         </item>
        </layout>
       </item>
@@ -450,6 +392,71 @@
       </item>
      </layout>
     </item>
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="layout_handVisualization" stretch="0,0">
+      <item>
+       <layout class="QVBoxLayout" name="layout_visualization">
+        <item>
+         <widget class="QGraphicsView" name="graphics_handVisualization">
+          <property name="minimumSize">
+           <size>
+            <width>240</width>
+            <height>240</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>240</width>
+            <height>240</height>
+           </size>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="cursor" stdset="0">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCustomPlot" name="graph_bending" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>240</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>240</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line_vertical_1">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -458,7 +465,7 @@
      <x>0</x>
      <y>0</y>
      <width>860</width>
-     <height>25</height>
+     <height>19</height>
     </rect>
    </property>
    <property name="cursor">
@@ -470,6 +477,7 @@
     </property>
     <addaction name="action_connect"/>
     <addaction name="action_disconnect"/>
+    <addaction name="action_testrun"/>
     <addaction name="action_exit"/>
     <addaction name="action_info"/>
    </widget>
@@ -487,6 +495,7 @@
    </attribute>
    <addaction name="action_connect"/>
    <addaction name="action_disconnect"/>
+   <addaction name="action_testrun"/>
    <addaction name="action_exit"/>
    <addaction name="action_info"/>
   </widget>
@@ -500,7 +509,7 @@
      <normaloff>:/button_connect/icons/connect</normaloff>:/button_connect/icons/connect</iconset>
    </property>
    <property name="text">
-    <string>Podłącz</string>
+    <string>&amp;Podłącz</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+C</string>
@@ -515,7 +524,7 @@
      <normaloff>:/button_disconnect/icons/disconnect</normaloff>:/button_disconnect/icons/disconnect</iconset>
    </property>
    <property name="text">
-    <string>Rozłącz</string>
+    <string>&amp;Rozłącz</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+D</string>
@@ -527,7 +536,7 @@
      <normaloff>:/button_exit/icons/exit</normaloff>:/button_exit/icons/exit</iconset>
    </property>
    <property name="text">
-    <string>Wyjdź</string>
+    <string>&amp;Wyjdź</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+E</string>
@@ -539,14 +548,31 @@
      <normaloff>:/button_about/icons/about</normaloff>:/button_about/icons/about</iconset>
    </property>
    <property name="text">
-    <string>Info</string>
+    <string>&amp;Info</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+I</string>
    </property>
   </action>
+  <action name="action_testrun">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/button_testrun/icons/testrun.png</normaloff>:/button_testrun/icons/testrun.png</iconset>
+   </property>
+   <property name="text">
+    <string>Test rysowania wykresów</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.hh</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../res/icons.qrc"/>
  </resources>
