@@ -1,4 +1,5 @@
 #include <QtGlobal>
+#include <string>
 
 /*!
  * \file Plik zawiera w sobie deklaracje dodatkowych funkcji.
@@ -23,3 +24,14 @@ int random_value(int range_min, int range_max);
  * \param[out] string z fragmentem ramki
  */
 std::string generate_data(int sensor_type, int sensor_id, int sensor_value);
+
+/*!
+ * \brief Przelicza wartosci z zakresu wejsciowego na zakres wyjsciowy
+ * \param[in] wartosc
+ * \param[in] wejscie_minimalne
+ * \param[in] wejscie_maksymalne
+ * \param[in] wyjscie_minimalne
+ * \param[in] wyjscie_maksymalne
+ * \param[out] przeliczona wartosc na nowy zakres (double)
+ */
+double map(double x, double in_min, double in_max, double out_min, double out_max);

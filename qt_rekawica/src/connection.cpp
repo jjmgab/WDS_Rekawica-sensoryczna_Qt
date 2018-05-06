@@ -23,7 +23,8 @@ Connection::Connection(QWidget* parent) :
         for (i = ports.begin(); i != ports.end(); ++i)
             ui->portName->addItem(i->portName());
 
-        QObject::connect(ui->button_ok, SIGNAL(clicked()), this, SLOT(accepted()));
+        QDialog::connect(ui->button_ok, SIGNAL(clicked()), this, SLOT(accept()));
+        QDialog::connect(ui->button_cancel, SIGNAL(clicked()), this, SLOT(reject()));
     }
 
 /*!
@@ -31,11 +32,4 @@ Connection::Connection(QWidget* parent) :
  */
 Connection::~Connection() {
     delete ui;
-}
-
-/*!
- * \brief Reakcja na wciśnięcie przycisku zatwierdzenia ustawień.
- */
-void Connection::accepted() {
-    this->accept();
 }

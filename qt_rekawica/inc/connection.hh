@@ -26,11 +26,6 @@ class Connection : public QDialog {
     Ui::dialog_connection* ui;
 
     public slots:
-    /*!
-    * \brief Reakcja na wciśnięcie przycisku zatwierdzenia ustawień.
-    */
-    void accepted();
-
 };
 
 #endif

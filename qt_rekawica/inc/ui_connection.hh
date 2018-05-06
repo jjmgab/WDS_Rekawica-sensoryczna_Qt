@@ -1,13 +1,13 @@
 /********************************************************************************
 ** Form generated from reading UI file 'connection.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef CONNECTION_H
-#define CONNECTION_H
+#ifndef UI_CONNECTION_H
+#define UI_CONNECTION_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -57,20 +57,20 @@ public:
     {
         if (dialog_connection->objectName().isEmpty())
             dialog_connection->setObjectName(QStringLiteral("dialog_connection"));
-        dialog_connection->resize(320, 250);
+        dialog_connection->resize(320, 280);
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(dialog_connection->sizePolicy().hasHeightForWidth());
         dialog_connection->setSizePolicy(sizePolicy);
-        dialog_connection->setMinimumSize(QSize(320, 250));
-        dialog_connection->setMaximumSize(QSize(320, 250));
+        dialog_connection->setMinimumSize(QSize(320, 280));
+        dialog_connection->setMaximumSize(QSize(320, 280));
         QIcon icon;
         icon.addFile(QStringLiteral(":/button_connect/icons/connect"), QSize(), QIcon::Normal, QIcon::Off);
         dialog_connection->setWindowIcon(icon);
         verticalLayoutWidget = new QWidget(dialog_connection);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 10, 297, 231));
+        verticalLayoutWidget->setGeometry(QRect(10, 10, 297, 254));
         gridLayout = new QGridLayout(verticalLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
@@ -192,38 +192,38 @@ public:
 
     void retranslateUi(QDialog *dialog_connection)
     {
-        dialog_connection->setWindowTitle(QApplication::translate("dialog_connection", "Po\305\202\304\205czenie", 0));
-        label_baudRate->setText(QApplication::translate("dialog_connection", "BaudRate", 0));
+        dialog_connection->setWindowTitle(QApplication::translate("dialog_connection", "Po\305\202\304\205czenie", Q_NULLPTR));
+        label_baudRate->setText(QApplication::translate("dialog_connection", "BaudRate", Q_NULLPTR));
         baudRate->clear();
         baudRate->insertItems(0, QStringList()
-         << QApplication::translate("dialog_connection", "115200", 0)
-         << QApplication::translate("dialog_connection", "9600", 0)
+         << QApplication::translate("dialog_connection", "115200", Q_NULLPTR)
+         << QApplication::translate("dialog_connection", "9600", Q_NULLPTR)
         );
-        label_stopBits->setText(QApplication::translate("dialog_connection", "Bit stopu", 0));
+        label_stopBits->setText(QApplication::translate("dialog_connection", "Bit stopu", Q_NULLPTR));
         stopBits->clear();
         stopBits->insertItems(0, QStringList()
-         << QApplication::translate("dialog_connection", "1", 0)
+         << QApplication::translate("dialog_connection", "1", Q_NULLPTR)
         );
-        label_dataBits->setText(QApplication::translate("dialog_connection", "Data bits", 0));
+        label_dataBits->setText(QApplication::translate("dialog_connection", "Data bits", Q_NULLPTR));
         dataBits->clear();
         dataBits->insertItems(0, QStringList()
-         << QApplication::translate("dialog_connection", "8", 0)
+         << QApplication::translate("dialog_connection", "8", Q_NULLPTR)
         );
-        label_parity->setText(QApplication::translate("dialog_connection", "Parzysto\305\233\304\207", 0));
+        label_parity->setText(QApplication::translate("dialog_connection", "Parzysto\305\233\304\207", Q_NULLPTR));
         parity->clear();
         parity->insertItems(0, QStringList()
-         << QApplication::translate("dialog_connection", "Nieparzysty", 0)
-         << QApplication::translate("dialog_connection", "Parzysty", 0)
+         << QApplication::translate("dialog_connection", "Nieparzysty", Q_NULLPTR)
+         << QApplication::translate("dialog_connection", "Parzysty", Q_NULLPTR)
         );
-        label_portName->setText(QApplication::translate("dialog_connection", "<html><head/><body><p>Port</p></body></html>", 0));
-        label_flowControl->setText(QApplication::translate("dialog_connection", "Flow control", 0));
+        label_portName->setText(QApplication::translate("dialog_connection", "<html><head/><body><p>Port</p></body></html>", Q_NULLPTR));
+        label_flowControl->setText(QApplication::translate("dialog_connection", "Flow control", Q_NULLPTR));
         flowControl->clear();
         flowControl->insertItems(0, QStringList()
-         << QApplication::translate("dialog_connection", "Hardware", 0)
-         << QApplication::translate("dialog_connection", "Software", 0)
+         << QApplication::translate("dialog_connection", "Hardware", Q_NULLPTR)
+         << QApplication::translate("dialog_connection", "Software", Q_NULLPTR)
         );
-        button_ok->setText(QApplication::translate("dialog_connection", "OK", 0));
-        button_cancel->setText(QApplication::translate("dialog_connection", "Anuluj", 0));
+        button_ok->setText(QApplication::translate("dialog_connection", "OK", Q_NULLPTR));
+        button_cancel->setText(QApplication::translate("dialog_connection", "Anuluj", Q_NULLPTR));
     } // retranslateUi
 
 };
@@ -234,4 +234,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // CONNECTION_H
+#endif // UI_CONNECTION_H

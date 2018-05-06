@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -9,6 +9,7 @@
 #ifndef UI_MAINWINDOW_H
 #define UI_MAINWINDOW_H
 
+#include <QtCore/QLocale>
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
@@ -29,7 +30,7 @@
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "qcustomplot.hh"
+#include <qcustomplot.hh>
 
 QT_BEGIN_NAMESPACE
 
@@ -85,7 +86,10 @@ public:
     QHBoxLayout *layout_handVisualization;
     QVBoxLayout *layout_visualization;
     QGraphicsView *graphics_handVisualization;
+    QFrame *line_2;
     QCustomPlot *graph_bending;
+    QFrame *line_3;
+    QCustomPlot *graph_touch;
     QFrame *line_vertical_1;
     QMenuBar *menuBar;
     QMenu *menuMenu;
@@ -96,13 +100,13 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(860, 508);
+        MainWindow->resize(1023, 656);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
-        MainWindow->setMinimumSize(QSize(860, 508));
+        MainWindow->setMinimumSize(QSize(0, 0));
         MainWindow->setMaximumSize(QSize(16777215, 16777215));
         QIcon icon;
         icon.addFile(QStringLiteral(":/button_connect/icons/connect"), QSize(), QIcon::Normal, QIcon::Off);
@@ -150,6 +154,8 @@ public:
         centralWidget->setSizePolicy(sizePolicy1);
         centralWidget->setMinimumSize(QSize(0, 0));
         centralWidget->setSizeIncrement(QSize(0, 0));
+        centralWidget->setBaseSize(QSize(1025, 590));
+        centralWidget->setLocale(QLocale(QLocale::Polish, QLocale::Poland));
         gridLayout = new QGridLayout(centralWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -162,11 +168,17 @@ public:
         layout_orientation->setObjectName(QStringLiteral("layout_orientation"));
         graphics_handOrientation = new QGraphicsView(centralWidget);
         graphics_handOrientation->setObjectName(QStringLiteral("graphics_handOrientation"));
-        graphics_handOrientation->setMinimumSize(QSize(170, 110));
-        graphics_handOrientation->setMaximumSize(QSize(170, 110));
+        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(graphics_handOrientation->sizePolicy().hasHeightForWidth());
+        graphics_handOrientation->setSizePolicy(sizePolicy2);
+        graphics_handOrientation->setMinimumSize(QSize(0, 0));
+        graphics_handOrientation->setMaximumSize(QSize(16777215, 16777215));
+        graphics_handOrientation->setBaseSize(QSize(0, 0));
         graphics_handOrientation->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ForbiddenCursor)));
 
-        layout_orientation->addWidget(graphics_handOrientation);
+        layout_orientation->addWidget(graphics_handOrientation, 0, Qt::AlignHCenter|Qt::AlignVCenter);
 
         line_vertical_2 = new QFrame(centralWidget);
         line_vertical_2->setObjectName(QStringLiteral("line_vertical_2"));
@@ -183,11 +195,13 @@ public:
         layout_orientation_dataView_labels->setObjectName(QStringLiteral("layout_orientation_dataView_labels"));
         label_orientationX = new QLabel(centralWidget);
         label_orientationX->setObjectName(QStringLiteral("label_orientationX"));
+        label_orientationX->setCursor(QCursor(Qt::IBeamCursor));
 
         layout_orientation_dataView_labels->addWidget(label_orientationX);
 
         label_orientationY = new QLabel(centralWidget);
         label_orientationY->setObjectName(QStringLiteral("label_orientationY"));
+        label_orientationY->setCursor(QCursor(Qt::IBeamCursor));
 
         layout_orientation_dataView_labels->addWidget(label_orientationY);
 
@@ -200,11 +214,13 @@ public:
         layout_orientation_dataView_values->setContentsMargins(-1, -1, 10, -1);
         value_orientationX = new QLabel(centralWidget);
         value_orientationX->setObjectName(QStringLiteral("value_orientationX"));
+        value_orientationX->setCursor(QCursor(Qt::ForbiddenCursor));
 
         layout_orientation_dataView_values->addWidget(value_orientationX);
 
         value_orientationY = new QLabel(centralWidget);
         value_orientationY->setObjectName(QStringLiteral("value_orientationY"));
+        value_orientationY->setCursor(QCursor(Qt::ForbiddenCursor));
 
         layout_orientation_dataView_values->addWidget(value_orientationY);
 
@@ -216,9 +232,14 @@ public:
 
         graph_orientation = new QCustomPlot(centralWidget);
         graph_orientation->setObjectName(QStringLiteral("graph_orientation"));
+        graph_orientation->setCursor(QCursor(Qt::CrossCursor));
 
         layout_orientation->addWidget(graph_orientation);
 
+        layout_orientation->setStretch(0, 2);
+        layout_orientation->setStretch(1, 1);
+        layout_orientation->setStretch(2, 1);
+        layout_orientation->setStretch(3, 3);
 
         layout_mainInfo->addLayout(layout_orientation);
 
@@ -412,6 +433,9 @@ public:
 
         layout_mainInfo->addWidget(terminal);
 
+        layout_mainInfo->setStretch(0, 7);
+        layout_mainInfo->setStretch(1, 5);
+        layout_mainInfo->setStretch(2, 5);
 
         gridLayout->addLayout(layout_mainInfo, 0, 1, 1, 1);
 
@@ -423,22 +447,52 @@ public:
         layout_visualization->setObjectName(QStringLiteral("layout_visualization"));
         graphics_handVisualization = new QGraphicsView(centralWidget);
         graphics_handVisualization->setObjectName(QStringLiteral("graphics_handVisualization"));
-        graphics_handVisualization->setMinimumSize(QSize(240, 240));
-        graphics_handVisualization->setMaximumSize(QSize(240, 240));
+        sizePolicy2.setHeightForWidth(graphics_handVisualization->sizePolicy().hasHeightForWidth());
+        graphics_handVisualization->setSizePolicy(sizePolicy2);
+        graphics_handVisualization->setMinimumSize(QSize(0, 0));
+        graphics_handVisualization->setMaximumSize(QSize(16777215, 9999999));
         graphics_handVisualization->setSizeIncrement(QSize(0, 0));
         graphics_handVisualization->setBaseSize(QSize(0, 0));
         graphics_handVisualization->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ForbiddenCursor)));
         graphics_handVisualization->setAutoFillBackground(false);
 
-        layout_visualization->addWidget(graphics_handVisualization);
+        layout_visualization->addWidget(graphics_handVisualization, 0, Qt::AlignHCenter|Qt::AlignVCenter);
+
+        line_2 = new QFrame(centralWidget);
+        line_2->setObjectName(QStringLiteral("line_2"));
+        line_2->setFrameShape(QFrame::HLine);
+        line_2->setFrameShadow(QFrame::Sunken);
+
+        layout_visualization->addWidget(line_2);
 
         graph_bending = new QCustomPlot(centralWidget);
         graph_bending->setObjectName(QStringLiteral("graph_bending"));
+        sizePolicy1.setHeightForWidth(graph_bending->sizePolicy().hasHeightForWidth());
+        graph_bending->setSizePolicy(sizePolicy1);
         graph_bending->setMinimumSize(QSize(240, 0));
-        graph_bending->setMaximumSize(QSize(240, 16777215));
+        graph_bending->setMaximumSize(QSize(16777215, 16777215));
+        graph_bending->setCursor(QCursor(Qt::CrossCursor));
 
         layout_visualization->addWidget(graph_bending);
 
+        line_3 = new QFrame(centralWidget);
+        line_3->setObjectName(QStringLiteral("line_3"));
+        line_3->setFrameShape(QFrame::HLine);
+        line_3->setFrameShadow(QFrame::Sunken);
+
+        layout_visualization->addWidget(line_3);
+
+        graph_touch = new QCustomPlot(centralWidget);
+        graph_touch->setObjectName(QStringLiteral("graph_touch"));
+        graph_touch->setCursor(QCursor(Qt::CrossCursor));
+
+        layout_visualization->addWidget(graph_touch);
+
+        layout_visualization->setStretch(0, 3);
+        layout_visualization->setStretch(1, 1);
+        layout_visualization->setStretch(2, 2);
+        layout_visualization->setStretch(3, 1);
+        layout_visualization->setStretch(4, 2);
 
         layout_handVisualization->addLayout(layout_visualization);
 
@@ -449,13 +503,17 @@ public:
 
         layout_handVisualization->addWidget(line_vertical_1);
 
+        layout_handVisualization->setStretch(0, 2);
+        layout_handVisualization->setStretch(1, 1);
 
         gridLayout->addLayout(layout_handVisualization, 0, 0, 1, 1);
 
+        gridLayout->setColumnStretch(0, 1);
+        gridLayout->setColumnStretch(1, 3);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 860, 19));
+        menuBar->setGeometry(QRect(0, 0, 1023, 25));
         menuBar->setCursor(QCursor(Qt::PointingHandCursor));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QStringLiteral("menuMenu"));
@@ -476,9 +534,12 @@ public:
         menuMenu->addAction(action_info);
         mainToolBar->addAction(action_connect);
         mainToolBar->addAction(action_disconnect);
+        mainToolBar->addSeparator();
         mainToolBar->addAction(action_testrun);
-        mainToolBar->addAction(action_exit);
+        mainToolBar->addSeparator();
         mainToolBar->addAction(action_info);
+        mainToolBar->addSeparator();
+        mainToolBar->addAction(action_exit);
 
         retranslateUi(MainWindow);
 
@@ -487,30 +548,31 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Rekawica_sensoryczna", 0));
-        action_connect->setText(QApplication::translate("MainWindow", "&Pod\305\202\304\205cz", 0));
-        action_connect->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+C", 0));
-        action_disconnect->setText(QApplication::translate("MainWindow", "&Roz\305\202\304\205cz", 0));
-        action_disconnect->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+D", 0));
-        action_exit->setText(QApplication::translate("MainWindow", "&Wyjd\305\272", 0));
-        action_exit->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+E", 0));
-        action_info->setText(QApplication::translate("MainWindow", "&Info", 0));
-        action_info->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+I", 0));
-        action_testrun->setText(QApplication::translate("MainWindow", "Test rysowania wykres\303\263w", 0));
-        label_orientationX->setText(QApplication::translate("MainWindow", "Wsp\303\263\305\202rz\304\231dna X: ", 0));
-        label_orientationY->setText(QApplication::translate("MainWindow", "Wsp\303\263\305\202rz\304\231dna Y: ", 0));
-        value_orientationX->setText(QApplication::translate("MainWindow", "---", 0));
-        value_orientationY->setText(QApplication::translate("MainWindow", "---", 0));
-        info1->setText(QApplication::translate("MainWindow", "Sterowanie drganiami paliczk\303\263w", 0));
-        graphics_finger_1->setText(QApplication::translate("MainWindow", "Kciuk", 0));
-        graphics_finger_2->setText(QApplication::translate("MainWindow", "P. wskazuj\304\205cy", 0));
-        graphics_finger_3->setText(QApplication::translate("MainWindow", "P. \305\233rodkowy", 0));
-        graphics_finger_4->setText(QApplication::translate("MainWindow", "P. serdeczny", 0));
-        graphics_finger_5->setText(QApplication::translate("MainWindow", "P. ma\305\202y", 0));
-        info2->setText(QApplication::translate("MainWindow", "Si\305\202a nacisku na poszczeg\303\263lne paliczki", 0));
-        progressBar_finger_1->setFormat(QApplication::translate("MainWindow", "%p%", 0));
-        terminal->setPlaceholderText(QApplication::translate("MainWindow", "Logs only", 0));
-        menuMenu->setTitle(QApplication::translate("MainWindow", "&Menu", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Rekawica_sensoryczna", Q_NULLPTR));
+        action_connect->setText(QApplication::translate("MainWindow", "&Pod\305\202\304\205cz", Q_NULLPTR));
+        action_connect->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+C", Q_NULLPTR));
+        action_disconnect->setText(QApplication::translate("MainWindow", "&Roz\305\202\304\205cz", Q_NULLPTR));
+        action_disconnect->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+D", Q_NULLPTR));
+        action_exit->setText(QApplication::translate("MainWindow", "&Wyjd\305\272", Q_NULLPTR));
+        action_exit->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+E", Q_NULLPTR));
+        action_info->setText(QApplication::translate("MainWindow", "&Info", Q_NULLPTR));
+        action_info->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+I", Q_NULLPTR));
+        action_testrun->setText(QApplication::translate("MainWindow", "Test Syntetyczny", Q_NULLPTR));
+        action_testrun->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+T", Q_NULLPTR));
+        label_orientationX->setText(QApplication::translate("MainWindow", "Wsp\303\263\305\202rz\304\231dna X: ", Q_NULLPTR));
+        label_orientationY->setText(QApplication::translate("MainWindow", "Wsp\303\263\305\202rz\304\231dna Y: ", Q_NULLPTR));
+        value_orientationX->setText(QApplication::translate("MainWindow", "---", Q_NULLPTR));
+        value_orientationY->setText(QApplication::translate("MainWindow", "---", Q_NULLPTR));
+        info1->setText(QApplication::translate("MainWindow", "Sterowanie drganiami paliczk\303\263w", Q_NULLPTR));
+        graphics_finger_1->setText(QApplication::translate("MainWindow", "Kciuk", Q_NULLPTR));
+        graphics_finger_2->setText(QApplication::translate("MainWindow", "P. wskazuj\304\205cy", Q_NULLPTR));
+        graphics_finger_3->setText(QApplication::translate("MainWindow", "P. \305\233rodkowy", Q_NULLPTR));
+        graphics_finger_4->setText(QApplication::translate("MainWindow", "P. serdeczny", Q_NULLPTR));
+        graphics_finger_5->setText(QApplication::translate("MainWindow", "P. ma\305\202y", Q_NULLPTR));
+        info2->setText(QApplication::translate("MainWindow", "Si\305\202a nacisku na poszczeg\303\263lne paliczki", Q_NULLPTR));
+        progressBar_finger_1->setFormat(QApplication::translate("MainWindow", "%p%", Q_NULLPTR));
+        terminal->setPlaceholderText(QApplication::translate("MainWindow", "Logs only", Q_NULLPTR));
+        menuMenu->setTitle(QApplication::translate("MainWindow", "&Menu", Q_NULLPTR));
     } // retranslateUi
 
 };
@@ -521,4 +583,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // MAINWINDOW_H
+#endif // UI_MAINWINDOW_H

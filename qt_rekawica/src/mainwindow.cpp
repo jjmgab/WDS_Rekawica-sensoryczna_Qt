@@ -27,14 +27,21 @@ MainWindow::MainWindow(QWidget *parent) :
     device_firstWord = false;
     flag_isConnected = false;
 
-    timeout_counter = 0;
     time_now = 0.0f;
 
+    // wskazniki na czujniki zgiecia
     pointers_bendSensor.append(&sensor_bend_01);
     pointers_bendSensor.append(&sensor_bend_02);
     pointers_bendSensor.append(&sensor_bend_03);
     pointers_bendSensor.append(&sensor_bend_04);
     pointers_bendSensor.append(&sensor_bend_05);
+
+    // wskazniki na czujniki dotyku
+    pointers_touchSensor.append(&sensor_touch_01);
+    pointers_touchSensor.append(&sensor_touch_02);
+    pointers_touchSensor.append(&sensor_touch_03);
+    pointers_touchSensor.append(&sensor_touch_04);
+    pointers_touchSensor.append(&sensor_touch_05);
 
     // wyswietl poczatkowy status
     ui->statusBar->showMessage(tr("Status: Rozłączony"));
@@ -50,7 +57,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // opcje do debugowania
     debugTimer = new QTimer(this);
     debug_on = false;
-    qsrand(qrand());
+    //qsrand(qrand());
 
     // KONFIGURACJA WYKRESOW
     QPen p_thumb,
@@ -71,9 +78,11 @@ MainWindow::MainWindow(QWidget *parent) :
     pens.append(p_ring);
     pens.append(p_pinky);
 
+
+    // ustawienia wykresu wygiecia
     ui->graph_bending->yAxis->setRange(SENSOR_RANGE_BEND_MIN, SENSOR_RANGE_BEND_MAX);
-    ui->graph_bending->xAxis->setLabel(tr("Czas pomiaru, s"));
-    ui->graph_bending->yAxis->setLabel(tr("Wartosc zgiecia"));
+    ui->graph_bending->xAxis->setLabel(tr("Czas pomiaru [s]"));
+    ui->graph_bending->yAxis->setLabel(tr("Wart. zgięcia"));
     ui->graph_bending->setBackground(QBrush(Qt::white));
 
     for (int i = 0; i < MAX_SENSORS_BEND; i++) {
@@ -81,7 +90,19 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->graph_bending->graph(i)->setPen(pens.at(i));
     }
 
-    QObject::connect(ui->action_testrun, SIGNAL(triggered()), this, SLOT(testrun_begin()));
+    // ustawienia wykresu dotyku
+    ui->graph_touch->yAxis->setRange(SENSOR_RANGE_TOUCH_MIN, SENSOR_RANGE_TOUCH_MAX);
+    ui->graph_touch->xAxis->setLabel(tr("Czas pomiaru [s]"));
+    ui->graph_touch->yAxis->setLabel(tr("Siła dotyku"));
+    ui->graph_touch->setBackground(QBrush(Qt::white));
+
+    for (int i = 0; i < MAX_SENSORS_TOUCH; i++) {
+        ui->graph_touch->addGraph();
+        ui->graph_touch->graph(i)->setPen(pens.at(i));
+    }
+    
+
+    QObject::connect(ui->action_testrun, SIGNAL(triggered()), this, SLOT(testrun()));
     QObject::connect(debugTimer, SIGNAL(timeout()), this, SLOT(testrun_timeoutHandler()));
 
 }
@@ -114,13 +135,19 @@ MainWindow::~MainWindow() {
  * określa ustawienia połączenia. Następnie podejmuje próbę połączenia.
  */
 void MainWindow::action_connect_click() {
-    ui->terminal->append(tr("Próba połączenia nr ") + QString::number(timeout_counter) + ". . .\n");
+     // musi być static przez to że akcja reconnect wywołuje action_connect
+    static bool status;        
 
-    if (timeout_counter < 1) {
+    // aby sprawdzic czy jest to proba polaczenia czy tez nowe polaczenie oraz do logow, static bo akcja reconnect wywoluje funkcje ponownie 
+    static int timeout_counter = 0; 
+
     // otwieranie ustawien polaczenia
     connectionWindow = new Connection(this);
-    if (connectionWindow->exec() == QDialog::Accepted) {
-        
+    if ( timeout_counter == 0 ) status = connectionWindow->exec();
+    // Aby nie probowalo laczyc jezeli uzytkownik nie zaakceptuje danych
+    if (status) {
+        // Aby nie mozna bylo wywolywac ponownie polaczenia kiedy jedno juz jest w trakcie
+        ui->action_connect->setEnabled(false); 
         // czyszczenie poprzedniego portu - przy rozlaczeniu i ponownym laczeniu
         if (serial != nullptr) {
             if (serial->isOpen()) {
@@ -154,40 +181,36 @@ void MainWindow::action_connect_click() {
         if(!serial->setStopBits((QSerialPort::StopBits) connectionWindow->ui->stopBits->currentText().toInt()))
             ui->terminal->append(tr("QSerialError: błąd ustawienia StopBits"));
 
-    }
     delete connectionWindow;
-    }
-
-    
-
-    // proba polaczenia
-    serial->open(SERIAL_OPEN_MODE);
-    // sukces
-    if (serial->isOpen()) {
-        flag_isConnected = true;
-        ui->action_connect->setEnabled(false);
-        ui->action_disconnect->setEnabled(true);
-
-        ui->statusBar->showMessage(tr("Status: Połączony"));
-    }
-    // ponawianie polaczenia
-    else if (timeout_counter < MAX_CONNECTION_TRIES) {
-
-        ui->terminal->append(tr("Ponawianie próby połączenia"));
-        for (int i = 0; i < RECONNECT_SECONDS; i++) {
-            delay_seconds(1);
-            ui->terminal->moveCursor(QTextCursor::End);
-            ui->terminal->insertPlainText(". ");
-            ui->terminal->moveCursor(QTextCursor::End);
-        }
         
-        timeout_counter++;
-        emit reconnect();
-    }
-    // porazka
-    else {
-        timeout_counter = 0;
-        ui->terminal->append(tr("Próba połączenia: niepowodzenie. . ."));
+        // proba polaczenia
+        serial->open(SERIAL_OPEN_MODE);
+        // sukces
+        if (serial->isOpen()) {
+            flag_isConnected = true;
+            ui->action_disconnect->setEnabled(true);
+            ui->statusBar->showMessage(tr("Status: Połączony"));
+        }
+        // ponawianie polaczenia
+        else if (timeout_counter < MAX_CONNECTION_TRIES) {
+
+            timeout_counter++;
+            ui->terminal->append(tr("Próba połączenia nr ") + QString::number(timeout_counter) + " ");
+            for (int i = 0; i < RECONNECT_SECONDS; i++) {
+                delay_seconds(1);
+                ui->terminal->moveCursor(QTextCursor::End);
+                ui->terminal->insertPlainText(". ");
+                ui->terminal->moveCursor(QTextCursor::End);
+            }
+            emit reconnect();
+        }
+        // porazka
+        else {
+            timeout_counter = 0;
+            ui->action_connect->setEnabled(true);
+            ui->terminal->append(tr("Próba połączenia: niepowodzenie"));
+            ui->statusBar->showMessage(tr("Status: Nie udalo się połączyć"));
+        }
     }
 }
 
@@ -311,14 +334,24 @@ void MainWindow::device_ready() {
  * Wypisuje w terminalu i na pasku stanu informacje o uruchomieniu testowego przebiegu.
  * Ignoruje wbudowane flagi -- sluzy za test parsowania ramki i wyswietlania na wykresie danych.
  */
-void MainWindow::testrun_begin() {
-    ui->terminal->append(tr("Testrun: Uruchomiono przebieg testowy"));
-    ui->statusBar->showMessage(tr("Testrun: Uruchomiono przebieg testowy"));
-
-    device_isReady = true;
-    debug_on = true;
+void MainWindow::testrun() {
+    if (!debug_on)                              // jezeli debug == false
+    {
+        device_isReady = true;
+        debug_on = true;
     
-    debugTimer->start(TIMER_TIMEOUT_MS);
+        debugTimer->start(TIMER_TIMEOUT_MS);
+        ui->terminal->append(tr("Testrun: Uruchomiono przebieg testowy"));
+        ui->statusBar->showMessage(tr("Testrun: Uruchomiono przebieg testowy"));
+
+    } else {
+        device_isReady = false;
+        debug_on = false;
+    
+        debugTimer->stop();
+        ui->terminal->append(tr("Testrun: Zatrzymano przebieg testowy"));
+        ui->statusBar->showMessage(tr("Testrun: Zatrzymano przebieg testowy"));
+    }
 }
 
 /*!
@@ -372,31 +405,72 @@ void MainWindow::testrun_timeoutHandler() {
         parse(data.substr(2 + 4 * i, 4));
     }
 
-    
-
     // weryfikuje, czy przekroczony zostal zalozony zakres na osi x
     if (full_range) { 
         graph_time.pop_front();
         graph_time.append(time_now);
         // przesuwa wykres wzdluz osi x po przekroczeniu zakresu
         ui->graph_bending->xAxis->setRange(-1.0f * ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)) + time_now, time_now);
+        ui->graph_touch->xAxis->setRange(-1.0f * ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)) + time_now, time_now);
     }
     else {
         graph_time.append(time_now);
         // skaluje zakres, poki nie zostal przekroczony
         ui->graph_bending->xAxis->setRange(0, time_now);
+        ui->graph_touch->xAxis->setRange(0, time_now);
     }
 
     // laduje wczytane dane do wykresow,
     // odnosi sie do poszczegolnych danych poprzez wektor wskaznikow na wektory danych
     for (int i = 0; i < pointers_bendSensor.size(); i++)
         ui->graph_bending->graph(i)->setData(graph_time, *(pointers_bendSensor.at(i)));
+
+    // wyswietla wczytane dane na progress barach
+    // odnosi sie do najnowszej danej w wektorze danych z ktorych korzystaja wykresy
+    for (int i = 0; i < pointers_touchSensor.size(); i++) 
+    {
+        ui->graph_touch->graph(i)->setData(graph_time, *(pointers_touchSensor.at(i)));
+        switch (i) 
+        {
+            case 0:
+                ui->progressBar_finger_1->setValue(convert_touch_value(sensor_touch_01.at(sensor_touch_01.size()-1)));
+                break;
+            
+            case 1:
+                ui->progressBar_finger_2->setValue(convert_touch_value(sensor_touch_02.at(sensor_touch_02.size()-1)));
+                break;
+            
+            case 2:
+                ui->progressBar_finger_3->setValue(convert_touch_value(sensor_touch_03.at(sensor_touch_03.size()-1)));
+                break;
+            
+            case 3:
+                ui->progressBar_finger_4->setValue(convert_touch_value(sensor_touch_04.at(sensor_touch_04.size()-1)));
+                break;
+
+            case 4:
+                ui->progressBar_finger_5->setValue(convert_touch_value(sensor_touch_05.at(sensor_touch_05.size()-1)));
+                break;
+        }
+    }
     
     // rysuje wykres
     ui->graph_bending->replot();
+    ui->graph_touch->replot();
 
     // czas pomiarow sie zwieksza
     time_now += (double)TIMER_TIMEOUT_MS / 1000.0f;
+}
+
+/*!
+* \brief Przelicza wartosci 8 bitowe na wartosci procentowe
+* 
+* \param[in] wartosc 8 bitowa
+* \param[out] wartosc procentowa 0-100% double
+*/
+double MainWindow::convert_touch_value(double touch_value)
+{
+    return map(touch_value, SENSOR_RANGE_TOUCH_MIN, SENSOR_RANGE_TOUCH_MAX, BAR_PERCENTAGE_MIN, BAR_PERCENTAGE_MAX);
 }
 
 void MainWindow::parse(const std::string& dataframe_chunk) {

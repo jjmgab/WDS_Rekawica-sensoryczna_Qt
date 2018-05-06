@@ -46,6 +46,10 @@
 #define SENSOR_RANGE_ACC_MIN        0x00
 #define SENSOR_RANGE_ACC_MAX        0xFF
 
+// -- zakresy progress barow
+#define BAR_PERCENTAGE_MAX              0x64
+#define BAR_PERCENTAGE_MIN              0x00
+
 // -- komunikaty wysylane
 #define DEVICE_HANDSHAKE            "01\n"
 
@@ -56,9 +60,11 @@
 // WYKRESY
 #define X_RANGE_POINTS              20
 #define TIMER_TIMEOUT_MS            100
+
 // -- debugging i testy
 #define MAX_SENSORS                 10
 #define MAX_SENSORS_BEND            5
+#define MAX_SENSORS_TOUCH           5
 
 namespace Ui {
 class MainWindow;
@@ -83,7 +89,18 @@ public:
      */
     ~MainWindow();
 
+    /*!
+     * \brief Parsuje ramke danych
+     */
     void parse(const std::string&);
+
+    /*!
+    * \brief Przelicza wartosci 8 bitowe na wartosci procentowe
+    * 
+    * \param[in] wartosc 8 bitowa
+    * \param[out] wartosc procentowa 0-100% double
+    */
+    double convert_touch_value(double touch_value);
 
 public slots:
     /*!
@@ -121,7 +138,7 @@ public slots:
     /*!
      * \brief Uruchomienie testowego zbierania danych
      */
-    void testrun_begin();
+    void testrun();
 
     /*!
      * \brief Reakcja na timeout timera testowego
@@ -163,6 +180,7 @@ private:
                     sensor_bend_04,     // serdeczny zgiecie
                     sensor_bend_05,     // maly zgiecie
 
+                                        // w przypadku sensorow dotyku dane dotycza rowniez progress barow
                     sensor_touch_01,    // kciuk dotyk
                     sensor_touch_02,    // wskazujacy dotyk
                     sensor_touch_03,    // srodkowy dotyk
@@ -173,11 +191,12 @@ private:
                     sensor_acc_y;       // akcelerometr os y
 
     QVector<QVector<double>*> pointers_bendSensor;  // wskazniki na wektory danych czujnikow zgiecia
+    QVector<QVector<double>*> pointers_touchSensor; // wskazniki na wektory danych czujnikow dotyku
 
     double time_now;        // przechowuje aktualny czas polaczenia
 
     // -- ustawienia wykresow
-    // zgiecie
+    // zgiecie 
     QVector<QPen> pens;
 
     // -- debug
