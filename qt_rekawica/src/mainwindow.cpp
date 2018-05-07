@@ -21,6 +21,23 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     serial = new QSerialPort(this);
 
+    // -- Zaladowanie obrazka orientacji
+    // laduje obrazek ze sciezki qrc z prefixem images oraz aliasem img_orientation
+    QPixmap pixmap_orientation(":/images/img_orientation");
+    // do zmiennej dodaje scene
+    scene_orientation->addPixmap(pixmap_orientation);
+    // ustawia przezroczyste tlo sceny
+    ui->graphics_handOrientation->setStyleSheet("background-color: transparent;");
+    // ustawia oraz wyswietla scene w QGraphicsview
+    ui->graphics_handOrientation->setScene(scene_orientation);
+    ui->graphics_handOrientation->show();
+
+
+    // resetuje wizualizacje ręki do zera przed wczytaniem nowego stanu do sceny - w tym przypadku wczyta
+    reset_hand_visualisation_scene();
+    ui->graphics_handVisualization->show();
+
+
     connectionWindow = nullptr;
 
     device_isReady = false;
@@ -28,6 +45,9 @@ MainWindow::MainWindow(QWidget *parent) :
     flag_isConnected = false;
 
     time_now = 0.0f;
+
+    // ładowanie scen do wizualizacji zgięcia
+    
 
     // wskazniki na czujniki zgiecia
     pointers_bendSensor.append(&sensor_bend_01);
@@ -42,6 +62,10 @@ MainWindow::MainWindow(QWidget *parent) :
     pointers_touchSensor.append(&sensor_touch_03);
     pointers_touchSensor.append(&sensor_touch_04);
     pointers_touchSensor.append(&sensor_touch_05);
+
+    //wskazniki na osie akcelereometru
+    pointers_accSensor.append(&sensor_acc_x);
+    pointers_accSensor.append(&sensor_acc_z);
 
     // wyswietl poczatkowy status
     ui->statusBar->showMessage(tr("Status: Rozłączony"));
@@ -64,19 +88,29 @@ MainWindow::MainWindow(QWidget *parent) :
          p_index,
          p_middle,
          p_ring,
-         p_pinky;
+         p_pinky,
+         ACC_x,
+         ACC_z;
 
+    // kolory na palcach (dotyk i zgiecie)
     p_thumb.setColor(Qt::black);
     p_index.setColor(Qt::red);
     p_middle.setColor(Qt::blue);
     p_ring.setColor(Qt::green);
     p_pinky.setColor(Qt::magenta);
 
+    // kolory akcelerometr
+    ACC_x.setColor(Qt::black);
+    ACC_z.setColor(Qt::red);
+
     pens.append(p_thumb);
     pens.append(p_index);
     pens.append(p_middle);
     pens.append(p_ring);
     pens.append(p_pinky);
+
+    pens_ACC.append(ACC_x);
+    pens_ACC.append(ACC_z);
 
 
     // ustawienia wykresu wygiecia
@@ -100,7 +134,21 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->graph_touch->addGraph();
         ui->graph_touch->graph(i)->setPen(pens.at(i));
     }
-    
+
+    // ustawienia wykresu akcelerometru
+    ui->graph_orientation->yAxis->setRange(SENSOR_RANGE_ACC_MIN, SENSOR_RANGE_ACC_MAX);
+    ui->graph_orientation->xAxis->setLabel(tr("Czas pomiaru [s]"));
+    ui->graph_orientation->yAxis->setLabel(tr("Wartości wsp. ACC"));
+    ui->graph_orientation->setBackground(QBrush(Qt::white));
+
+    for (int i = 0; i < MAX_AXIS_ACC; i++) {
+        ui->graph_orientation->addGraph();
+        ui->graph_orientation->graph(i)->setPen(pens_ACC.at(i));
+    }
+
+    ui->graph_orientation->graph(0)->setName("Wart. osi x");
+    ui->graph_orientation->graph(1)->setName("Wart. osi z");
+    ui->graph_orientation->legend->setVisible(true);
 
     QObject::connect(ui->action_testrun, SIGNAL(triggered()), this, SLOT(testrun()));
     QObject::connect(debugTimer, SIGNAL(timeout()), this, SLOT(testrun_timeoutHandler()));
@@ -121,6 +169,10 @@ MainWindow::~MainWindow() {
 
     std::cout << "~debugTimer" << std::endl;
     if (debugTimer != nullptr) delete debugTimer;
+    
+    std::cout << "~scenes" << std::endl;
+    if (scene_visualisation != nullptr) delete scene_visualisation;
+    if (scene_orientation != nullptr) delete scene_orientation;
 
     std::cout << "~ui" << std::endl;
     delete ui;
@@ -180,8 +232,6 @@ void MainWindow::action_connect_click() {
 
         if(!serial->setStopBits((QSerialPort::StopBits) connectionWindow->ui->stopBits->currentText().toInt()))
             ui->terminal->append(tr("QSerialError: błąd ustawienia StopBits"));
-
-    delete connectionWindow;
         
         // proba polaczenia
         serial->open(SERIAL_OPEN_MODE);
@@ -212,6 +262,7 @@ void MainWindow::action_connect_click() {
             ui->statusBar->showMessage(tr("Status: Nie udalo się połączyć"));
         }
     }
+    delete connectionWindow;
 }
 
 /*!
@@ -347,7 +398,8 @@ void MainWindow::testrun() {
     } else {
         device_isReady = false;
         debug_on = false;
-    
+
+        reset_hand_visualisation_scene();       // aby po zatrzymaniu przebiegu testowego wylaczyla sie wizualizacja na dloni
         debugTimer->stop();
         ui->terminal->append(tr("Testrun: Zatrzymano przebieg testowy"));
         ui->statusBar->showMessage(tr("Testrun: Zatrzymano przebieg testowy"));
@@ -364,7 +416,7 @@ void MainWindow::testrun_timeoutHandler() {
 
     // GENEROWANIE DANYCH
     std::string data = "";
-    qsrand(qrand());
+    //qsrand(qrand());
 
     // ilosc sensorow
     char devices[3];
@@ -389,6 +441,10 @@ void MainWindow::testrun_timeoutHandler() {
     data += generate_data(SENSOR_TYPE_TOUCH, SENSOR_ID_FINGER_RING, random_value(SENSOR_RANGE_TOUCH_MIN, SENSOR_RANGE_TOUCH_MAX));
     data += generate_data(SENSOR_TYPE_TOUCH, SENSOR_ID_FINGER_PINKY, random_value(SENSOR_RANGE_TOUCH_MIN, SENSOR_RANGE_TOUCH_MAX));
 
+    // akcelerometr osie
+    data += generate_data(SENSOR_TYPE_ACC, SENSOR_ID_ACC_XAXIS, random_value(SENSOR_RANGE_ACC_MIN, SENSOR_RANGE_ACC_MAX));
+    data += generate_data(SENSOR_TYPE_ACC, SENSOR_ID_ACC_ZAXIS, random_value(SENSOR_RANGE_ACC_MIN, SENSOR_RANGE_ACC_MAX));
+
     // ------------------------------------------------
 
     // WCZYTYWANIE I WYSWIETLANIE DANYCH
@@ -412,24 +468,43 @@ void MainWindow::testrun_timeoutHandler() {
         // przesuwa wykres wzdluz osi x po przekroczeniu zakresu
         ui->graph_bending->xAxis->setRange(-1.0f * ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)) + time_now, time_now);
         ui->graph_touch->xAxis->setRange(-1.0f * ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)) + time_now, time_now);
+        ui->graph_orientation->xAxis->setRange(-1.0f * ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)) + time_now, time_now);
     }
     else {
         graph_time.append(time_now);
         // skaluje zakres, poki nie zostal przekroczony
         ui->graph_bending->xAxis->setRange(0, time_now);
         ui->graph_touch->xAxis->setRange(0, time_now);
+        ui->graph_orientation->xAxis->setRange(0, time_now);
     }
 
-    // laduje wczytane dane do wykresow,
-    // odnosi sie do poszczegolnych danych poprzez wektor wskaznikow na wektory danych
-    for (int i = 0; i < pointers_bendSensor.size(); i++)
-        ui->graph_bending->graph(i)->setData(graph_time, *(pointers_bendSensor.at(i)));
+    // resetuje scene aby moc przyjac nowe dane
+    reset_hand_visualisation_scene();
 
-    // wyswietla wczytane dane na progress barach
+    // inicjalizacja wizualizacji wartosciami "zielonymi", numery grafik i prefix zdefiniowany w pliku qrc
+    for (int i = 0; i < MAX_SENSORS_BEND; i++){
+        QPixmap pixmap_element(":/visualisation_element_static_bend/" + QString::number(i)); //-1 bo indexy od 0
+        scene_visualisation->addPixmap(pixmap_element);
+    }
+
+    for (int i = 0; i < MAX_SENSORS_TOUCH; i++){
+        QPixmap pixmap_element(":/visualisation_element_static_touch/" + QString::number(i)); //-1 bo indexy od 0
+        scene_visualisation->addPixmap(pixmap_element);
+    }
+
+    // laduje wczytane dane do wykresow oraz wizualizacji
+    // odnosi sie do poszczegolnych danych poprzez wektor wskaznikow na wektory danych
+    for (int i = 0; i < pointers_bendSensor.size(); i++) {
+        ui->graph_bending->graph(i)->setData(graph_time, *(pointers_bendSensor.at(i)));
+        set_hand_visualisation_scene(SENSOR_TYPE_BEND, i+1, pointers_bendSensor.at(i)->at(pointers_bendSensor.at(i)->size()-1)); //i+1 bo indexy define od 1
+    }
+
+    // wyswietla wczytane dane na wykresach, wizualizacjach, progress barach
     // odnosi sie do najnowszej danej w wektorze danych z ktorych korzystaja wykresy
     for (int i = 0; i < pointers_touchSensor.size(); i++) 
     {
         ui->graph_touch->graph(i)->setData(graph_time, *(pointers_touchSensor.at(i)));
+        set_hand_visualisation_scene(SENSOR_TYPE_TOUCH, i+1, pointers_touchSensor.at(i)->at(pointers_touchSensor.at(i)->size()-1)); //i+1 bo indexy define od 1
         switch (i) 
         {
             case 0:
@@ -453,10 +528,27 @@ void MainWindow::testrun_timeoutHandler() {
                 break;
         }
     }
+
+    // laduje wczytane dane do wykresow,
+    // odnosi sie do poszczegolnych danych poprzez wektor wskaznikow na wektory danych
+    for (int i = 0; i < pointers_accSensor.size(); i++)
+        ui->graph_orientation->graph(i)->setData(graph_time, *(pointers_accSensor.at(i)));
+
+    QString value;
+    value = (QString::number(sensor_acc_x.at(sensor_acc_x.size()-1))).rightJustified(3, '0'); // rightJustified odnosi się do zer a nie całego tesktu
+    ui->value_orientationX->setText(value);                                                   // wyświetlanie jest dopiero tutaj
+    value = (QString::number(sensor_acc_z.at(sensor_acc_z.size()-1))).rightJustified(3, '0');
+    ui->value_orientationZ->setText(value);
+
     
     // rysuje wykres
     ui->graph_bending->replot();
     ui->graph_touch->replot();
+    ui->graph_orientation->replot();
+
+    // rysuje wizualizacje
+    ui->graphics_handVisualization->setScene(scene_visualisation);
+    ui->graphics_handVisualization->show();
 
     // czas pomiarow sie zwieksza
     time_now += (double)TIMER_TIMEOUT_MS / 1000.0f;
@@ -471,6 +563,69 @@ void MainWindow::testrun_timeoutHandler() {
 double MainWindow::convert_touch_value(double touch_value)
 {
     return map(touch_value, SENSOR_RANGE_TOUCH_MIN, SENSOR_RANGE_TOUCH_MAX, BAR_PERCENTAGE_MIN, BAR_PERCENTAGE_MAX);
+}
+
+/*!
+* \brief Ustawia scene wizualizacji
+*
+* \param[in] int typ sensora (1-2)
+* \param[in] int id palca (1-5)
+* \param[in] int wartosc chwili obecnej (0-255)
+*/
+void MainWindow::set_hand_visualisation_scene(int sensor_type, int sensor_id, int sensor_value)
+{
+    if (sensor_type == SENSOR_TYPE_BEND) {
+        // Konstruktor QPixmap ze sciezka qrc
+        QPixmap pixmap_element(":/visualisation_element_bend/" + QString::number(sensor_id-1));
+        // nowy Qpixmap z takim samym wymiarem
+        QPixmap result(pixmap_element.size());
+        // ustawienie przezroczystosci nowego QPixmap
+        result.fill(Qt::transparent);
+        // Utworzenie obiektu QPainter ktory pozwoli nam zmienic obrazek
+        QPainter painter;
+        // - - "Startujemy" paintera z obrazkiem result (pustka)
+        painter.begin(&result);
+        // Ustawiamy przezroczystosc wszystkich pikseli na zalezna od wartosci przeliczana za pomoca funkcji map
+        painter.setOpacity(map(sensor_value, SENSOR_RANGE_BEND_MIN, SENSOR_RANGE_BEND_MAX, 0.0, 1.0));
+        // Bierzemy i od pozycji 0, 0 kopiujemy nasz obrazek (na warstwe przezroczystosci)
+        painter.drawPixmap(0, 0, pixmap_element);
+        // - - "Kończymy" paintera 
+        painter.end();
+        // dodajemy na scene nasz nowy obrazek
+        scene_visualisation->addPixmap(result);
+    }
+
+    if (sensor_type == SENSOR_TYPE_TOUCH) {
+        QPixmap pixmap_element(":/visualisation_element_touch/" + QString::number(sensor_id-1));
+        QPixmap result(pixmap_element.size());
+        result.fill(Qt::transparent);
+        QPainter painter;
+        painter.begin(&result);
+        painter.setOpacity(map(sensor_value, SENSOR_RANGE_BEND_MIN, SENSOR_RANGE_BEND_MAX, 0.0, 1.0));
+        painter.drawPixmap(0, 0, pixmap_element);
+        painter.end();
+        scene_visualisation->addPixmap(result);
+    }
+
+    // ustawiamy nasza scene na QGraphicsView, teraz wystarszy wyswietlic za pomoca show()
+    ui->graphics_handVisualization->setScene(scene_visualisation);
+}
+
+/*!
+* \brief Resetuje wizualizacje do stanu niepodlaczonego
+*/
+void MainWindow::reset_hand_visualisation_scene()
+{
+    delete scene_visualisation;
+    scene_visualisation = new QGraphicsScene;
+
+    QPixmap pixmap_visualisation(":/images/img_bg_visualisation");
+    // do zmiennej dodaje scene
+    scene_visualisation->addPixmap(pixmap_visualisation);
+    // ustawia przezroczyste tlo sceny
+    ui->graphics_handVisualization->setStyleSheet("background-color: transparent;");
+    // ustawia oraz wyswietla scene w QGraphicsview
+    ui->graphics_handVisualization->setScene(scene_visualisation);
 }
 
 void MainWindow::parse(const std::string& dataframe_chunk) {
@@ -562,9 +717,9 @@ void MainWindow::parse(const std::string& dataframe_chunk) {
                     sensor_acc_x.append(sensor_value);
                     break;
 
-                case SENSOR_ID_ACC_YAXIS:
-                    if (full_range) sensor_acc_y.pop_front();  
-                    sensor_acc_y.append(sensor_value);
+                case SENSOR_ID_ACC_ZAXIS:
+                    if (full_range) sensor_acc_z.pop_front();  
+                    sensor_acc_z.append(sensor_value);
                     break;
 
                 default:

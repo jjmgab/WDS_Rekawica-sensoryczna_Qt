@@ -51,10 +51,10 @@ public:
     QHBoxLayout *layout_orientation_dataView;
     QVBoxLayout *layout_orientation_dataView_labels;
     QLabel *label_orientationX;
-    QLabel *label_orientationY;
+    QLabel *label_orientationZ;
     QVBoxLayout *layout_orientation_dataView_values;
     QLabel *value_orientationX;
-    QLabel *value_orientationY;
+    QLabel *value_orientationZ;
     QCustomPlot *graph_orientation;
     QVBoxLayout *layout_touchVisualization;
     QFrame *line_horizontal_1;
@@ -100,7 +100,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1023, 656);
+        MainWindow->resize(1131, 829);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -120,29 +120,30 @@ public:
         if (QIcon::hasThemeIcon(iconThemeName)) {
             icon1 = QIcon::fromTheme(iconThemeName);
         } else {
-            icon1.addFile(QStringLiteral(":/button_connect/icons/connect"), QSize(), QIcon::Normal, QIcon::Off);
+            icon1.addFile(QStringLiteral(":/menu_buttons/img_connect"), QSize(), QIcon::Normal, QIcon::Off);
         }
         action_connect->setIcon(icon1);
         action_disconnect = new QAction(MainWindow);
         action_disconnect->setObjectName(QStringLiteral("action_disconnect"));
         action_disconnect->setEnabled(false);
         QIcon icon2;
-        icon2.addFile(QStringLiteral(":/button_disconnect/icons/disconnect"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QStringLiteral(":/menu_buttons/img_disconnect"), QSize(), QIcon::Normal, QIcon::Off);
         action_disconnect->setIcon(icon2);
         action_exit = new QAction(MainWindow);
         action_exit->setObjectName(QStringLiteral("action_exit"));
         QIcon icon3;
-        icon3.addFile(QStringLiteral(":/button_exit/icons/exit"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QStringLiteral(":/menu_buttons/img_buttonexit"), QSize(), QIcon::Normal, QIcon::Off);
         action_exit->setIcon(icon3);
         action_info = new QAction(MainWindow);
         action_info->setObjectName(QStringLiteral("action_info"));
         QIcon icon4;
-        icon4.addFile(QStringLiteral(":/button_about/icons/about"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QStringLiteral(":/menu_buttons/img_about"), QSize(), QIcon::Normal, QIcon::Off);
         action_info->setIcon(icon4);
         action_testrun = new QAction(MainWindow);
         action_testrun->setObjectName(QStringLiteral("action_testrun"));
+        action_testrun->setCheckable(true);
         QIcon icon5;
-        icon5.addFile(QStringLiteral(":/button_testrun/icons/testrun.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QStringLiteral(":/menu_buttons/img_testrun"), QSize(), QIcon::Normal, QIcon::Off);
         action_testrun->setIcon(icon5);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
@@ -152,9 +153,9 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
         centralWidget->setSizePolicy(sizePolicy1);
-        centralWidget->setMinimumSize(QSize(0, 0));
+        centralWidget->setMinimumSize(QSize(1130, 740));
         centralWidget->setSizeIncrement(QSize(0, 0));
-        centralWidget->setBaseSize(QSize(1025, 590));
+        centralWidget->setBaseSize(QSize(1130, 740));
         centralWidget->setLocale(QLocale(QLocale::Polish, QLocale::Poland));
         gridLayout = new QGridLayout(centralWidget);
         gridLayout->setSpacing(6);
@@ -177,6 +178,9 @@ public:
         graphics_handOrientation->setMaximumSize(QSize(16777215, 16777215));
         graphics_handOrientation->setBaseSize(QSize(0, 0));
         graphics_handOrientation->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ForbiddenCursor)));
+        graphics_handOrientation->setToolTipDuration(2000);
+        graphics_handOrientation->setAutoFillBackground(false);
+        graphics_handOrientation->setInteractive(false);
 
         layout_orientation->addWidget(graphics_handOrientation, 0, Qt::AlignHCenter|Qt::AlignVCenter);
 
@@ -199,11 +203,11 @@ public:
 
         layout_orientation_dataView_labels->addWidget(label_orientationX);
 
-        label_orientationY = new QLabel(centralWidget);
-        label_orientationY->setObjectName(QStringLiteral("label_orientationY"));
-        label_orientationY->setCursor(QCursor(Qt::IBeamCursor));
+        label_orientationZ = new QLabel(centralWidget);
+        label_orientationZ->setObjectName(QStringLiteral("label_orientationZ"));
+        label_orientationZ->setCursor(QCursor(Qt::IBeamCursor));
 
-        layout_orientation_dataView_labels->addWidget(label_orientationY);
+        layout_orientation_dataView_labels->addWidget(label_orientationZ);
 
 
         layout_orientation_dataView->addLayout(layout_orientation_dataView_labels);
@@ -218,11 +222,11 @@ public:
 
         layout_orientation_dataView_values->addWidget(value_orientationX);
 
-        value_orientationY = new QLabel(centralWidget);
-        value_orientationY->setObjectName(QStringLiteral("value_orientationY"));
-        value_orientationY->setCursor(QCursor(Qt::ForbiddenCursor));
+        value_orientationZ = new QLabel(centralWidget);
+        value_orientationZ->setObjectName(QStringLiteral("value_orientationZ"));
+        value_orientationZ->setCursor(QCursor(Qt::ForbiddenCursor));
 
-        layout_orientation_dataView_values->addWidget(value_orientationY);
+        layout_orientation_dataView_values->addWidget(value_orientationZ);
 
 
         layout_orientation_dataView->addLayout(layout_orientation_dataView_values);
@@ -233,6 +237,7 @@ public:
         graph_orientation = new QCustomPlot(centralWidget);
         graph_orientation->setObjectName(QStringLiteral("graph_orientation"));
         graph_orientation->setCursor(QCursor(Qt::CrossCursor));
+        graph_orientation->setToolTipDuration(2000);
 
         layout_orientation->addWidget(graph_orientation);
 
@@ -260,6 +265,7 @@ public:
         font.setWeight(75);
         info1->setFont(font);
         info1->setCursor(QCursor(Qt::IBeamCursor));
+        info1->setToolTipDuration(2000);
         info1->setAlignment(Qt::AlignCenter);
 
         layout_touchVisualization->addWidget(info1);
@@ -339,6 +345,7 @@ public:
         info2->setObjectName(QStringLiteral("info2"));
         info2->setFont(font);
         info2->setCursor(QCursor(Qt::IBeamCursor));
+        info2->setToolTipDuration(-1);
         info2->setAlignment(Qt::AlignCenter);
 
         layout_touchVisualization->addWidget(info2);
@@ -349,6 +356,7 @@ public:
         progressBar_finger_1 = new QProgressBar(centralWidget);
         progressBar_finger_1->setObjectName(QStringLiteral("progressBar_finger_1"));
         progressBar_finger_1->setCursor(QCursor(Qt::ForbiddenCursor));
+        progressBar_finger_1->setToolTipDuration(2000);
         progressBar_finger_1->setValue(0);
 
         layout_touchVisualization_progressBars->addWidget(progressBar_finger_1);
@@ -363,6 +371,7 @@ public:
         progressBar_finger_2 = new QProgressBar(centralWidget);
         progressBar_finger_2->setObjectName(QStringLiteral("progressBar_finger_2"));
         progressBar_finger_2->setCursor(QCursor(Qt::ForbiddenCursor));
+        progressBar_finger_2->setToolTipDuration(2000);
         progressBar_finger_2->setValue(0);
 
         layout_touchVisualization_progressBars->addWidget(progressBar_finger_2);
@@ -377,6 +386,7 @@ public:
         progressBar_finger_3 = new QProgressBar(centralWidget);
         progressBar_finger_3->setObjectName(QStringLiteral("progressBar_finger_3"));
         progressBar_finger_3->setCursor(QCursor(Qt::ForbiddenCursor));
+        progressBar_finger_3->setToolTipDuration(2000);
         progressBar_finger_3->setValue(0);
 
         layout_touchVisualization_progressBars->addWidget(progressBar_finger_3);
@@ -391,6 +401,7 @@ public:
         progressBar_finger_4 = new QProgressBar(centralWidget);
         progressBar_finger_4->setObjectName(QStringLiteral("progressBar_finger_4"));
         progressBar_finger_4->setCursor(QCursor(Qt::ForbiddenCursor));
+        progressBar_finger_4->setToolTipDuration(2000);
         progressBar_finger_4->setValue(0);
 
         layout_touchVisualization_progressBars->addWidget(progressBar_finger_4);
@@ -405,6 +416,7 @@ public:
         progressBar_finger_5 = new QProgressBar(centralWidget);
         progressBar_finger_5->setObjectName(QStringLiteral("progressBar_finger_5"));
         progressBar_finger_5->setCursor(QCursor(Qt::ForbiddenCursor));
+        progressBar_finger_5->setToolTipDuration(2000);
         progressBar_finger_5->setValue(0);
 
         layout_touchVisualization_progressBars->addWidget(progressBar_finger_5);
@@ -428,6 +440,7 @@ public:
         font1.setFamily(QStringLiteral("Courier 10 Pitch"));
         terminal->setFont(font1);
         terminal->viewport()->setProperty("cursor", QVariant(QCursor(Qt::IBeamCursor)));
+        terminal->setToolTipDuration(2000);
         terminal->setUndoRedoEnabled(false);
         terminal->setReadOnly(true);
 
@@ -454,6 +467,7 @@ public:
         graphics_handVisualization->setSizeIncrement(QSize(0, 0));
         graphics_handVisualization->setBaseSize(QSize(0, 0));
         graphics_handVisualization->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ForbiddenCursor)));
+        graphics_handVisualization->setToolTipDuration(2000);
         graphics_handVisualization->setAutoFillBackground(false);
 
         layout_visualization->addWidget(graphics_handVisualization, 0, Qt::AlignHCenter|Qt::AlignVCenter);
@@ -472,6 +486,7 @@ public:
         graph_bending->setMinimumSize(QSize(240, 0));
         graph_bending->setMaximumSize(QSize(16777215, 16777215));
         graph_bending->setCursor(QCursor(Qt::CrossCursor));
+        graph_bending->setToolTipDuration(2000);
 
         layout_visualization->addWidget(graph_bending);
 
@@ -485,6 +500,7 @@ public:
         graph_touch = new QCustomPlot(centralWidget);
         graph_touch->setObjectName(QStringLiteral("graph_touch"));
         graph_touch->setCursor(QCursor(Qt::CrossCursor));
+        graph_touch->setToolTipDuration(2000);
 
         layout_visualization->addWidget(graph_touch);
 
@@ -513,7 +529,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1023, 25));
+        menuBar->setGeometry(QRect(0, 0, 1131, 25));
         menuBar->setCursor(QCursor(Qt::PointingHandCursor));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QStringLiteral("menuMenu"));
@@ -549,20 +565,59 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Rekawica_sensoryczna", Q_NULLPTR));
-        action_connect->setText(QApplication::translate("MainWindow", "&Pod\305\202\304\205cz", Q_NULLPTR));
+        action_connect->setText(QApplication::translate("MainWindow", "Pod\305\202\304\205cz", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        action_connect->setToolTip(QApplication::translate("MainWindow", "Umo\305\274liwia \305\202\304\205czenie z urz\304\205dzeniem poprzez port wirtualny", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_WHATSTHIS
+        action_connect->setWhatsThis(QString());
+#endif // QT_NO_WHATSTHIS
         action_connect->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+C", Q_NULLPTR));
-        action_disconnect->setText(QApplication::translate("MainWindow", "&Roz\305\202\304\205cz", Q_NULLPTR));
+        action_disconnect->setText(QApplication::translate("MainWindow", "Roz\305\202\304\205cz", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        action_disconnect->setToolTip(QApplication::translate("MainWindow", "Roz\305\202\304\205cza z urz\304\205dzeniem", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_WHATSTHIS
+        action_disconnect->setWhatsThis(QString());
+#endif // QT_NO_WHATSTHIS
         action_disconnect->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+D", Q_NULLPTR));
-        action_exit->setText(QApplication::translate("MainWindow", "&Wyjd\305\272", Q_NULLPTR));
+        action_exit->setText(QApplication::translate("MainWindow", "Wyjd\305\272", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        action_exit->setToolTip(QApplication::translate("MainWindow", "Wychodzi z aplikacji", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_WHATSTHIS
+        action_exit->setWhatsThis(QString());
+#endif // QT_NO_WHATSTHIS
         action_exit->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+E", Q_NULLPTR));
         action_info->setText(QApplication::translate("MainWindow", "&Info", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        action_info->setToolTip(QApplication::translate("MainWindow", "Pokazuje informacje", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_WHATSTHIS
+        action_info->setWhatsThis(QString());
+#endif // QT_NO_WHATSTHIS
         action_info->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+I", Q_NULLPTR));
-        action_testrun->setText(QApplication::translate("MainWindow", "Test Syntetyczny", Q_NULLPTR));
+        action_testrun->setText(QApplication::translate("MainWindow", "&Test Syntetyczny", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        action_testrun->setToolTip(QApplication::translate("MainWindow", "Uruchamia test syntetyczny z losowymi warto\305\233ciami", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_WHATSTHIS
+        action_testrun->setWhatsThis(QString());
+#endif // QT_NO_WHATSTHIS
         action_testrun->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+T", Q_NULLPTR));
-        label_orientationX->setText(QApplication::translate("MainWindow", "Wsp\303\263\305\202rz\304\231dna X: ", Q_NULLPTR));
-        label_orientationY->setText(QApplication::translate("MainWindow", "Wsp\303\263\305\202rz\304\231dna Y: ", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        graphics_handOrientation->setToolTip(QApplication::translate("MainWindow", "Jak rozumiemy wsp\303\263\305\202rz\304\231dne, osie", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        label_orientationX->setText(QApplication::translate("MainWindow", "O\305\233 X: ", Q_NULLPTR));
+        label_orientationZ->setText(QApplication::translate("MainWindow", "O\305\233 Z: ", Q_NULLPTR));
         value_orientationX->setText(QApplication::translate("MainWindow", "---", Q_NULLPTR));
-        value_orientationY->setText(QApplication::translate("MainWindow", "---", Q_NULLPTR));
+        value_orientationZ->setText(QApplication::translate("MainWindow", "---", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        graph_orientation->setToolTip(QApplication::translate("MainWindow", "Wykres warto\305\233ci akcelerometru zale\305\274ny od czasu", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        info1->setToolTip(QApplication::translate("MainWindow", "Przyciski pozwalaj\304\205ce sterowa\304\207 drganiami poszczeg\303\263lnych palc\303\263w", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         info1->setText(QApplication::translate("MainWindow", "Sterowanie drganiami paliczk\303\263w", Q_NULLPTR));
         graphics_finger_1->setText(QApplication::translate("MainWindow", "Kciuk", Q_NULLPTR));
         graphics_finger_2->setText(QApplication::translate("MainWindow", "P. wskazuj\304\205cy", Q_NULLPTR));
@@ -570,8 +625,35 @@ public:
         graphics_finger_4->setText(QApplication::translate("MainWindow", "P. serdeczny", Q_NULLPTR));
         graphics_finger_5->setText(QApplication::translate("MainWindow", "P. ma\305\202y", Q_NULLPTR));
         info2->setText(QApplication::translate("MainWindow", "Si\305\202a nacisku na poszczeg\303\263lne paliczki", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        progressBar_finger_1->setToolTip(QApplication::translate("MainWindow", "Warto\305\233\304\207 si\305\202y nacisku na kciuk", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         progressBar_finger_1->setFormat(QApplication::translate("MainWindow", "%p%", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        progressBar_finger_2->setToolTip(QApplication::translate("MainWindow", "Warto\305\233\304\207 si\305\202y nacisku na palec wskazuj\304\205cy", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        progressBar_finger_3->setToolTip(QApplication::translate("MainWindow", "Warto\305\233\304\207 si\305\202y nacisku na palec \305\233rodkowy", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        progressBar_finger_4->setToolTip(QApplication::translate("MainWindow", "Warto\305\233\304\207 si\305\202y nacisku na palec serdeczny", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        progressBar_finger_5->setToolTip(QApplication::translate("MainWindow", "Warto\305\233\304\207 si\305\202y nacisku na ma\305\202y palec", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        terminal->setToolTip(QApplication::translate("MainWindow", "Pokazuje zapiski systemowe", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         terminal->setPlaceholderText(QApplication::translate("MainWindow", "Logs only", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        graphics_handVisualization->setToolTip(QApplication::translate("MainWindow", "Wizualizuje interkacje", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        graph_bending->setToolTip(QApplication::translate("MainWindow", "Pokazuje warto\305\233ci zgi\304\231cia palc\303\263w zale\305\274ne od czasu", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        graph_touch->setToolTip(QApplication::translate("MainWindow", "Pokazuje warto\305\233ci si\305\202y dotyku poszczeg\303\263lnych palc\303\263w zale\305\274ne od czasu", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         menuMenu->setTitle(QApplication::translate("MainWindow", "&Menu", Q_NULLPTR));
     } // retranslateUi
 

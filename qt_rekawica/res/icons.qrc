@@ -1,17 +1,47 @@
 <RCC>
-  <qresource prefix="button_connect">
-    <file>icons/connect</file>
+  <qresource prefix="menu_buttons">
+    <file alias="img_connect">icons/connect</file>
+    <file alias="img_testrun">icons/testrun.png</file>
+    <file alias="img_disconnect">icons/disconnect</file>
+    <file alias="img_buttonexit">icons/exit</file>
+    <file alias="img_about">icons/about</file>
   </qresource>
-  <qresource prefix="button_testrun">
-    <file>icons/testrun.png</file>
+
+  <qresource prefix="images">
+    <file alias="img_orientation">img/hand_orientation/hand.png</file>
+    <file alias="img_bg_visualisation">img/hand_visualisation/hand.png</file>
   </qresource>
-  <qresource prefix="button_disconnect">
-    <file>icons/disconnect</file>
+
+  <qresource prefix="visualisation_element_static_bend">
+    <file alias="0">img/hand_visualisation/finger_thumb_bend_active.png</file>
+    <file alias="1">img/hand_visualisation/finger_index_bend_active.png</file>
+    <file alias="2">img/hand_visualisation/finger_middle_bend_active.png</file>
+    <file alias="3">img/hand_visualisation/finger_ring_bend_active.png</file>
+    <file alias="4">img/hand_visualisation/finger_pinky_bend_active.png</file>
   </qresource>
-  <qresource prefix="button_exit">
-    <file>icons/exit</file>
+  
+  <qresource prefix="visualisation_element_static_touch">
+    <file alias="0">img/hand_visualisation/finger_thumb_touch_active.png</file>
+    <file alias="1">img/hand_visualisation/finger_index_touch_active.png</file>
+    <file alias="2">img/hand_visualisation/finger_middle_touch_active.png</file>
+    <file alias="3">img/hand_visualisation/finger_ring_touch_active.png</file>
+    <file alias="4">img/hand_visualisation/finger_pinky_touch_active.png</file>
   </qresource>
-  <qresource prefix="button_about">
-    <file>icons/about</file>
+
+  <qresource prefix="visualisation_element_bend">
+    <file alias="0">img/hand_visualisation/finger_thumb_bend_disconnected.png</file>
+    <file alias="1">img/hand_visualisation/finger_index_bend_disconnected.png</file>
+    <file alias="2">img/hand_visualisation/finger_middle_bend_disconnected.png</file>
+    <file alias="3">img/hand_visualisation/finger_ring_bend_disconnected.png</file>
+    <file alias="4">img/hand_visualisation/finger_pinky_bend_disconnected.png</file>
   </qresource>
+
+  <qresource prefix="visualisation_element_touch">
+    <file alias="0">img/hand_visualisation/finger_thumb_touch_disconnected.png</file>
+    <file alias="1">img/hand_visualisation/finger_index_touch_disconnected.png</file>
+    <file alias="2">img/hand_visualisation/finger_middle_touch_disconnected.png</file>
+    <file alias="3">img/hand_visualisation/finger_ring_touch_disconnected.png</file>
+    <file alias="4">img/hand_visualisation/finger_pinky_touch_disconnected.png</file>
+  </qresource>
+
 </RCC>

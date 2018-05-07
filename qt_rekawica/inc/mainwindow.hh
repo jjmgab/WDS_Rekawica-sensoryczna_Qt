@@ -36,7 +36,7 @@
 #define SENSOR_ID_FINGER_RING       0x4
 #define SENSOR_ID_FINGER_PINKY      0x5
 #define SENSOR_ID_ACC_XAXIS         0xA
-#define SENSOR_ID_ACC_YAXIS         0xB
+#define SENSOR_ID_ACC_ZAXIS         0xB
 
 // -- zakresy czujnikow
 #define SENSOR_RANGE_BEND_MIN       0x00
@@ -59,12 +59,13 @@
 
 // WYKRESY
 #define X_RANGE_POINTS              20
-#define TIMER_TIMEOUT_MS            100
+#define TIMER_TIMEOUT_MS            250
 
 // -- debugging i testy
-#define MAX_SENSORS                 10
 #define MAX_SENSORS_BEND            5
 #define MAX_SENSORS_TOUCH           5
+#define MAX_AXIS_ACC                2
+#define MAX_SENSORS                 MAX_SENSORS_BEND + MAX_SENSORS_TOUCH + MAX_AXIS_ACC
 
 namespace Ui {
 class MainWindow;
@@ -78,6 +79,24 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+private:
+    QGraphicsScene *scene_visualisation = new QGraphicsScene;
+    QGraphicsScene *scene_orientation = new QGraphicsScene;
+
+    /*!
+    * \brief Ustawia scene wizualizacji
+    *
+    * \param[in] int typ sensora (1-2)
+    * \param[in] int id palca (1-5)
+    * \param[in] int wartosc chwili obecnej (0-255)
+    */
+    void set_hand_visualisation_scene(int sensor_type, int sensor_id, int sensor_value);
+
+    /*!
+     * \brief Resetuje wizualizacje do stanu niepodlaczonego
+     */
+    void reset_hand_visualisation_scene();
+
 
 public:
     /*!
@@ -188,16 +207,18 @@ private:
                     sensor_touch_05,    // maly dotyk
 
                     sensor_acc_x,       // akcelerometr os x
-                    sensor_acc_y;       // akcelerometr os y
+                    sensor_acc_z;       // akcelerometr os z
 
     QVector<QVector<double>*> pointers_bendSensor;  // wskazniki na wektory danych czujnikow zgiecia
     QVector<QVector<double>*> pointers_touchSensor; // wskazniki na wektory danych czujnikow dotyku
+    QVector<QVector<double>*> pointers_accSensor;   // wskazniki na wektory danych akcelerometru
 
     double time_now;        // przechowuje aktualny czas polaczenia
 
     // -- ustawienia wykresow
     // zgiecie 
     QVector<QPen> pens;
+    QVector<QPen> pens_ACC;
 
     // -- debug
     QTimer* debugTimer;

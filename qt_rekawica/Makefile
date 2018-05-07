@@ -32,7 +32,7 @@ pro:
 	mkdir pro
 
 __sprawdz__:
-	make -f Makefile.app
+	make -j8 -f Makefile.app
 
 Makefile.app: pro/${NAZWA_APLIKACJI}.pro
 	qmake -o Makefile.app pro/${NAZWA_APLIKACJI}.pro
