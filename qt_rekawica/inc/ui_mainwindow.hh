@@ -153,7 +153,7 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
         centralWidget->setSizePolicy(sizePolicy1);
-        centralWidget->setMinimumSize(QSize(1130, 740));
+        centralWidget->setMinimumSize(QSize(0, 0));
         centralWidget->setSizeIncrement(QSize(0, 0));
         centralWidget->setBaseSize(QSize(1130, 740));
         centralWidget->setLocale(QLocale(QLocale::Polish, QLocale::Poland));
@@ -169,7 +169,7 @@ public:
         layout_orientation->setObjectName(QStringLiteral("layout_orientation"));
         graphics_handOrientation = new QGraphicsView(centralWidget);
         graphics_handOrientation->setObjectName(QStringLiteral("graphics_handOrientation"));
-        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        QSizePolicy sizePolicy2(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(graphics_handOrientation->sizePolicy().hasHeightForWidth());

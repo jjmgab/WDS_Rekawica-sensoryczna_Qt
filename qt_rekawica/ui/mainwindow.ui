@@ -50,8 +50,8 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>1130</width>
-     <height>740</height>
+     <width>0</width>
+     <height>0</height>
     </size>
    </property>
    <property name="sizeIncrement">
@@ -77,7 +77,7 @@
         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
          <widget class="QGraphicsView" name="graphics_handOrientation">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -499,7 +499,7 @@
         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
          <widget class="QGraphicsView" name="graphics_handVisualization">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>

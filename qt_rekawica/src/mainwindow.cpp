@@ -400,6 +400,11 @@ void MainWindow::testrun() {
         debug_on = false;
 
         reset_hand_visualisation_scene();       // aby po zatrzymaniu przebiegu testowego wylaczyla sie wizualizacja na dloni
+        ui->progressBar_finger_1->setValue(0);  // Wyzerowujemy progress bary wskazujace sile dotyku po rozlaczeniu (zatrzymaniu testu)
+        ui->progressBar_finger_2->setValue(0);
+        ui->progressBar_finger_3->setValue(0);
+        ui->progressBar_finger_4->setValue(0);
+        ui->progressBar_finger_5->setValue(0);
         debugTimer->stop();
         ui->terminal->append(tr("Testrun: Zatrzymano przebieg testowy"));
         ui->statusBar->showMessage(tr("Testrun: Zatrzymano przebieg testowy"));
