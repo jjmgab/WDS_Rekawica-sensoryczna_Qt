@@ -1,0 +1,44 @@
+digraph "QCPLayerable::parentLayerable"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node235 [label="QCPLayerable::parentLayerable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node235 -> Node236 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node236 [label="QCPLayerable::setParentLayerable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html#aa23c893671f1f6744ac235cf2204cf3a"];
+  Node236 -> Node237 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node237 [label="QCPLayout::adoptElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout.html#af6dbbc24156a808da29cd1ec031729a3"];
+  Node237 -> Node238 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node238 [label="QCPLayoutGrid::addElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#adff1a2ca691ed83d2d24a4cd1fe17012"];
+  Node238 -> Node239 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node239 [label="QCPLayoutGrid::addElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a4c44025dd25acd27e053cadfd448ad7b"];
+  Node238 -> Node240 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node240 [label="QCPLayoutGrid::setFillOrder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#affc2f3cfd22f28698c5b29b960d2a391"];
+  Node238 -> Node241 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node241 [label="QCustomPlot::QCustomPlot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a45b99626558651a6428b83972b0b34b8"];
+  Node237 -> Node242 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node242 [label="QCPLayoutInset::addElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_inset.html#ad61529eb576af7f04dff94abb10c745a"];
+  Node242 -> Node241 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node236 -> Node243 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node243 [label="QCPLayout::releaseElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout.html#a4afbb4bef0071f72f91afdac4433a18e"];
+  Node243 -> Node244 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node244 [label="QCPLayoutGrid::takeAt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a17dd220234d1bbf8835abcc666384d45"];
+  Node244 -> Node240 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node244 -> Node245 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node245 [label="QCPLayoutGrid::take",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#aee961c2eb6cf8a85dcbc5a7d7b6c1a00"];
+  Node244 -> Node246 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node246 [label="QCPLayoutInset::take",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_inset.html#af7f13cc369f8190b5e7e17d5f39dfe1c"];
+  Node243 -> Node247 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node247 [label="QCPLayoutInset::takeAt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_inset.html#abf2e8233f5b7051220907e62ded490a2"];
+  Node236 -> Node248 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node248 [label="QCPAbstractItem::setClip\lToAxisRect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_item.html#a39e05b9d4176b9accafc746d16ca6a06"];
+  Node248 -> Node249 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node249 [label="QCPAbstractItem::QCPAbstractItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_item.html#a9922507d8b4503a1fe1ed0b1030e23b6"];
+  Node236 -> Node250 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node250 [label="QCPAbstractItem::setClip\lAxisRect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_item.html#a7dc75fcbcd10206fe0b75d757ea7a347"];
+  Node250 -> Node249 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node236 -> Node251 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node251 [label="QCPAxisRect::QCPAxisRect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a60b31dece805462c1b82eea2e69ba042"];
+  Node236 -> Node252 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node252 [label="QCPColorScaleAxisRectPrivate\l::QCPColorScaleAxisRectPrivate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_scale_axis_rect_private.html#ad3b242f75dd2b33581364a4e668a80db"];
+}

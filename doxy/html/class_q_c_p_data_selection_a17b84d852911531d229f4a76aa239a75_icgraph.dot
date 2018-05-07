@@ -1,0 +1,33 @@
+digraph "QCPDataSelection::enforceType"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node48 [label="QCPDataSelection::enforceType",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node48 -> Node49 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node49 [label="QCPAbstractPlottable\l::setSelection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a219bc5403a9d85d3129165ec3f5ae436"];
+  Node49 -> Node50 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node50 [label="QCPAbstractPlottable\l::selectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a2d488568cf16600dd81fa23d7d439829"];
+  Node49 -> Node51 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node51 [label="QCPAbstractPlottable\l::deselectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a9b104d9da4f38f934363945c313bf82e"];
+  Node48 -> Node52 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node52 [label="QCPAbstractPlottable\l::setSelectable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#ac238d6e910f976f1f30d41c2bca44ac3"];
+  Node52 -> Node53 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node53 [label="QCPAbstractLegendItem\l::selected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#adf427dbb05d5f1a8e84c6abcb05becdf"];
+  Node53 -> Node54 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node54 [label="QCPAbstractLegendItem\l::setSelected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#a6eed93b0ab99cb3eabb043fb08179c2b"];
+  Node54 -> Node55 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node55 [label="QCPAbstractLegendItem\l::selectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#a0081acfd8c4bb8ac4e9dcfe0f6c49b74"];
+  Node54 -> Node56 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node56 [label="QCPAbstractLegendItem\l::deselectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#aa1c0620558cc8e2a2e6fb7ab558f6097"];
+  Node53 -> Node57 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node57 [label="QCPLegend::setSelectedParts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#a2aee309bb5c2a794b1987f3fc97f8ad8"];
+  Node52 -> Node58 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node58 [label="QCPTextElement::selected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#a135d1ad0aa97a245b4247c3292ff551c"];
+  Node58 -> Node59 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node59 [label="QCPTextElement::setSelected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#aba5521f9fb22a5f3d2f09ab37d4a1751"];
+  Node59 -> Node60 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node60 [label="QCPTextElement::selectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#a8d696ea82fa7bf743e01858039c03525"];
+  Node59 -> Node61 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node61 [label="QCPTextElement::deselect\lEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#a9a631a9deb9d82089a9d52de1744accf"];
+}

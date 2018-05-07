@@ -1,0 +1,18 @@
+digraph "QCustomPlot::setupPaintBuffers"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1414 [label="QCustomPlot::setupPaintBuffers",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1414 -> Node1415 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1415 [label="QCustomPlot::createPaint\lBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a943b57596a1adf7f0e75c3b50e407ae6"];
+  Node1415 -> Node1416 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1416 [label="QCustomPlot::viewport",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a19842409b18f556b256d05e97fffc670"];
+  Node1414 -> Node1417 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1417 [label="QCustomPlot::layer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a0a96244e7773b242ef23c32b7bdfb159"];
+  Node1417 -> Node1418 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1418 [label="QCPLayer::name",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layer.html#a37806f662b50b588fb1029a14fc5ef50"];
+  Node1414 -> Node1419 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1419 [label="QCPLayer::mode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layer.html#a44ae50b011b19f3dd46a38d8e2e2c1b6"];
+  Node1414 -> Node1416 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

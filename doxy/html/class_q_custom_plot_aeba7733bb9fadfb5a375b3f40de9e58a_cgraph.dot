@@ -1,0 +1,35 @@
+digraph "QCustomPlot::registerPlottable"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node851 [label="QCustomPlot::registerPlottable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node851 -> Node852 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node852 [label="QCustomPlot::plottable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#adea38bdc660da9412ba69fb939031567"];
+  Node851 -> Node853 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node853 [label="QCPLayerable::parentPlot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html#a473edb813a4c1929d6b6a8fe3ff3faf7"];
+  Node851 -> Node854 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node854 [label="QCPAbstractPlottable\l::addToLegend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#aa64e93cb5b606d8110d2cc0a349bb30f"];
+  Node854 -> Node853 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node854 -> Node855 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node855 [label="QCPLegend::hasItemWithPlottable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#a4b90a442af871582df85c2bc13f91e88"];
+  Node854 -> Node856 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node856 [label="QCPLegend::addItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#a3ab274de52d2951faea45a6d975e6b3f"];
+  Node851 -> Node857 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node857 [label="QCPLayerable::layer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html#a5ff4862e8c784c9f5986dbc1533ba2a4"];
+  Node851 -> Node858 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node858 [label="QCPLayerable::setLayer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html#ab0d0da6d2de45a118886d2c8e16d5a54"];
+  Node858 -> Node859 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node859 [label="QCPLayerable::moveToLayer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html#af94484cfb7cbbddb7de522e9be71d9a4"];
+  Node859 -> Node860 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node860 [label="QCPLayer::parentPlot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layer.html#a5520019787482e13857ebe631c27c3fa"];
+  Node859 -> Node861 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node861 [label="QCPLayer::name",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layer.html#a37806f662b50b588fb1029a14fc5ef50"];
+  Node859 -> Node862 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node862 [label="QCPLayer::removeChild",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layer.html#ac2f64ac7761650582d968d86670ef362"];
+  Node859 -> Node857 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node859 -> Node863 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node863 [label="QCPLayer::addChild",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layer.html#a57ce5e49364aa9122276d5df3b4a0ddc"];
+  Node851 -> Node864 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node864 [label="QCustomPlot::currentLayer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a0421d647f420b0b4c57aec1708857af5"];
+}

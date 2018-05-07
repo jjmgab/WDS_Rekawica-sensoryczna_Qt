@@ -1,0 +1,24 @@
+digraph "QCPColorMapData::setValueSize"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node188 [label="QCPColorMapData::setValueSize",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node188 -> Node189 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node189 [label="QCPColorMapData::setSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a0d9ff35c299d0478b682bfbcdd9c097e"];
+  Node189 -> Node190 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node190 [label="QCPColorMapData::keySize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#abbda4d28de97aedce1e6e6f008a0a1f7"];
+  Node189 -> Node191 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node191 [label="QCPColorMapData::valueSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a8510cafea24645bbb62b5e0bfc43209f"];
+  Node189 -> Node192 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node192 [label="QCPColorMapData::fill",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a350f783260eb9b5de5c7b5e0d5d3e3c2"];
+  Node189 -> Node193 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node193 [label="QCPColorMapData::createAlpha",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a42c2b1c303683515fa4de4c551f54441"];
+  Node193 -> Node194 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node194 [label="QCPColorMapData::clearAlpha",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a14d08b9c3720cd719400079b86d3906b"];
+  Node193 -> Node195 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node195 [label="QCPColorMapData::isEmpty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#aea88cc75a76ca571acf29b2ba8ac970d"];
+  Node193 -> Node196 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node196 [label="QCPColorMapData::fillAlpha",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a93e2a549d7702bc849cd48a585294657"];
+  Node196 -> Node193 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

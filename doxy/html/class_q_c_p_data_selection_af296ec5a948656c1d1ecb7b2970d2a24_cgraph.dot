@@ -1,0 +1,20 @@
+digraph "QCPDataSelection::intersection"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node66 [label="QCPDataSelection::intersection",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node66 -> Node67 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node67 [label="QCPDataSelection::dataRange\lCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_selection.html#abd8869ccb231ab991e8576de931f647d"];
+  Node66 -> Node68 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node68 [label="QCPDataRange::intersection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#a84e1e03129dd52528efb4bac18d30183"];
+  Node68 -> Node69 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node69 [label="QCPDataRange::isValid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#aae53a37472212dca0a7939963e20dba0"];
+  Node68 -> Node70 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node70 [label="QCPDataRange::QCPDataRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#a49e72fd9bace1da9d875136dcc04c986"];
+  Node66 -> Node71 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node71 [label="QCPDataSelection::dataRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_selection.html#a6956acf6a9a49a353b4f9b58608978ad"];
+  Node71 -> Node70 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node66 -> Node72 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node72 [label="QCPDataSelection::simplify",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_selection.html#a4a2fbad1a6e4d1dd26fdfdf88956f2a4"];
+}

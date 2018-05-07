@@ -1,0 +1,22 @@
+digraph "QCPColorMapData::keyRange"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node99 [label="QCPColorMapData::keyRange",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node99 -> Node100 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node100 [label="QCPColorMapData::operator=",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#afdf4dd1b2f5714234fe84709b85c2a8d"];
+  Node99 -> Node101 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node101 [label="QCPColorMapData::setKeyRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a0738c485f3c9df9ea1241b7a8bb6a86e"];
+  Node101 -> Node102 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node102 [label="QCPColorMapData::setRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#aad9c1c7c703c1339489fc730517c83d4"];
+  Node102 -> Node100 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node99 -> Node103 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node103 [label="QCPColorMap::selectTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map.html#afb4b843596addf58096082827a9e3450"];
+  Node99 -> Node104 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node104 [label="QCPColorMap::getKeyRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map.html#a985861974560f950af6cb7fae8c46267"];
+  Node99 -> Node105 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node105 [label="QCPColorMap::getValueRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map.html#a88134493aaf6b297af34eaab65264fff"];
+  Node99 -> Node106 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node106 [label="QCPColorMap::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map.html#a6b628014d2939368935efd0a788648c8"];
+}

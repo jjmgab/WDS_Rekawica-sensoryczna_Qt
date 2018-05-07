@@ -1,0 +1,29 @@
+digraph "QCPColorScale::update"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node118 [label="QCPColorScale::update",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node118 -> Node119 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node119 [label="QCPLayoutElement::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a929c2ec62e0e0e1d8418eaa802e2af9b"];
+  Node119 -> Node120 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node120 [label="QCP::setMarginValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespace_q_c_p.html#afbf6e3084c108f2bb4372107945ee82f"];
+  Node119 -> Node121 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node121 [label="QCPLayoutElement::calculate\lAutoMargin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a005c9f0fe84bc1591a2cf2c46fd477b4"];
+  Node121 -> Node122 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node122 [label="QCP::getMarginValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespace_q_c_p.html#a23a2679d3495c444acc26acc61e35b5b"];
+  Node119 -> Node122 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node119 -> Node123 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node123 [label="QCPLayoutElement::setMargins",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a8f450b1f3f992ad576fce2c63d8b79cf"];
+  Node123 -> Node124 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node124 [label="QCPLayoutElement::margins",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#af4ac9450aa2d60863bf3a8ea0c940c9d"];
+  Node118 -> Node125 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node125 [label="QCPLayoutElement::setMaximumSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a74eb5280a737ab44833d506db65efd95"];
+  Node125 -> Node126 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node126 [label="QCPLayout::sizeConstraints\lChanged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout.html#aeac66a292f65cf7f8adf94eb92345b3e"];
+  Node118 -> Node127 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node127 [label="QCPLayoutElement::setMinimumSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a5dd29a3c8bc88440c97c06b67be7886b"];
+  Node127 -> Node126 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node118 -> Node128 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node128 [label="QCPLayoutElement::rect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a208effccfe2cca4a0eaf9393e60f2dd4"];
+}

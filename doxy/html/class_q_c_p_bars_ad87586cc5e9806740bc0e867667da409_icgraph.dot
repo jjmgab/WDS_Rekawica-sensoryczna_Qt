@@ -1,0 +1,22 @@
+digraph "QCPBars::getPixelWidth"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node210 [label="QCPBars::getPixelWidth",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node210 -> Node211 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node211 [label="QCPBars::getKeyRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_bars.html#ac5a3854774d9d9cd129b1eae1426de2d"];
+  Node210 -> Node212 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node212 [label="QCPBars::getBarRect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_bars.html#a01b87e38e5d5089d214646d2af7896ea"];
+  Node212 -> Node213 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node213 [label="QCPBars::selectTestRect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_bars.html#ab03bb6125c3e983b89d694f75ce6b3d5"];
+  Node212 -> Node214 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node214 [label="QCPBars::selectTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_bars.html#a121f899c27af3186fe93dcd0eb98f49b"];
+  Node212 -> Node215 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node215 [label="QCPBars::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_bars.html#aa267c20650d55084c3f47cb2f8fac9dc"];
+  Node212 -> Node216 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node216 [label="QCPBars::getVisibleDataBounds",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_bars.html#ac8b6b514a665a7bff4fb080413ba996a"];
+  Node216 -> Node213 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node216 -> Node214 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node216 -> Node215 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

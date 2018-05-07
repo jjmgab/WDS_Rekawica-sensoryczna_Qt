@@ -1,0 +1,13 @@
+digraph "map"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node5 [label="map",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="MainWindow::convert\l_touch_value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#ac16a3b21d65b063b89b87e772afcfd0c",tooltip="Przelicza wartosci 8 bitowe na wartosci procentowe. "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="MainWindow::testrun\l_timeoutHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#a9d9abd7a1b1373c715d72c2205088cd3",tooltip="Reakcja na timeout timera testowego. "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="MainWindow::MainWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d",tooltip="Konstruktor parametryczny klasy MainWindow. "];
+}

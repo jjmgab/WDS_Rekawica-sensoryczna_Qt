@@ -1,0 +1,22 @@
+digraph "QCPAbstractPlottable::selectEvent"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node454 [label="QCPAbstractPlottable\l::selectEvent",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node454 -> Node455 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node455 [label="QCPAbstractPlottable\l::selected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a0b3b514474fe93354fc74cfc144184b4"];
+  Node454 -> Node456 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node456 [label="QCPAbstractPlottable\l::setSelection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a219bc5403a9d85d3129165ec3f5ae436"];
+  Node456 -> Node457 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node457 [label="QCPDataSelection::enforceType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_selection.html#a17b84d852911531d229f4a76aa239a75"];
+  Node456 -> Node458 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node458 [label="QCPAbstractPlottable\l::selection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a040bf09f41d456284cfd39cc37aa068f"];
+  Node456 -> Node455 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node454 -> Node459 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node459 [label="QCPDataSelection::contains",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_selection.html#ab1ad3d5bbb55749c3f7ab1e45429c932"];
+  Node459 -> Node460 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node460 [label="QCPDataSelection::isEmpty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_selection.html#a7f7526b475998dc0c3d6c376b24736c9"];
+  Node460 -> Node461 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node461 [label="QCPDataRange::begin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#ae76d7eba9defdfafcd0fc41096793129"];
+}

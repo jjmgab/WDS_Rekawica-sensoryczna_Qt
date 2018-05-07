@@ -1,0 +1,35 @@
+digraph "QCustomPlot::plottable"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node678 [label="QCustomPlot::plottable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node678 -> Node679 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node679 [label="QCustomPlot::removePlottable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#af3dafd56884208474f311d6226513ab2"];
+  Node679 -> Node680 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node680 [label="QCustomPlot::removePlottable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#afc210e0021480f8119bccf37839dbcc8"];
+  Node679 -> Node681 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node681 [label="QCustomPlot::clearPlottables",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a9a409bb3201878adb7ffba1c89c4e004"];
+  Node681 -> Node682 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node682 [label="QCustomPlot::~QCustomPlot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a75d9b6f599dcae706e45efd425c5499e"];
+  Node679 -> Node683 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node683 [label="QCustomPlot::removeGraph",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a903561be895fb6528a770d66ac5e6713"];
+  Node683 -> Node684 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node684 [label="QCustomPlot::removeGraph",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a9554b3d2d5b10c0f884bd4010b6c192c"];
+  Node683 -> Node685 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node685 [label="QCustomPlot::clearGraphs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#ab0f3abff2d2f7df3668b5836f39207fa"];
+  Node678 -> Node686 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node686 [label="QCustomPlot::selectedPlottables",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a747faaab57c56891e901a1e97fa4359a"];
+  Node678 -> Node687 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node687 [label="QCustomPlot::plottableAt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#acddbbd8b16dd633f0d94e5a736fbd8cf"];
+  Node678 -> Node688 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node688 [label="QCustomPlot::processRect\lSelection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#ac10849411e1d0e858ea7f29c8ade364c"];
+  Node688 -> Node689 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node689 [label="QCustomPlot::setSelection\lRectMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a810ef958ebe84db661c7288b526c0deb"];
+  Node688 -> Node690 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node690 [label="QCustomPlot::setSelectionRect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a0c09f96df15faa4799ad7051bb16cf33"];
+  Node678 -> Node691 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node691 [label="QCustomPlot::registerPlottable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#aeba7733bb9fadfb5a375b3f40de9e58a"];
+  Node691 -> Node692 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node692 [label="QCPAbstractPlottable\l::QCPAbstractPlottable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#af78a036e40db6f53a31abadc5323715a"];
+}

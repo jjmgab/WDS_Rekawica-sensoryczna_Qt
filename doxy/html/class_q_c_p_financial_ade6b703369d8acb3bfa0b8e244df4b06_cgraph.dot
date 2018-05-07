@@ -1,0 +1,43 @@
+digraph "QCPFinancial::drawCandlestickPlot"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node72 [label="QCPFinancial::drawCandlestickPlot",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node72 -> Node73 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node73 [label="QCPAbstractPlottable\l::keyAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a2cdd6f0dd5e9a979037f86b4000d9cfe"];
+  Node72 -> Node74 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node74 [label="QCPAbstractPlottable\l::valueAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#af47809a644a68ffd955fb30b01fb4f2f"];
+  Node72 -> Node75 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node75 [label="QCPAxis::orientation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#ab988ef4538e2655bb77bd138189cd42e"];
+  Node72 -> Node76 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node76 [label="QCPSelectionDecorator\l::applyPen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_selection_decorator.html#a75098893f7d08660ea449206810679d7"];
+  Node76 -> Node77 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node77 [label="QCPPainter::setPen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#af9c7a4cd1791403901f8c5b82a150195"];
+  Node77 -> Node78 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 [label="QCPPainter::makeNonCosmetic",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#a7e63fbcf47e35c6f2ecd11b8fef7c7d8"];
+  Node72 -> Node79 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node79 [label="QCPSelectionDecorator\l::applyBrush",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_selection_decorator.html#a225544527d51b49546b70d0e6d655a34"];
+  Node72 -> Node77 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node72 -> Node80 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node80 [label="QCPAxis::coordToPixel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#af15d1b3a7f7e9b53d759d3ccff1fe4b4"];
+  Node80 -> Node75 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node80 -> Node81 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node81 [label="QCPRange::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a62326e7cc4316b96df6a60813230e63f"];
+  Node80 -> Node82 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node82 [label="QCPAxisRect::width",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a204645398a4f9d0b0189385c7c2cfb91"];
+  Node80 -> Node83 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node83 [label="QCPAxisRect::left",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#afb4a3de02046b20b9310bdb8fca781c3"];
+  Node80 -> Node84 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 [label="QCPAxisRect::right",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a3f819d4a1b2193723d1fdafc573eea10"];
+  Node80 -> Node85 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node85 [label="QCPAxisRect::bottom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#acefdf1abaa8a8ab681e906cc2be9581e"];
+  Node80 -> Node86 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node86 [label="QCPAxisRect::height",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#acc4377809e79d9a089ab790f39429b0d"];
+  Node80 -> Node87 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node87 [label="QCPAxisRect::top",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a45dbad181cbb9f09d068dbb76c817c95"];
+  Node72 -> Node88 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node88 [label="QCPPainter::drawLine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0"];
+  Node72 -> Node89 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node89 [label="QCPFinancial::getPixelWidth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_financial.html#a3ff49384a95233140c8205af77c08955"];
+}

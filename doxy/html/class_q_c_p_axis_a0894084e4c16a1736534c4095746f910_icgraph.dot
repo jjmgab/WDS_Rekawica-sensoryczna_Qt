@@ -1,0 +1,48 @@
+digraph "QCPAxis::rangeChanged"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node520 [label="QCPAxis::rangeChanged",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node520 -> Node521 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node521 [label="QCPAxis::setRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#aebdfea5d44c3a0ad2b4700cd4d25b641"];
+  Node521 -> Node522 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node522 [label="MainWindow::MainWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d",tooltip="Konstruktor parametryczny klasy MainWindow. "];
+  Node521 -> Node523 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node523 [label="MainWindow::testrun\l_timeoutHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#a9d9abd7a1b1373c715d72c2205088cd3",tooltip="Reakcja na timeout timera testowego. "];
+  Node523 -> Node522 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node521 -> Node524 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node524 [label="QCPAxis::setScaleType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#adef29cae617af4f519f6c40d1a866ca6"];
+  Node524 -> Node525 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node525 [label="QCPAxisRect::setupFullAxesBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a5fa906175447b14206954f77fc7f1ef4"];
+  Node521 -> Node526 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node526 [label="QCPAxis::setRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#acf60e5b2d631fbc8c4548c3d579cb6d0"];
+  Node521 -> Node527 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node527 [label="QCPAxis::setScaleRatio",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#af4bbd446dcaee5a83ac30ce9bcd6e125"];
+  Node521 -> Node528 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node528 [label="QCPAxis::rescale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#a499345f02ebce4b23d8ccec96e58daa9"];
+  Node528 -> Node529 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node529 [label="QCustomPlot::rescaleAxes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#ad86528f2cee6c7e446dea4a6e8839935"];
+  Node521 -> Node530 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node530 [label="QCPAxis::mouseMoveEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#a2a89a13440eec099fc2327c2672be0cd"];
+  Node521 -> Node531 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node531 [label="QCPAbstractPlottable\l::rescaleKeyAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#ae96b83c961e257da116c6acf9c7da308"];
+  Node531 -> Node532 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node532 [label="QCPAbstractPlottable\l::rescaleAxes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a1491c4a606bccd2d09e65e11b79eb882"];
+  Node521 -> Node533 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node533 [label="QCPAbstractPlottable\l::rescaleValueAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a714eaf36b12434cd71846215504db82e"];
+  Node533 -> Node532 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node521 -> Node534 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node534 [label="QCPAxisRect::zoom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a6a39fb3aea60a8c503bdcb3f0477d2f6"];
+  Node521 -> Node525 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node521 -> Node535 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node535 [label="QCPAxisRect::mouseMoveEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a9cd27ad8c5cfb49aefd9dbb30def4beb"];
+  Node520 -> Node536 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node536 [label="QCPAxis::setRangeLower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#afcf51227d337db28d1a9ce9a4d1bc91a"];
+  Node520 -> Node537 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node537 [label="QCPAxis::setRangeUpper",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#acd3ca1247aa867b540cd5ec30ccd3bef"];
+  Node520 -> Node538 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node538 [label="QCPAxis::moveRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#a18f3a68f2b691af1fd34b6593c886630"];
+  Node520 -> Node539 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node539 [label="QCPAxis::scaleRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#a7072ff96fe690148f1bbcdb4f773ea1c"];
+}

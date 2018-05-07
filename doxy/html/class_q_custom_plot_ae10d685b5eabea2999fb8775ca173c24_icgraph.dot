@@ -1,0 +1,15 @@
+digraph "QCustomPlot::setNotAntialiasedElements"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1283 [label="QCustomPlot::setNotAntialiased\lElements",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1283 -> Node1284 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1284 [label="QCPAxis::mouseMoveEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#a2a89a13440eec099fc2327c2672be0cd"];
+  Node1283 -> Node1285 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1285 [label="QCPAxis::mouseReleaseEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#a35663b938ad83e91c0b8e59dbc8c6b18"];
+  Node1283 -> Node1286 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1286 [label="QCPAxisRect::mouseMoveEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a9cd27ad8c5cfb49aefd9dbb30def4beb"];
+  Node1283 -> Node1287 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1287 [label="QCPAxisRect::mouseRelease\lEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a6c89b988d3a0b93c0878f0ebdb5037f4"];
+}

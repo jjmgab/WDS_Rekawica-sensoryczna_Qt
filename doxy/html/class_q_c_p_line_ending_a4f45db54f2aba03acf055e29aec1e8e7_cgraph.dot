@@ -1,0 +1,27 @@
+digraph "QCPLineEnding::draw"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node7 [label="QCPLineEnding::draw",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="QCPVector2D::normalized",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#a707bb3af3b1f9331a2450ec75eaf7eb0"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="QCPVector2D::normalize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#ad83268be370685c2a0630acc0fb1a425"];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="QCPVector2D::length",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#a10adb5ab031fe94f0b64a3c5aefb552e"];
+  Node7 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="QCPVector2D::isNull",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#ace99f200b347b14864808213eef16593"];
+  Node7 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="QCPVector2D::perpendicular",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#a0e08d09f9027784237e302e32290b001"];
+  Node7 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="QCPVector2D::toPointF",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#acd7af3f4a62833ada58be3f3021dbbac"];
+  Node7 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="QCPPainter::setPen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#af9c7a4cd1791403901f8c5b82a150195"];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="QCPPainter::makeNonCosmetic",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#a7e63fbcf47e35c6f2ecd11b8fef7c7d8"];
+  Node7 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="QCPPainter::drawLine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0"];
+  Node7 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="QCPPainter::modes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#aef102658219b24165f7ee2aad1b9e48f"];
+}

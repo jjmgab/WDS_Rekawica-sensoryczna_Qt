@@ -1,0 +1,31 @@
+digraph "QCPLayoutInset::take"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node80 [label="QCPLayoutInset::take",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node80 -> Node81 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node81 [label="QCPLayoutGrid::elementCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a9a8942aface780a02445ebcf14c48513"];
+  Node80 -> Node82 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node82 [label="QCPLayoutGrid::elementAt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a4288f174082555f6bd92021bdedb75dc"];
+  Node82 -> Node81 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node82 -> Node83 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node83 [label="QCPLayoutGrid::indexToRowCol",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a577223db920e2acb34bc1091080c76d1"];
+  Node83 -> Node84 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 [label="QCPLayoutGrid::columnCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a1a2962cbf45011405b64b913afa8e7a2"];
+  Node83 -> Node85 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node85 [label="QCPLayoutGrid::rowCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a19c66fd76cbce58a8e94f33797e0c0aa"];
+  Node83 -> Node81 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node80 -> Node86 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node86 [label="QCPLayoutGrid::element",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a602b426609b4411cf6a93c3ddf3a381a"];
+  Node80 -> Node87 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node87 [label="QCPLayoutGrid::takeAt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a17dd220234d1bbf8835abcc666384d45"];
+  Node87 -> Node82 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node87 -> Node88 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node88 [label="QCPLayout::releaseElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout.html#a4afbb4bef0071f72f91afdac4433a18e"];
+  Node88 -> Node89 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node89 [label="QCPLayerable::setParentLayerable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html#aa23c893671f1f6744ac235cf2204cf3a"];
+  Node89 -> Node90 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node90 [label="QCPLayerable::parentLayerable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html#aa78b7e644d2c519e1a9a6f2ac5fcd858"];
+  Node87 -> Node83 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

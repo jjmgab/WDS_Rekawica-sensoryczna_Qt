@@ -1,0 +1,30 @@
+digraph "QCPAxisTicker::generate"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node26 [label="QCPAxisTicker::generate",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node26 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node27 [label="QCPAxisTicker::getTickStep",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_ticker.html#a910d69bcec2de37e92d8d4e1ecf201e2"];
+  Node27 -> Node28 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node28 [label="QCPRange::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a62326e7cc4316b96df6a60813230e63f"];
+  Node27 -> Node29 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node29 [label="QCPAxisTicker::cleanMantissa",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_ticker.html#ac7df6c72876b7abd67c932663a0b0f6a"];
+  Node29 -> Node30 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node30 [label="QCPAxisTicker::getMantissa",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_ticker.html#a2f1e223bafbf2cec7c3ba8b08d5c77e8"];
+  Node29 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node31 [label="QCPAxisTicker::pickClosest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_ticker.html#a4ea0a7c4ca1c610f92b9bd5944ab4260"];
+  Node26 -> Node32 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node32 [label="QCPAxisTicker::createTick\lVector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_ticker.html#af4645a824c7bd2ca8fc7e86ebf9055bd"];
+  Node26 -> Node33 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node33 [label="QCPAxisTicker::trimTicks",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_ticker.html#ab28cc1ab549489be7975f5ce7e717916"];
+  Node26 -> Node34 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node34 [label="QCPAxisTicker::createSub\lTickVector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_ticker.html#a9a6435723fa0bd366d1ea4c2cff7c33f"];
+  Node26 -> Node35 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node35 [label="QCPAxisTicker::getSubTick\lCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_ticker.html#a4ccc403ced7a1457ce6ba293509933c8"];
+  Node35 -> Node30 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 -> Node36 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node36 [label="QCPAxisTicker::createLabel\lVector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_ticker.html#a804050e408f37a0b9770c6654ebe6aa7"];
+  Node36 -> Node37 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node37 [label="QCPAxisTicker::getTickLabel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_ticker.html#a8201eb4aa8be192bf786b126eb5ee089"];
+}

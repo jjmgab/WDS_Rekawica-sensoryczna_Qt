@@ -1,0 +1,11 @@
+digraph "QCPLayoutElement::setMaximumSize"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node265 [label="QCPLayoutElement::setMaximumSize",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node265 -> Node266 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node266 [label="QCPLayoutElement::setMaximumSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a03e0e9c48f230217c529b0819f832d84"];
+  Node265 -> Node267 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node267 [label="QCPColorScale::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_scale.html#a259dcb6d3053a2cc3c197e9b1191ddbe"];
+}

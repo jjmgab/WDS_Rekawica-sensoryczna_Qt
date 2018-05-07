@@ -1,0 +1,12 @@
+digraph "QCPSelectionDecorator::scatterStyle"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node79 [label="QCPSelectionDecorator\l::scatterStyle",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node79 -> Node80 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node80 [label="QCPSelectionDecorator\l::setScatterStyle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_selection_decorator.html#ab403a613289714ff4fd4a0c0371ab116"];
+  Node80 -> Node81 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node81 [label="QCPSelectionDecorator\l::copyFrom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_selection_decorator.html#a467a8d5cfcab27e862a17c797ac27b8a"];
+  Node79 -> Node81 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

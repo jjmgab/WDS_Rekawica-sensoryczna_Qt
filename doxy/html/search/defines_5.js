@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['sensor_5fid_5facc_5fxaxis',['SENSOR_ID_ACC_XAXIS',['../mainwindow_8hh.html#a075d9f9977df6407e9ba9114e2ebab6e',1,'mainwindow.hh']]],
+  ['sensor_5fid_5facc_5fzaxis',['SENSOR_ID_ACC_ZAXIS',['../mainwindow_8hh.html#a5686bc69fd25a3fba41c883d76ae6644',1,'mainwindow.hh']]],
+  ['sensor_5fid_5ffinger_5findex',['SENSOR_ID_FINGER_INDEX',['../mainwindow_8hh.html#a5fc5c2ae1e1f61351ec696b2845f929d',1,'mainwindow.hh']]],
+  ['sensor_5fid_5ffinger_5fmiddle',['SENSOR_ID_FINGER_MIDDLE',['../mainwindow_8hh.html#a1c2b4b75c80610c096765ea2b9e53eab',1,'mainwindow.hh']]],
+  ['sensor_5fid_5ffinger_5fpinky',['SENSOR_ID_FINGER_PINKY',['../mainwindow_8hh.html#a4a6cf2ac7f94a999fe9545e399c38ec6',1,'mainwindow.hh']]],
+  ['sensor_5fid_5ffinger_5fring',['SENSOR_ID_FINGER_RING',['../mainwindow_8hh.html#ac41d46587af96c140b0503858d2a5bfd',1,'mainwindow.hh']]],
+  ['sensor_5fid_5ffinger_5fthumb',['SENSOR_ID_FINGER_THUMB',['../mainwindow_8hh.html#a45e76448b7999cec2cc61a2f4e7c7e95',1,'mainwindow.hh']]],
+  ['sensor_5frange_5facc_5fmax',['SENSOR_RANGE_ACC_MAX',['../mainwindow_8hh.html#adc4efb99da7d27889b8d211aea9d82ab',1,'mainwindow.hh']]],
+  ['sensor_5frange_5facc_5fmin',['SENSOR_RANGE_ACC_MIN',['../mainwindow_8hh.html#a6bf66a2ba856548cbfc389fd682034b2',1,'mainwindow.hh']]],
+  ['sensor_5frange_5fbend_5fmax',['SENSOR_RANGE_BEND_MAX',['../mainwindow_8hh.html#a31904e1a4a243ed5f002fc9df80ac480',1,'mainwindow.hh']]],
+  ['sensor_5frange_5fbend_5fmin',['SENSOR_RANGE_BEND_MIN',['../mainwindow_8hh.html#a14ed3e51af1d4105255a95065eb7f482',1,'mainwindow.hh']]],
+  ['sensor_5frange_5ftouch_5fmax',['SENSOR_RANGE_TOUCH_MAX',['../mainwindow_8hh.html#a4858636bd78600faf6850c075781e962',1,'mainwindow.hh']]],
+  ['sensor_5frange_5ftouch_5fmin',['SENSOR_RANGE_TOUCH_MIN',['../mainwindow_8hh.html#a5775aa83e57916ac81431bdfdc180cd1',1,'mainwindow.hh']]],
+  ['sensor_5ftype_5facc',['SENSOR_TYPE_ACC',['../mainwindow_8hh.html#ac8296e50ce9f4e906d7f4295faf90e90',1,'mainwindow.hh']]],
+  ['sensor_5ftype_5fbend',['SENSOR_TYPE_BEND',['../mainwindow_8hh.html#ad6ed6f841b9472c646777bf2c1eaca2f',1,'mainwindow.hh']]],
+  ['sensor_5ftype_5ftouch',['SENSOR_TYPE_TOUCH',['../mainwindow_8hh.html#a2d58e88ceaa8bf1d0658ce2c7e8d1394',1,'mainwindow.hh']]],
+  ['serial_5fopen_5fmode',['SERIAL_OPEN_MODE',['../mainwindow_8hh.html#a258676243bfb197499602aa8bd13b433',1,'mainwindow.hh']]]
+];

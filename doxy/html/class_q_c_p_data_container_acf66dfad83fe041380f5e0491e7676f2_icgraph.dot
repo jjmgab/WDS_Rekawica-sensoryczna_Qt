@@ -1,0 +1,32 @@
+digraph "QCPDataContainer::end"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node74 [label="QCPDataContainer::end",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node74 -> Node75 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node75 [label="QCPDataContainer::add",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_container.html#a42b98bd994307ccd163a43d576f91ad9"];
+  Node75 -> Node76 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node76 [label="QCPDataContainer::set",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_container.html#ae7042bd534fc3ce7befa2ce3f790b5bf"];
+  Node75 -> Node77 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node77 [label="QCPFinancial::timeSeries\lToOhlc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_financial.html#a9a058c035040d3939b8884f4aaccb1a7"];
+  Node74 -> Node78 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 [label="QCPDataContainer::remove\lBefore",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_container.html#aa7f74cbce304b0369e1626c3798e1eda"];
+  Node74 -> Node79 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node79 [label="QCPDataContainer::remove\lAfter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_container.html#abbe5d87ffc10b5aeffa5bb42cf03aa3c"];
+  Node74 -> Node80 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node80 [label="QCPDataContainer::remove",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_container.html#ae5f569a120648b167efa78835f12fd38"];
+  Node74 -> Node81 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node81 [label="QCPDataContainer::sort",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_container.html#a75da92e33063b63d6da5014683591d45"];
+  Node81 -> Node82 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node82 [label="QCPDataContainer::set",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_container.html#aff99fffbb26597a354c4bc8312596ab2"];
+  Node74 -> Node83 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node83 [label="QCPDataContainer::squeeze",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_container.html#a82fcc511def22287fc62579d0706387c"];
+  Node83 -> Node84 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 [label="QCPDataContainer::perform\lAutoSqueeze",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_container.html#a83c25ac14be1c920df85e797ee75c982"];
+  Node84 -> Node85 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node85 [label="QCPDataContainer::setAuto\lSqueeze",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_container.html#a233f866760a78950d2a393c1a4bc54b5"];
+  Node84 -> Node78 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 -> Node79 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 -> Node80 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

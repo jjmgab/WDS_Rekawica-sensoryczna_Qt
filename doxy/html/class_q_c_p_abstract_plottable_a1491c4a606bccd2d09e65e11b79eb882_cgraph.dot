@@ -1,0 +1,46 @@
+digraph "QCPAbstractPlottable::rescaleAxes"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node362 [label="QCPAbstractPlottable\l::rescaleAxes",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node362 -> Node363 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node363 [label="QCPAbstractPlottable\l::rescaleKeyAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#ae96b83c961e257da116c6acf9c7da308"];
+  Node363 -> Node364 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node364 [label="QCPAbstractPlottable\l::keyAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a2cdd6f0dd5e9a979037f86b4000d9cfe"];
+  Node363 -> Node365 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node365 [label="QCPAxis::scaleType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#ad23e9ad97b44e9aeaf4fab8904280098"];
+  Node363 -> Node366 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node366 [label="QCPAxis::range",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#ac4058855a81f1a883cf2e754f6a6acb1"];
+  Node363 -> Node367 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node367 [label="QCPAbstractPlottable\l::getKeyRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a4da16d3cd4b509e1104a9b0275623c96"];
+  Node363 -> Node368 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node368 [label="QCPRange::expand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a0fa1bc8048be50d52bea93a8caf08305"];
+  Node363 -> Node369 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node369 [label="QCPRange::validRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#ab38bd4841c77c7bb86c9eea0f142dcc0"];
+  Node363 -> Node370 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node370 [label="QCPRange::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a62326e7cc4316b96df6a60813230e63f"];
+  Node363 -> Node371 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node371 [label="QCPAxis::setRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#aebdfea5d44c3a0ad2b4700cd4d25b641"];
+  Node371 -> Node369 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node371 -> Node372 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node372 [label="QCPRange::sanitizedForLog\lScale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a3d66288d66e1d6df3636075eb42502ee"];
+  Node372 -> Node373 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node373 [label="QCPRange::normalize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#af914a7740269b0604d0827c634a878a9"];
+  Node371 -> Node374 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node374 [label="QCPRange::sanitizedForLin\lScale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a808751fdd9b17ef52327ba011df2e5f1"];
+  Node374 -> Node373 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node362 -> Node375 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node375 [label="QCPAbstractPlottable\l::rescaleValueAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a714eaf36b12434cd71846215504db82e"];
+  Node375 -> Node364 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node375 -> Node376 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node376 [label="QCPAbstractPlottable\l::valueAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#af47809a644a68ffd955fb30b01fb4f2f"];
+  Node375 -> Node365 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node375 -> Node366 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node375 -> Node377 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node377 [label="QCPAbstractPlottable\l::getValueRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a4de773988b21ed090fddd27c6a3a3dcb"];
+  Node375 -> Node368 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node375 -> Node369 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node375 -> Node370 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node375 -> Node371 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

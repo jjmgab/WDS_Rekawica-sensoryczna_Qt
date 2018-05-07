@@ -1,0 +1,11 @@
+digraph "QCPAbstractPlottable::setSelection"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node564 [label="QCPAbstractPlottable\l::setSelection",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node564 -> Node565 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node565 [label="QCPAbstractPlottable\l::selectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a2d488568cf16600dd81fa23d7d439829"];
+  Node564 -> Node566 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node566 [label="QCPAbstractPlottable\l::deselectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a9b104d9da4f38f934363945c313bf82e"];
+}

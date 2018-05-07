@@ -1,0 +1,13 @@
+digraph "QCPDataSelection::operator&lt;&lt;"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node134 [label="QCPDataSelection::operator\<\<",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node134 -> Node135 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node135 [label="QCPDataSelection::dataRange\lCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_selection.html#abd8869ccb231ab991e8576de931f647d"];
+  Node134 -> Node136 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node136 [label="QCPDataSelection::dataRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_selection.html#a6956acf6a9a49a353b4f9b58608978ad"];
+  Node136 -> Node137 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node137 [label="QCPDataRange::QCPDataRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#a49e72fd9bace1da9d875136dcc04c986"];
+}

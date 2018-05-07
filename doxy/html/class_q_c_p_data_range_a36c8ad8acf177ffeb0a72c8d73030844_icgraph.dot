@@ -1,0 +1,15 @@
+digraph "QCPDataRange::expanded"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node87 [label="QCPDataRange::expanded",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node87 -> Node88 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node88 [label="QCPDataSelection::inverse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_selection.html#ae8097f4e4ffee7b1b5df27c93eb365db"];
+  Node88 -> Node89 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node89 [label="QCPAbstractPlottable1D\l\< QCPCurveData \>::getDataSegments",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable1_d.html#ae890e62ce403c54f575c73b9529f1af8"];
+  Node88 -> Node90 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node90 [label="QCPErrorBars::getDataSegments",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_error_bars.html#a243e0bb2563fc2e9f08efd77e7175abf"];
+  Node90 -> Node91 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node91 [label="QCPErrorBars::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_error_bars.html#a801e85931372abf2a1034bfb2eac5cd2"];
+}

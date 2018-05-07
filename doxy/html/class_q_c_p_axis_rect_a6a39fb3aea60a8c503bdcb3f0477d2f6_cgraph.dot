@@ -1,0 +1,35 @@
+digraph "QCPAxisRect::zoom"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node802 [label="QCPAxisRect::zoom",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node802 -> Node803 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node803 [label="QCPAxisRect::axis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a583ae4f6d78b601b732183f6cabecbe1"];
+  Node802 -> Node804 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node804 [label="QCPAxis::orientation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#ab988ef4538e2655bb77bd138189cd42e"];
+  Node802 -> Node805 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node805 [label="QCPAxis::setRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#aebdfea5d44c3a0ad2b4700cd4d25b641"];
+  Node805 -> Node806 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node806 [label="QCPRange::validRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#ab38bd4841c77c7bb86c9eea0f142dcc0"];
+  Node805 -> Node807 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node807 [label="QCPRange::sanitizedForLog\lScale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a3d66288d66e1d6df3636075eb42502ee"];
+  Node807 -> Node808 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node808 [label="QCPRange::normalize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#af914a7740269b0604d0827c634a878a9"];
+  Node805 -> Node809 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node809 [label="QCPRange::sanitizedForLin\lScale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a808751fdd9b17ef52327ba011df2e5f1"];
+  Node809 -> Node808 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node802 -> Node810 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node810 [label="QCPAxis::pixelToCoord",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#a536ef8f624cac59b6b6fdcb495723c57"];
+  Node810 -> Node804 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node810 -> Node811 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node811 [label="QCPAxisRect::left",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#afb4a3de02046b20b9310bdb8fca781c3"];
+  Node810 -> Node812 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node812 [label="QCPAxisRect::width",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a204645398a4f9d0b0189385c7c2cfb91"];
+  Node810 -> Node813 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node813 [label="QCPRange::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a62326e7cc4316b96df6a60813230e63f"];
+  Node810 -> Node814 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node814 [label="QCPAxisRect::bottom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#acefdf1abaa8a8ab681e906cc2be9581e"];
+  Node810 -> Node815 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node815 [label="QCPAxisRect::height",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#acc4377809e79d9a089ab790f39429b0d"];
+}

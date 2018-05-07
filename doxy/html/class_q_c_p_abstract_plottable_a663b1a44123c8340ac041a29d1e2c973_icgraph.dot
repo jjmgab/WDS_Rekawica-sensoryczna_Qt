@@ -1,0 +1,31 @@
+digraph "QCPAbstractPlottable::selectableChanged"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node422 [label="QCPAbstractPlottable\l::selectableChanged",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node422 -> Node423 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node423 [label="QCPAbstractLegendItem\l::selected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#adf427dbb05d5f1a8e84c6abcb05becdf"];
+  Node423 -> Node424 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node424 [label="QCPAbstractLegendItem\l::setSelected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#a6eed93b0ab99cb3eabb043fb08179c2b"];
+  Node424 -> Node425 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node425 [label="QCPAbstractLegendItem\l::selectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#a0081acfd8c4bb8ac4e9dcfe0f6c49b74"];
+  Node424 -> Node426 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node426 [label="QCPAbstractLegendItem\l::deselectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#aa1c0620558cc8e2a2e6fb7ab558f6097"];
+  Node423 -> Node427 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node427 [label="QCPLegend::setSelectedParts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#a2aee309bb5c2a794b1987f3fc97f8ad8"];
+  Node422 -> Node428 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node428 [label="QCPLegend::selectedTextColor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#ab9b469b27787bfb2ce6c8978a31821af"];
+  Node422 -> Node429 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node429 [label="QCPTextElement::selected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#a135d1ad0aa97a245b4247c3292ff551c"];
+  Node429 -> Node430 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node430 [label="QCPTextElement::setSelected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#aba5521f9fb22a5f3d2f09ab37d4a1751"];
+  Node430 -> Node431 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node431 [label="QCPTextElement::selectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#a8d696ea82fa7bf743e01858039c03525"];
+  Node430 -> Node432 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node432 [label="QCPTextElement::deselect\lEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#a9a631a9deb9d82089a9d52de1744accf"];
+  Node422 -> Node433 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node433 [label="QCPAbstractPlottable\l::setSelectable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#ac238d6e910f976f1f30d41c2bca44ac3"];
+  Node433 -> Node423 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node433 -> Node429 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

@@ -1,0 +1,32 @@
+digraph "QCPScatterStyle::shape"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node169 [label="QCPScatterStyle::shape",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node169 -> Node170 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node170 [label="QCPScatterStyle::setFrom\lOther",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_scatter_style.html#a7d59ba8864914f765817841089e436f1"];
+  Node170 -> Node171 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node171 [label="QCPSelectionDecorator\l::getFinalScatterStyle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_selection_decorator.html#a1277b373248896bc70e8cc1de96da9fa"];
+  Node171 -> Node172 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node172 [label="QCPGraph::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a2b0849598f06e834b43ce18cd13bcdc3"];
+  Node171 -> Node173 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node173 [label="QCPCurve::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_curve.html#ac199d41d23865cd68bd7b598308a4433"];
+  Node171 -> Node174 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node174 [label="QCPStatisticalBox::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_statistical_box.html#afcff35fa79728cfe10e80e0702014fea"];
+  Node169 -> Node175 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node175 [label="QCPScatterStyle::setShape",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_scatter_style.html#a7c641c4d4c6d29cb705d3887cfce91c1"];
+  Node175 -> Node170 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node175 -> Node176 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node176 [label="QCPScatterStyle::setPixmap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_scatter_style.html#a5fb611d46acfac520d7b89a1c71d9246"];
+  Node176 -> Node170 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node176 -> Node177 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node177 [label="QCPGraph::drawLegendIcon",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a6efbab06c400bdb15e28b2d0a4ecc18a"];
+  Node176 -> Node178 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node178 [label="QCPCurve::drawLegendIcon",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_curve.html#aac6e94afbce4002d2cd7793250154e84"];
+  Node175 -> Node179 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node179 [label="QCPScatterStyle::setCustomPath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_scatter_style.html#a96a3e949f90b2afe5677ca9412a12a1e"];
+  Node179 -> Node170 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node169 -> Node177 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node169 -> Node178 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

@@ -1,0 +1,25 @@
+digraph "QCPAbstractItem::rectDistance"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node130 [label="QCPAbstractItem::rectDistance",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node130 -> Node131 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node131 [label="QCPVector2D::distanceSquared\lToLine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#a14840cd3da80cfee4eb3f8977cab89ab"];
+  Node131 -> Node132 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node132 [label="QCPVector2D::lengthSquared",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#a766585459d84cb149334fda1a498b2e5"];
+  Node131 -> Node133 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node133 [label="QCPVector2D::dot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#a39f8d28db7dbffcca6aa63a1f1f6e176"];
+  Node133 -> Node134 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node134 [label="operator*",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8hh.html#aa75268fb64b9eaee5448fb815007bee9"];
+  Node133 -> Node135 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node135 [label="operator/",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8hh.html#aa69909afc8c656999a2ea292ea01244b"];
+  Node133 -> Node136 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node136 [label="operator+",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8hh.html#a24cc5985429b12dbed4d0d3c5a917d20"];
+  Node133 -> Node137 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node137 [label="operator-",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8hh.html#a9e01331d8debf0877ee4cba9abd83605"];
+  Node133 -> Node138 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node138 [label="Q_DECLARE_TYPEINFO",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8hh.html#accbe1a1a6b69d3db3f495f66375f7301"];
+  Node130 -> Node139 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node139 [label="QCustomPlot::selectionTolerance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a5441d11013afeaf4b8f2ea06e8624a25"];
+}

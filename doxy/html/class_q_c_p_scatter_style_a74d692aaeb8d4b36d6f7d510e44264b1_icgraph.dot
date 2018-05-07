@@ -1,0 +1,17 @@
+digraph "QCPScatterStyle::setBrush"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node92 [label="QCPScatterStyle::setBrush",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node92 -> Node93 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node93 [label="QCPScatterStyle::setFrom\lOther",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_scatter_style.html#a7d59ba8864914f765817841089e436f1"];
+  Node93 -> Node94 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node94 [label="QCPSelectionDecorator\l::getFinalScatterStyle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_selection_decorator.html#a1277b373248896bc70e8cc1de96da9fa"];
+  Node94 -> Node95 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node95 [label="QCPGraph::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a2b0849598f06e834b43ce18cd13bcdc3"];
+  Node94 -> Node96 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node96 [label="QCPCurve::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_curve.html#ac199d41d23865cd68bd7b598308a4433"];
+  Node94 -> Node97 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node97 [label="QCPStatisticalBox::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_statistical_box.html#afcff35fa79728cfe10e80e0702014fea"];
+}

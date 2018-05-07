@@ -1,0 +1,15 @@
+digraph "QCPStatisticalBox::getQuartileBox"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node124 [label="QCPStatisticalBox::\lgetQuartileBox",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node124 -> Node125 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node125 [label="QCPStatisticalBox::\lselectTestRect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_statistical_box.html#a42febad6ad5e924a151434cc434b4ffc"];
+  Node124 -> Node126 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node126 [label="QCPStatisticalBox::\lselectTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_statistical_box.html#a1607fa92f829c631107c20ccb2d70a6d"];
+  Node124 -> Node127 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node127 [label="QCPStatisticalBox::\ldrawStatisticalBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_statistical_box.html#a02dc6b561be8203d460d7263da74b8a9"];
+  Node127 -> Node128 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node128 [label="QCPStatisticalBox::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_statistical_box.html#afcff35fa79728cfe10e80e0702014fea"];
+}

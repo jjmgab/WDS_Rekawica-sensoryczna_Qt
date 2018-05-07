@@ -1,0 +1,11 @@
+digraph "QCPDataSelection::operator!="
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node96 [label="QCPDataSelection::operator!=",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node96 -> Node97 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node97 [label="operator+",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8hh.html#a24cc5985429b12dbed4d0d3c5a917d20"];
+  Node96 -> Node98 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node98 [label="operator-",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8hh.html#a9e01331d8debf0877ee4cba9abd83605"];
+}

@@ -1,0 +1,44 @@
+digraph "QCPCurve::getScatters"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node187 [label="QCPCurve::getScatters",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node187 -> Node188 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node188 [label="QCPAbstractPlottable\l::keyAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a2cdd6f0dd5e9a979037f86b4000d9cfe"];
+  Node187 -> Node189 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node189 [label="QCPAbstractPlottable\l::valueAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#af47809a644a68ffd955fb30b01fb4f2f"];
+  Node187 -> Node190 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node190 [label="QCPAxis::range",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#ac4058855a81f1a883cf2e754f6a6acb1"];
+  Node187 -> Node191 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node191 [label="QCPAxis::pixelToCoord",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#a536ef8f624cac59b6b6fdcb495723c57"];
+  Node191 -> Node192 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node192 [label="QCPAxis::orientation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#ab988ef4538e2655bb77bd138189cd42e"];
+  Node191 -> Node193 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node193 [label="QCPAxisRect::left",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#afb4a3de02046b20b9310bdb8fca781c3"];
+  Node191 -> Node194 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node194 [label="QCPAxisRect::width",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a204645398a4f9d0b0189385c7c2cfb91"];
+  Node191 -> Node195 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node195 [label="QCPRange::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a62326e7cc4316b96df6a60813230e63f"];
+  Node191 -> Node196 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node196 [label="QCPAxisRect::bottom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#acefdf1abaa8a8ab681e906cc2be9581e"];
+  Node191 -> Node197 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node197 [label="QCPAxisRect::height",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#acc4377809e79d9a089ab790f39429b0d"];
+  Node187 -> Node198 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node198 [label="QCPAxis::coordToPixel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#af15d1b3a7f7e9b53d759d3ccff1fe4b4"];
+  Node198 -> Node192 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node198 -> Node195 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node198 -> Node194 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node198 -> Node193 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node198 -> Node199 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node199 [label="QCPAxisRect::right",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a3f819d4a1b2193723d1fdafc573eea10"];
+  Node198 -> Node196 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node198 -> Node197 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node198 -> Node200 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node200 [label="QCPAxisRect::top",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a45dbad181cbb9f09d068dbb76c817c95"];
+  Node187 -> Node201 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node201 [label="QCPAxis::pixelOrientation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#a45c45bed7e5666683b8d56afa66fa51f"];
+  Node187 -> Node192 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node187 -> Node202 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node202 [label="QCPRange::contains",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#ae9842b48b6d38dc5e9607358e3083cc8"];
+}

@@ -1,0 +1,33 @@
+digraph "QCPItemStraightLine::selectTest"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node44 [label="QCPItemStraightLine\l::selectTest",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node44 -> Node45 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 [label="QCPVector2D::distanceToStraightLine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#ae240b845c3744e43a5d0aa7b2bb66c19"];
+  Node45 -> Node46 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node46 [label="QCPVector2D::dot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#a39f8d28db7dbffcca6aa63a1f1f6e176"];
+  Node46 -> Node47 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node47 [label="operator*",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8hh.html#aa75268fb64b9eaee5448fb815007bee9"];
+  Node46 -> Node48 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node48 [label="operator/",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8hh.html#aa69909afc8c656999a2ea292ea01244b"];
+  Node46 -> Node49 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node49 [label="operator+",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8hh.html#a24cc5985429b12dbed4d0d3c5a917d20"];
+  Node46 -> Node50 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node50 [label="operator-",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8hh.html#a9e01331d8debf0877ee4cba9abd83605"];
+  Node46 -> Node51 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node51 [label="Q_DECLARE_TYPEINFO",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8hh.html#accbe1a1a6b69d3db3f495f66375f7301"];
+  Node45 -> Node52 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node52 [label="QCPVector2D::perpendicular",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#a0e08d09f9027784237e302e32290b001"];
+  Node45 -> Node53 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node53 [label="QCPVector2D::length",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_vector2_d.html#a10adb5ab031fe94f0b64a3c5aefb552e"];
+  Node44 -> Node54 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node54 [label="QCPItemPosition::pixelPosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_item_position.html#a8be9a4787635433edecc75164beb748d"];
+  Node54 -> Node55 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node55 [label="QCPItemAnchor::pixelPosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_item_anchor.html#a06dcfb7220d26eee93eef56ae66582cb"];
+  Node55 -> Node56 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node56 [label="QCPAbstractItem::anchorPixel\lPosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_item.html#ada5bad4e1196c4fc0d0d12328e24b8f2"];
+  Node54 -> Node57 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node57 [label="QCustomPlot::viewport",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a19842409b18f556b256d05e97fffc670"];
+}

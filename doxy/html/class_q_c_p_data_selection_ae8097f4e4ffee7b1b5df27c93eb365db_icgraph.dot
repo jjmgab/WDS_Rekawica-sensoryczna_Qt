@@ -1,0 +1,13 @@
+digraph "QCPDataSelection::inverse"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node82 [label="QCPDataSelection::inverse",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node82 -> Node83 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node83 [label="QCPAbstractPlottable1D\l\< QCPCurveData \>::getDataSegments",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable1_d.html#ae890e62ce403c54f575c73b9529f1af8"];
+  Node82 -> Node84 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 [label="QCPErrorBars::getDataSegments",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_error_bars.html#a243e0bb2563fc2e9f08efd77e7175abf"];
+  Node84 -> Node85 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node85 [label="QCPErrorBars::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_error_bars.html#a801e85931372abf2a1034bfb2eac5cd2"];
+}

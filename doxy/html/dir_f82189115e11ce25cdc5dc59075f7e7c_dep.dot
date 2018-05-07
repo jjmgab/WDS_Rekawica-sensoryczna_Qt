@@ -1,0 +1,11 @@
+digraph "/home/rexlu/studia/prog/Rekawica/qt_rekawica/qt_rekawica/src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_c964003ffbe08cabae5ddef5f6f66158 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="qt_rekawica" fontname="Helvetica", fontsize="10", URL="dir_c964003ffbe08cabae5ddef5f6f66158.html"]
+  dir_f82189115e11ce25cdc5dc59075f7e7c [shape=box, label="src", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_f82189115e11ce25cdc5dc59075f7e7c.html"];
+  }
+  dir_7bbece5c158832e47e22443ca5798bb0 [shape=box label="inc" URL="dir_7bbece5c158832e47e22443ca5798bb0.html"];
+  dir_f82189115e11ce25cdc5dc59075f7e7c->dir_7bbece5c158832e47e22443ca5798bb0 [headlabel="7", labeldistance=1.5 headhref="dir_000002_000001.html"];
+}

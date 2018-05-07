@@ -1,0 +1,25 @@
+digraph "QCPGraph::data"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node27 [label="QCPGraph::data",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node27 -> Node28 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node28 [label="QCPGraph::channelFillGraph",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a84277b1655474453a5c83318053414d5"];
+  Node27 -> Node29 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node29 [label="QCPGraph::setData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a1eae9429a316b008e2d99b2d65a54395"];
+  Node29 -> Node30 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node30 [label="MainWindow::testrun\l_timeoutHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#a9d9abd7a1b1373c715d72c2205088cd3",tooltip="Reakcja na timeout timera testowego. "];
+  Node30 -> Node31 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node31 [label="MainWindow::MainWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d",tooltip="Konstruktor parametryczny klasy MainWindow. "];
+  Node27 -> Node32 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node32 [label="QCPGraph::getScatters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a9d7ba5904fdcaca413222335d4b283c3"];
+  Node32 -> Node33 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node33 [label="QCPGraph::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a2b0849598f06e834b43ce18cd13bcdc3"];
+  Node27 -> Node34 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node34 [label="QCPItemTracer::updatePosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_item_tracer.html#a5b90296109e36384aedbc8908a670413"];
+  Node34 -> Node35 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node35 [label="QCPItemTracer::setGraph",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_item_tracer.html#af5886f4ded8dd68cb4f3388f390790c0"];
+  Node34 -> Node36 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node36 [label="QCPItemTracer::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_item_tracer.html#a11f187ffea436434f3b5cfc387811967"];
+}

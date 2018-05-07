@@ -1,0 +1,27 @@
+digraph "QCPGraph::getChannelFillPolygon"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node321 [label="QCPGraph::getChannelFill\lPolygon",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node321 -> Node322 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node322 [label="QCPAbstractPlottable\l::keyAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a2cdd6f0dd5e9a979037f86b4000d9cfe"];
+  Node321 -> Node323 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node323 [label="QCPAbstractPlottable\l::valueAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#af47809a644a68ffd955fb30b01fb4f2f"];
+  Node321 -> Node324 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node324 [label="QCPAxis::orientation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#ab988ef4538e2655bb77bd138189cd42e"];
+  Node321 -> Node325 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node325 [label="QCPDataRange::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#ac6af055e509d1b691c244954ff1c5887"];
+  Node321 -> Node326 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node326 [label="QCPDataRange::begin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#ae76d7eba9defdfafcd0fc41096793129"];
+  Node321 -> Node327 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node327 [label="QCPDataRange::end",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#aee1b20fb045929c3753ee2ce14af7630"];
+  Node321 -> Node328 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node328 [label="QCPGraph::findIndexBelowX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a8c3f15dd5a06633011a6ef36016d308b"];
+  Node321 -> Node329 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node329 [label="QCPGraph::findIndexAboveX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#aaabd6c6a7200a2672c44e62bd2a1cafa"];
+  Node321 -> Node330 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node330 [label="QCPGraph::findIndexBelowY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a5b0291f248e8ca8eaa82833ab420dcd0"];
+  Node321 -> Node331 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node331 [label="QCPGraph::findIndexAboveY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a8b952a5f937840dc242489585cc8000d"];
+}

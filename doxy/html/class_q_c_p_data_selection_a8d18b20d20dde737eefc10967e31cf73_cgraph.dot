@@ -1,0 +1,15 @@
+digraph "QCPDataSelection::operator-="
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node109 [label="QCPDataSelection::operator-=",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node109 -> Node110 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node110 [label="QCPDataRange::isEmpty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#ac32e53fc05d6cd2eac96b96a7265d3b8"];
+  Node109 -> Node111 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node111 [label="QCPDataRange::end",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#aee1b20fb045929c3753ee2ce14af7630"];
+  Node109 -> Node112 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node112 [label="QCPDataRange::begin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#ae76d7eba9defdfafcd0fc41096793129"];
+  Node109 -> Node113 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node113 [label="QCPDataRange::QCPDataRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#a49e72fd9bace1da9d875136dcc04c986"];
+}

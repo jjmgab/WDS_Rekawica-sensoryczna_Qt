@@ -1,0 +1,13 @@
+digraph "QCustomPlot::removeItem"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node890 [label="QCustomPlot::removeItem",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node890 -> Node891 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node891 [label="QCustomPlot::removeItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#abcfdda3d601c0441cab136137d715dea"];
+  Node890 -> Node892 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node892 [label="QCustomPlot::clearItems",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#abdfd07d4f0591d0cf967f85013fd3645"];
+  Node892 -> Node893 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node893 [label="QCustomPlot::~QCustomPlot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a75d9b6f599dcae706e45efd425c5499e"];
+}

@@ -1,0 +1,17 @@
+digraph "/home/rexlu/studia/prog/Rekawica/qt_rekawica/qt_rekawica/inc/qcustomplot.hh"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node26 [label="/home/rexlu/studia\l/prog/Rekawica/qt_rekawica\l/qt_rekawica/inc/qcustomplot.hh",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node26 -> Node27 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node27 [label="/home/rexlu/studia\l/prog/Rekawica/qt_rekawica\l/qt_rekawica/inc/mainwindow.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mainwindow_8hh.html"];
+  Node27 -> Node28 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node28 [label="/home/rexlu/studia\l/prog/Rekawica/qt_rekawica\l/qt_rekawica/src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html"];
+  Node27 -> Node29 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node29 [label="/home/rexlu/studia\l/prog/Rekawica/qt_rekawica\l/qt_rekawica/src/mainwindow.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mainwindow_8cpp.html",tooltip="Definicja metod klasy MainWindow. "];
+  Node26 -> Node30 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node30 [label="/home/rexlu/studia\l/prog/Rekawica/qt_rekawica\l/qt_rekawica/inc/ui_mainwindow.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ui__mainwindow_8hh.html"];
+  Node30 -> Node29 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 -> Node31 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node31 [label="/home/rexlu/studia\l/prog/Rekawica/qt_rekawica\l/qt_rekawica/src/qcustomplot.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qcustomplot_8cpp.html"];
+}

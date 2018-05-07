@@ -1,0 +1,9 @@
+digraph "qUnregisterResourceData"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node10 [label="qUnregisterResourceData",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="qCleanupResources_icons",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$qrc__icons_8cpp.html#adf4b7bcaad8a7e6715bed7d18cb3c7a8"];
+}

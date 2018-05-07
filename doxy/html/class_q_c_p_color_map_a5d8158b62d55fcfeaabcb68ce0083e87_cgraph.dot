@@ -1,0 +1,34 @@
+digraph "QCPColorMap::updateLegendIcon"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node153 [label="QCPColorMap::updateLegendIcon",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node153 -> Node154 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node154 [label="QCPColorMap::data",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map.html#a047d7eb3ae657f93f2f39b5e68b79451"];
+  Node153 -> Node155 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node155 [label="QCPColorMapData::isEmpty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#aea88cc75a76ca571acf29b2ba8ac970d"];
+  Node153 -> Node156 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node156 [label="QCPColorMap::updateMapImage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map.html#a5efcea591bb5486d968af520a4d43c3a"];
+  Node156 -> Node157 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node157 [label="QCPAbstractPlottable\l::keyAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a2cdd6f0dd5e9a979037f86b4000d9cfe"];
+  Node156 -> Node155 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node156 -> Node158 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node158 [label="QCPColorMapData::keySize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#abbda4d28de97aedce1e6e6f008a0a1f7"];
+  Node156 -> Node159 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node159 [label="QCPColorMapData::valueSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a8510cafea24645bbb62b5e0bfc43209f"];
+  Node156 -> Node160 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node160 [label="QCPAxis::orientation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#ab988ef4538e2655bb77bd138189cd42e"];
+  Node156 -> Node161 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node161 [label="QCPColorGradient::colorize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_gradient.html#aaf423ceb943e177b0ed2c48c811d83dc"];
+  Node161 -> Node162 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node162 [label="QCPColorGradient::update\lColorBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_gradient.html#a353f15ab3ab586eebf1f6b58c3e2707b"];
+  Node162 -> Node163 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node163 [label="QCPColorGradient::stopsUse\lAlpha",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_color_gradient.html#a137b368ea8829a871974add6e4883c71"];
+  Node161 -> Node164 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node164 [label="QCPRange::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a62326e7cc4316b96df6a60813230e63f"];
+  Node153 -> Node157 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node153 -> Node160 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node153 -> Node165 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node165 [label="QCPAbstractPlottable\l::valueAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#af47809a644a68ffd955fb30b01fb4f2f"];
+}

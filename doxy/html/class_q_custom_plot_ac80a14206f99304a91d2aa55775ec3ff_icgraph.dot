@@ -1,0 +1,9 @@
+digraph "QCustomPlot::mouseWheel"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node605 [label="QCustomPlot::mouseWheel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node605 -> Node606 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node606 [label="QCustomPlot::wheelEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a7848c9ac8be60bbd8fcea9b53be543c5"];
+}

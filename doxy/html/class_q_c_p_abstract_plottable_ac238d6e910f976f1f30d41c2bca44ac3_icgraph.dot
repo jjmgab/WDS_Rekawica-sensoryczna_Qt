@@ -1,0 +1,25 @@
+digraph "QCPAbstractPlottable::setSelectable"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node550 [label="QCPAbstractPlottable\l::setSelectable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node550 -> Node551 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node551 [label="QCPAbstractLegendItem\l::selected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#adf427dbb05d5f1a8e84c6abcb05becdf"];
+  Node551 -> Node552 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node552 [label="QCPAbstractLegendItem\l::setSelected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#a6eed93b0ab99cb3eabb043fb08179c2b"];
+  Node552 -> Node553 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node553 [label="QCPAbstractLegendItem\l::selectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#a0081acfd8c4bb8ac4e9dcfe0f6c49b74"];
+  Node552 -> Node554 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node554 [label="QCPAbstractLegendItem\l::deselectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#aa1c0620558cc8e2a2e6fb7ab558f6097"];
+  Node551 -> Node555 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node555 [label="QCPLegend::setSelectedParts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#a2aee309bb5c2a794b1987f3fc97f8ad8"];
+  Node550 -> Node556 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node556 [label="QCPTextElement::selected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#a135d1ad0aa97a245b4247c3292ff551c"];
+  Node556 -> Node557 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node557 [label="QCPTextElement::setSelected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#aba5521f9fb22a5f3d2f09ab37d4a1751"];
+  Node557 -> Node558 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node558 [label="QCPTextElement::selectEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#a8d696ea82fa7bf743e01858039c03525"];
+  Node557 -> Node559 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node559 [label="QCPTextElement::deselect\lEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#a9a631a9deb9d82089a9d52de1744accf"];
+}
