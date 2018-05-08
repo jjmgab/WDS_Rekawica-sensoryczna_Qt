@@ -21,13 +21,18 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     serial = new QSerialPort(this);
 
+    // customowe tooltipy
+    // App->setStyleSheet("QToolTip { color: #000000 ; background-color: #ffffff; border: none; }");
+
     // -- Zaladowanie obrazka orientacji
     // laduje obrazek ze sciezki qrc z prefixem images oraz aliasem img_orientation
     QPixmap pixmap_orientation(":/images/img_orientation");
     // do zmiennej dodaje scene
     scene_orientation->addPixmap(pixmap_orientation);
     // ustawia przezroczyste tlo sceny
-    ui->graphics_handOrientation->setStyleSheet("background-color: transparent;");
+    QPalette palette = ui->graphics_handOrientation->palette();
+    palette.setColor(ui->graphics_handOrientation->backgroundRole(), QColor(0, 0, 0, 0));
+    ui->graphics_handOrientation->setPalette(palette);
     // ustawia oraz wyswietla scene w QGraphicsview
     ui->graphics_handOrientation->setScene(scene_orientation);
     ui->graphics_handOrientation->show();
@@ -403,6 +408,9 @@ void MainWindow::testrun() {
     {
         device_isReady = true;
         debug_on = true;
+        // zablokowanie przyciskow aby nie mozna bylo wejsc w okna podczas testrun
+        ui->action_connect->setEnabled(false);
+        ui->action_info->setEnabled(false);
     
         debugTimer->start(TIMER_TIMEOUT_MS);
         ui->terminal->append(tr("Testrun: Uruchomiono przebieg testowy"));
@@ -419,6 +427,9 @@ void MainWindow::testrun() {
         ui->progressBar_finger_4->setValue(0);
         ui->progressBar_finger_5->setValue(0);
         debugTimer->stop();
+        // zablokowanie przyciskow po wyjsciu z testrun
+        ui->action_connect->setEnabled(true);
+        ui->action_info->setEnabled(true);
         ui->terminal->append(tr("Testrun: Zatrzymano przebieg testowy"));
         ui->statusBar->showMessage(tr("Testrun: Zatrzymano przebieg testowy"));
     }
@@ -641,7 +652,9 @@ void MainWindow::reset_hand_visualisation_scene()
     // do zmiennej dodaje scene
     scene_visualisation->addPixmap(pixmap_visualisation);
     // ustawia przezroczyste tlo sceny
-    ui->graphics_handVisualization->setStyleSheet("background-color: transparent;");
+    QPalette palette = ui->graphics_handVisualization->palette();
+    palette.setColor(ui->graphics_handVisualization->backgroundRole(), QColor(0, 0, 0, 0));
+    ui->graphics_handVisualization->setPalette(palette);
     // ustawia oraz wyswietla scene w QGraphicsview
     ui->graphics_handVisualization->setScene(scene_visualisation);
 }
