@@ -100,13 +100,13 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1131, 829);
+        MainWindow->resize(960, 700);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
-        MainWindow->setMinimumSize(QSize(0, 0));
+        MainWindow->setMinimumSize(QSize(0, 700));
         MainWindow->setMaximumSize(QSize(16777215, 16777215));
         QIcon icon;
         icon.addFile(QStringLiteral(":/button_connect/icons/connect"), QSize(), QIcon::Normal, QIcon::Off);
@@ -155,7 +155,7 @@ public:
         centralWidget->setSizePolicy(sizePolicy1);
         centralWidget->setMinimumSize(QSize(0, 0));
         centralWidget->setSizeIncrement(QSize(0, 0));
-        centralWidget->setBaseSize(QSize(1130, 740));
+        centralWidget->setBaseSize(QSize(970, 700));
         centralWidget->setLocale(QLocale(QLocale::Polish, QLocale::Poland));
         gridLayout = new QGridLayout(centralWidget);
         gridLayout->setSpacing(6);
@@ -241,10 +241,10 @@ public:
 
         layout_orientation->addWidget(graph_orientation);
 
-        layout_orientation->setStretch(0, 2);
-        layout_orientation->setStretch(1, 1);
-        layout_orientation->setStretch(2, 1);
-        layout_orientation->setStretch(3, 3);
+        layout_orientation->setStretch(0, 3);
+        layout_orientation->setStretch(1, 3);
+        layout_orientation->setStretch(2, 3);
+        layout_orientation->setStretch(3, 6);
 
         layout_mainInfo->addLayout(layout_orientation);
 
@@ -504,7 +504,7 @@ public:
 
         layout_visualization->addWidget(graph_touch);
 
-        layout_visualization->setStretch(0, 3);
+        layout_visualization->setStretch(0, 2);
         layout_visualization->setStretch(1, 1);
         layout_visualization->setStretch(2, 2);
         layout_visualization->setStretch(3, 1);
@@ -519,7 +519,7 @@ public:
 
         layout_handVisualization->addWidget(line_vertical_1);
 
-        layout_handVisualization->setStretch(0, 2);
+        layout_handVisualization->setStretch(0, 4);
         layout_handVisualization->setStretch(1, 1);
 
         gridLayout->addLayout(layout_handVisualization, 0, 0, 1, 1);
@@ -529,7 +529,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1131, 25));
+        menuBar->setGeometry(QRect(0, 0, 960, 25));
         menuBar->setCursor(QCursor(Qt::PointingHandCursor));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QStringLiteral("menuMenu"));

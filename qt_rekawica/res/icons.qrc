@@ -3,8 +3,8 @@
     <file alias="img_connect">icons/connect</file>
     <file alias="img_testrun">icons/testrun.png</file>
     <file alias="img_disconnect">icons/disconnect</file>
-    <file alias="img_buttonexit">icons/exit</file>
-    <file alias="img_about">icons/about</file>
+    <file alias="img_buttonexit">icons/exit.png</file>
+    <file alias="img_about">icons/about.png</file>
   </qresource>
 
   <qresource prefix="images">
