@@ -118,6 +118,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->graph_bending->xAxis->setLabel(tr("Czas pomiaru [s]"));
     ui->graph_bending->yAxis->setLabel(tr("Wart. zgięcia"));
     ui->graph_bending->setBackground(QBrush(Qt::white));
+    ui->graph_bending->setInteraction(QCP::iSelectPlottables, true);
+    ui->graph_bending->setInteraction(QCP::iRangeDrag, true);
+    ui->graph_bending->setInteraction(QCP::iRangeZoom, true);
 
     for (int i = 0; i < MAX_SENSORS_BEND; i++) {
         ui->graph_bending->addGraph();
@@ -129,6 +132,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->graph_touch->xAxis->setLabel(tr("Czas pomiaru [s]"));
     ui->graph_touch->yAxis->setLabel(tr("Siła dotyku"));
     ui->graph_touch->setBackground(QBrush(Qt::white));
+    // ustaw ze mozna wybierac krzywe
+    ui->graph_touch->setInteraction(QCP::iSelectPlottables, true);
+    // ustawe ze mozna przesuwac wykres
+    ui->graph_touch->setInteraction(QCP::iRangeDrag, true);
+    // ui->graph_touch->axisRects().at(0)->setRangeDrag(Qt::Horizontal); // przesuwanie tylko w poziomie
+    // ustaw ze mozna zmieniac przyblizenie
+    ui->graph_touch->setInteraction(QCP::iRangeZoom, true);
 
     for (int i = 0; i < MAX_SENSORS_TOUCH; i++) {
         ui->graph_touch->addGraph();
@@ -140,6 +150,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->graph_orientation->xAxis->setLabel(tr("Czas pomiaru [s]"));
     ui->graph_orientation->yAxis->setLabel(tr("Wartości wsp. ACC"));
     ui->graph_orientation->setBackground(QBrush(Qt::white));
+    ui->graph_orientation->setInteraction(QCP::iSelectPlottables, true);
+    ui->graph_orientation->setInteraction(QCP::iRangeDrag, true);
+    ui->graph_orientation->setInteraction(QCP::iRangeZoom, true);
 
     for (int i = 0; i < MAX_AXIS_ACC; i++) {
         ui->graph_orientation->addGraph();
