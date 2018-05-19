@@ -270,6 +270,7 @@ void MainWindow::action_connect_click() {
                 ui->terminal->insertPlainText(". ");
                 ui->terminal->moveCursor(QTextCursor::End);
             }
+            std::cout << "RECONNECT" << std::endl;
             emit reconnect();
         }
         // porazka
@@ -278,9 +279,13 @@ void MainWindow::action_connect_click() {
             ui->action_connect->setEnabled(true);
             ui->terminal->append(tr("Próba połączenia: niepowodzenie"));
             ui->statusBar->showMessage(tr("Status: Nie udalo się połączyć"));
+            std::cout << "CONNECTION FAILURE" << std::endl;
         }
     }
+    std::cout << "DELETE CONNECTION WINDOW..." << std::endl;
     delete connectionWindow;
+    connectionWindow = nullptr;
+    std::cout << "DELETED" << std::endl;
 }
 
 /*!
@@ -329,21 +334,30 @@ void MainWindow::serial_dataAvailable() {
         ui->terminal->moveCursor(QTextCursor::End);
         ui->terminal->insertPlainText(datas);
         ui->terminal->moveCursor(QTextCursor::End);
+        
+        int value;
 
         if (!device_isReady) {
-            int value;
+            
             if (!device_firstWord) {
                 sscanf(datas.toStdString().c_str(), "%04X", &value);
                 if (value == DEVICE_FIRST_WORD) device_firstWord = true;
                 
                 // proba powitania
+                std::cout << "DEVICE HANDSHAKE" << std::endl;
                 serial->write(DEVICE_HANDSHAKE);
+
             } else if (!device_isReady) {
+                std::cout << "DEVICE HANDLE DATA" << std::endl;
                 sscanf(datas.toStdString().c_str(), "%02X", &value);
                 if (value == DEVICE_HANDSHAKE_RESPONSE) emit device_ready();
             }
-        } else {
-
+        } else if (device_isReady && datas.size() > 0) {
+            sscanf(datas.toStdString().c_str(), "%02X", &value);
+            if (value != DEVICE_START_RESPONSE) {
+                std::cout << "DEVICE HANDLE DATA" << std::endl;
+                handle_data(datas.toStdString());
+            }
         }
     }
 }
@@ -395,6 +409,8 @@ void MainWindow::device_ready() {
     ui->terminal->append(tr("QSerial: Urządzenie gotowe do pracy."));
     ui->statusBar->showMessage(tr("QSerial: Urządzenie gotowe do pracy"));
     device_isReady = true;
+    std::cout << "DEVICE READY" << std::endl;
+    serial->write(DEVICE_START);
 }
 
 /*!
@@ -583,6 +599,120 @@ void MainWindow::testrun_timeoutHandler() {
     time_now += (double)TIMER_TIMEOUT_MS / 1000.0f;
 }
 
+void MainWindow::handle_data(const std::string& _data) {
+    // WCZYTYWANIE I WYSWIETLANIE DANYCH
+
+    std::cout << "BEGIN HANDLE" << std::endl;
+    // czy punktow jest wiecej niz zalozony zakres
+    bool full_range = (time_now > ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)));
+
+    std::cout << "SENSORS: ";
+    // (do wczytywania) liczba sensorow
+    int devices_no = -1;
+    sscanf(_data.c_str(), "%02X", &devices_no);
+    std::cout << devices_no << std::endl;
+
+    std::cout << "PARSE BEGIN" << std::endl;
+    // wczytuje i parsuje po 4*4 bity z ramki
+    for (int i = 0; i < MAX_SENSORS; i++) {
+        std::cout << "PARSE " << i << std::endl;
+        parse(_data.substr(2 + 4 * i, 4));
+    }
+
+    std::cout << "GRAPHING BEGIN" << std::endl;
+    // weryfikuje, czy przekroczony zostal zalozony zakres na osi x
+    if (full_range) { 
+        graph_time.pop_front();
+        graph_time.append(time_now);
+        // przesuwa wykres wzdluz osi x po przekroczeniu zakresu
+        ui->graph_bending->xAxis->setRange(-1.0f * ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)) + time_now, time_now);
+        ui->graph_touch->xAxis->setRange(-1.0f * ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)) + time_now, time_now);
+        ui->graph_orientation->xAxis->setRange(-1.0f * ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)) + time_now, time_now);
+    }
+    else {
+        graph_time.append(time_now);
+        // skaluje zakres, poki nie zostal przekroczony
+        ui->graph_bending->xAxis->setRange(0, time_now);
+        ui->graph_touch->xAxis->setRange(0, time_now);
+        ui->graph_orientation->xAxis->setRange(0, time_now);
+    }
+
+    // resetuje scene aby moc przyjac nowe dane
+    reset_hand_visualisation_scene();
+
+    // inicjalizacja wizualizacji wartosciami "zielonymi", numery grafik i prefix zdefiniowany w pliku qrc
+    for (int i = 0; i < MAX_SENSORS_BEND; i++){
+        QPixmap pixmap_element(":/visualisation_element_static_bend/" + QString::number(i)); //-1 bo indexy od 0
+        scene_visualisation->addPixmap(pixmap_element);
+    }
+
+    for (int i = 0; i < MAX_SENSORS_TOUCH; i++){
+        QPixmap pixmap_element(":/visualisation_element_static_touch/" + QString::number(i)); //-1 bo indexy od 0
+        scene_visualisation->addPixmap(pixmap_element);
+    }
+
+    // laduje wczytane dane do wykresow oraz wizualizacji
+    // odnosi sie do poszczegolnych danych poprzez wektor wskaznikow na wektory danych
+    for (int i = 0; i < pointers_bendSensor.size(); i++) {
+        ui->graph_bending->graph(i)->setData(graph_time, *(pointers_bendSensor.at(i)));
+        set_hand_visualisation_scene(SENSOR_TYPE_BEND, i+1, pointers_bendSensor.at(i)->at(pointers_bendSensor.at(i)->size()-1)); //i+1 bo indexy define od 1
+    }
+
+    // wyswietla wczytane dane na wykresach, wizualizacjach, progress barach
+    // odnosi sie do najnowszej danej w wektorze danych z ktorych korzystaja wykresy
+    for (int i = 0; i < pointers_touchSensor.size(); i++) 
+    {
+        ui->graph_touch->graph(i)->setData(graph_time, *(pointers_touchSensor.at(i)));
+        set_hand_visualisation_scene(SENSOR_TYPE_TOUCH, i+1, pointers_touchSensor.at(i)->at(pointers_touchSensor.at(i)->size()-1)); //i+1 bo indexy define od 1
+        switch (i) 
+        {
+            case 0:
+                ui->progressBar_finger_1->setValue(convert_touch_value(sensor_touch_01.at(sensor_touch_01.size()-1)));
+                break;
+            
+            case 1:
+                ui->progressBar_finger_2->setValue(convert_touch_value(sensor_touch_02.at(sensor_touch_02.size()-1)));
+                break;
+            
+            case 2:
+                ui->progressBar_finger_3->setValue(convert_touch_value(sensor_touch_03.at(sensor_touch_03.size()-1)));
+                break;
+            
+            case 3:
+                ui->progressBar_finger_4->setValue(convert_touch_value(sensor_touch_04.at(sensor_touch_04.size()-1)));
+                break;
+
+            case 4:
+                ui->progressBar_finger_5->setValue(convert_touch_value(sensor_touch_05.at(sensor_touch_05.size()-1)));
+                break;
+        }
+    }
+
+    // laduje wczytane dane do wykresow,
+    // odnosi sie do poszczegolnych danych poprzez wektor wskaznikow na wektory danych
+    for (int i = 0; i < pointers_accSensor.size(); i++)
+        ui->graph_orientation->graph(i)->setData(graph_time, *(pointers_accSensor.at(i)));
+
+    QString value;
+    value = (QString::number(sensor_acc_x.at(sensor_acc_x.size()-1))).rightJustified(3, '0'); // rightJustified odnosi się do zer a nie całego tesktu
+    ui->value_orientationX->setText(value);                                                   // wyświetlanie jest dopiero tutaj
+    value = (QString::number(sensor_acc_z.at(sensor_acc_z.size()-1))).rightJustified(3, '0');
+    ui->value_orientationZ->setText(value);
+
+    
+    // rysuje wykres
+    ui->graph_bending->replot();
+    ui->graph_touch->replot();
+    ui->graph_orientation->replot();
+
+    // rysuje wizualizacje
+    ui->graphics_handVisualization->setScene(scene_visualisation);
+    ui->graphics_handVisualization->show();
+
+    // czas pomiarow sie zwieksza
+    time_now += (double)TIMER_TIMEOUT_MS / 1000.0f;
+}
+
 /*!
 * \brief Przelicza wartosci 8 bitowe na wartosci procentowe
 * 
@@ -664,6 +794,7 @@ void MainWindow::parse(const std::string& dataframe_chunk) {
         sensor_id = -1,
         sensor_value = -1;
 
+    std::cout << "READ DATA" << std::endl;
     // wczytuje dane z ramki
     sscanf(dataframe_chunk.c_str(), "%01X%01X%02X", &sensor_type, &sensor_id, &sensor_value);
 
@@ -674,6 +805,7 @@ void MainWindow::parse(const std::string& dataframe_chunk) {
     // najpierw sprawdza typ czujnika (bend, touch, acc)
     // nastepnie jego id (dany palec/os akc.)
     // i laduje w odpowiedni wektor
+    std::cout << "SWITCH" << std::endl;
     switch(sensor_type) {
         case SENSOR_TYPE_BEND:
             switch(sensor_id) {

@@ -52,10 +52,12 @@
 
 // -- komunikaty wysylane
 #define DEVICE_HANDSHAKE            "01\n"
+#define DEVICE_START                "02\n"
 
 // -- komunikaty odbierane
 #define DEVICE_HANDSHAKE_RESPONSE   0x10
-#define DEVICE_FIRST_WORD           0xF005
+#define DEVICE_START_RESPONSE       0x20
+#define DEVICE_FIRST_WORD           0xF0
 
 // WYKRESY
 #define X_RANGE_POINTS              20
@@ -152,6 +154,7 @@ public slots:
      */
     void device_ready();
 
+    void handle_data(const std::string& _data);
 
 
     /*!
