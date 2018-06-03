@@ -83,6 +83,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(this, SIGNAL(disconnect_me()), this, SLOT(action_disconnect_click()));
     QObject::connect(this, SIGNAL(reconnect()), this, SLOT(action_connect_click()));
 
+
     // opcje do debugowania
     debugTimer = new QTimer(this);
     debug_on = false;
@@ -171,6 +172,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->action_testrun, SIGNAL(triggered()), this, SLOT(testrun()));
     QObject::connect(debugTimer, SIGNAL(timeout()), this, SLOT(testrun_timeoutHandler()));
 
+    QObject::connect(ui->graphics_finger_5, SIGNAL(clicked()), this, SLOT(vibrate_pinky()));
+    QObject::connect(this, SIGNAL(test_vibrate_pinky()), this, SLOT(vibrate_pinky()));
+
 }
 
 /*!
@@ -210,6 +214,8 @@ void MainWindow::action_connect_click() {
 
     // aby sprawdzic czy jest to proba polaczenia czy tez nowe polaczenie oraz do logow, static bo akcja reconnect wywoluje funkcje ponownie 
     static int timeout_counter = 0; 
+
+    device_finished = false;
 
     // otwieranie ustawien polaczenia
     connectionWindow = new Connection(this);
@@ -294,9 +300,20 @@ void MainWindow::action_connect_click() {
  * Podejmuje próbę rozłączenia.
  */
 void MainWindow::action_disconnect_click() {
+    
+    int disconnect_try = 0;
 
     if (serial->isOpen()) {
         ui->terminal->append(tr("Rozłączanie urządzenia. . ."));
+
+        while (!device_finished) {
+            if (serial->isOpen() && device_isReady)
+                ui->terminal->append(tr("Próba rozłączenia nr ") + QString::number(disconnect_try) + QString("\n"));
+                serial->write(DEVICE_STOP);
+                delay_seconds(1);
+                disconnect_try++;
+        }
+
         serial->close();
     } else {
         ui->terminal->append(tr("Uwaga: Brak urządzeń do rozłączenia!")); 
@@ -338,8 +355,8 @@ void MainWindow::serial_dataAvailable() {
         int value;
 
         if (!device_isReady) {
-            
             if (!device_firstWord) {
+                std::cout << "DEVICE FIRST WORD" << std::endl;
                 sscanf(datas.toStdString().c_str(), "%04X", &value);
                 if (value == DEVICE_FIRST_WORD) device_firstWord = true;
                 
@@ -348,14 +365,17 @@ void MainWindow::serial_dataAvailable() {
                 serial->write(DEVICE_HANDSHAKE);
 
             } else if (!device_isReady) {
-                std::cout << "DEVICE HANDLE DATA" << std::endl;
+                std::cout << "DEVICE READY" << std::endl;
                 sscanf(datas.toStdString().c_str(), "%02X", &value);
                 if (value == DEVICE_HANDSHAKE_RESPONSE) emit device_ready();
             }
         } else if (device_isReady && datas.size() > 0) {
             sscanf(datas.toStdString().c_str(), "%02X", &value);
-            if (value != DEVICE_START_RESPONSE) {
-                std::cout << "DEVICE HANDLE DATA" << std::endl;
+            if (value == DEVICE_STOP_RESPONSE) {
+                std::cout << "STOPPING" << std::endl;
+                device_finished = true;
+            }
+            else if (value != DEVICE_START_RESPONSE && (value & 0xF0) != DEVICE_VIBRATE) {
                 handle_data(datas.toStdString());
             }
         }
@@ -602,24 +622,18 @@ void MainWindow::testrun_timeoutHandler() {
 void MainWindow::handle_data(const std::string& _data) {
     // WCZYTYWANIE I WYSWIETLANIE DANYCH
 
-    std::cout << "BEGIN HANDLE" << std::endl;
     // czy punktow jest wiecej niz zalozony zakres
     bool full_range = (time_now > ((double) X_RANGE_POINTS / (1000.0f / (double) TIMER_TIMEOUT_MS)));
 
-    std::cout << "SENSORS: ";
     // (do wczytywania) liczba sensorow
     int devices_no = -1;
     sscanf(_data.c_str(), "%02X", &devices_no);
-    std::cout << devices_no << std::endl;
 
-    std::cout << "PARSE BEGIN" << std::endl;
     // wczytuje i parsuje po 4*4 bity z ramki
     for (int i = 0; i < MAX_SENSORS; i++) {
-        std::cout << "PARSE " << i << std::endl;
         parse(_data.substr(2 + 4 * i, 4));
     }
 
-    std::cout << "GRAPHING BEGIN" << std::endl;
     // weryfikuje, czy przekroczony zostal zalozony zakres na osi x
     if (full_range) { 
         graph_time.pop_front();
@@ -794,7 +808,6 @@ void MainWindow::parse(const std::string& dataframe_chunk) {
         sensor_id = -1,
         sensor_value = -1;
 
-    std::cout << "READ DATA" << std::endl;
     // wczytuje dane z ramki
     sscanf(dataframe_chunk.c_str(), "%01X%01X%02X", &sensor_type, &sensor_id, &sensor_value);
 
@@ -805,7 +818,6 @@ void MainWindow::parse(const std::string& dataframe_chunk) {
     // najpierw sprawdza typ czujnika (bend, touch, acc)
     // nastepnie jego id (dany palec/os akc.)
     // i laduje w odpowiedni wektor
-    std::cout << "SWITCH" << std::endl;
     switch(sensor_type) {
         case SENSOR_TYPE_BEND:
             switch(sensor_id) {
@@ -894,5 +906,16 @@ void MainWindow::parse(const std::string& dataframe_chunk) {
         default:
             exit(-1);
             break;
+    }
+}
+
+void MainWindow::vibrate_pinky() {
+
+    if (device_isReady) {
+        char vibr[4];
+        sprintf(vibr, "%02X\n", DEVICE_VIBRATE|SENSOR_ID_FINGER_PINKY);
+        ui->terminal->append(tr("Wibracje, palec mały\n"));
+        if (serial->isWritable() && serial->isOpen()) 
+            serial->write(vibr);
     }
 }

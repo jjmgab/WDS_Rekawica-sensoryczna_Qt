@@ -53,11 +53,17 @@
 // -- komunikaty wysylane
 #define DEVICE_HANDSHAKE            "01\n"
 #define DEVICE_START                "02\n"
+#define DEVICE_STOP                 "03\n"
+
+#define DEVICE_VIBRATE              0x40
 
 // -- komunikaty odbierane
 #define DEVICE_HANDSHAKE_RESPONSE   0x10
 #define DEVICE_START_RESPONSE       0x20
+#define DEVICE_STOP_RESPONSE       0x30
 #define DEVICE_FIRST_WORD           0xF0
+
+#define DEVICE_VIBRATE_PINKY_RESPONSE   0x45
 
 // WYKRESY
 #define X_RANGE_POINTS              20
@@ -156,6 +162,8 @@ public slots:
 
     void handle_data(const std::string& _data);
 
+    void vibrate_pinky();
+
 
     /*!
      * \brief Uruchomienie testowego zbierania danych
@@ -178,6 +186,8 @@ signals:
      */
     void reconnect();
 
+    void test_vibrate_pinky();
+
 private:
     Ui::MainWindow *ui;
     
@@ -192,6 +202,7 @@ private:
     bool flag_isConnected;  // podlaczony
     bool device_firstWord;  // przeslal pierwszy komunikat
     bool device_isReady;    // gotowy do transmisji
+    bool device_finished;
 
     // -- dane do wykresow
     QVector<double> graph_time,         // czas
