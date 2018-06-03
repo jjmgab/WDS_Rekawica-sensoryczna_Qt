@@ -60,10 +60,8 @@
 // -- komunikaty odbierane
 #define DEVICE_HANDSHAKE_RESPONSE   0x10
 #define DEVICE_START_RESPONSE       0x20
-#define DEVICE_STOP_RESPONSE       0x30
+#define DEVICE_STOP_RESPONSE        0x30
 #define DEVICE_FIRST_WORD           0xF0
-
-#define DEVICE_VIBRATE_PINKY_RESPONSE   0x45
 
 // WYKRESY
 #define X_RANGE_POINTS              20
@@ -143,6 +141,8 @@ public slots:
      */
     void action_exit_click();
 
+
+
     /*!
      * \brief Reakcja na pojawienie sie danych na porcie szeregowym
      */
@@ -155,14 +155,52 @@ public slots:
      */
     void serial_errorOccurred(QSerialPort::SerialPortError error);
 
+
+
     /*!
      * \brief Slot określający gotowość urządzenia do pracy
      */
     void device_ready();
 
+    /*!
+     * \brief Slot odpowiedzialny za parsowanie ramki danych
+     */
     void handle_data(const std::string& _data);
 
+
+
+    /*!
+     * \brief Slot odpowiedzialny za wysłanie sygnału wibracji dla określonego palca
+     * 
+     * \param[in] ID silnika wibracyjnego (palca)
+     */
+    void vibrate(const int& sensor_id);
+
+    /*!
+     * \brief Slot odpowiedzialny za wywołanie wibracji na kciuku
+     */
+    void vibrate_thumb();
+
+    /*!
+     * \brief Slot odpowiedzialny za wywołanie wibracji na palcu wskazującym
+     */
+    void vibrate_index();
+    
+    /*!
+     * \brief Slot odpowiedzialny za wywołanie wibracji na palcu środkowym
+     */
+    void vibrate_middle();
+    
+    /*!
+     * \brief Slot odpowiedzialny za wywołanie wibracji na palcu serdecznym
+     */
+    void vibrate_ring();
+    
+    /*!
+     * \brief Slot odpowiedzialny za wywołanie wibracji na małym palcu
+     */
     void vibrate_pinky();
+
 
 
     /*!
@@ -185,8 +223,6 @@ signals:
      * \brief Sygnal emitowany w celu realizacji powtornej proby polaczenia
      */
     void reconnect();
-
-    void test_vibrate_pinky();
 
 private:
     Ui::MainWindow *ui;

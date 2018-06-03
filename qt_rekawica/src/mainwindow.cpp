@@ -172,9 +172,11 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->action_testrun, SIGNAL(triggered()), this, SLOT(testrun()));
     QObject::connect(debugTimer, SIGNAL(timeout()), this, SLOT(testrun_timeoutHandler()));
 
+    QObject::connect(ui->graphics_finger_1, SIGNAL(clicked()), this, SLOT(vibrate_thumb()));
+    QObject::connect(ui->graphics_finger_2, SIGNAL(clicked()), this, SLOT(vibrate_index()));
+    QObject::connect(ui->graphics_finger_3, SIGNAL(clicked()), this, SLOT(vibrate_middle()));
+    QObject::connect(ui->graphics_finger_4, SIGNAL(clicked()), this, SLOT(vibrate_ring()));
     QObject::connect(ui->graphics_finger_5, SIGNAL(clicked()), this, SLOT(vibrate_pinky()));
-    QObject::connect(this, SIGNAL(test_vibrate_pinky()), this, SLOT(vibrate_pinky()));
-
 }
 
 /*!
@@ -909,13 +911,34 @@ void MainWindow::parse(const std::string& dataframe_chunk) {
     }
 }
 
-void MainWindow::vibrate_pinky() {
-
+void MainWindow::vibrate(const int& sensor_id) {
     if (device_isReady) {
         char vibr[4];
-        sprintf(vibr, "%02X\n", DEVICE_VIBRATE|SENSOR_ID_FINGER_PINKY);
-        ui->terminal->append(tr("Wibracje, palec mały\n"));
-        if (serial->isWritable() && serial->isOpen()) 
-            serial->write(vibr);
+        if (sensor_id >= SENSOR_ID_FINGER_THUMB && sensor_id <= SENSOR_ID_FINGER_PINKY) {
+            sprintf(vibr, "%02X\n", DEVICE_VIBRATE|sensor_id);
+            ui->terminal->append(tr("Wibracja ") + QString("%1").arg(vibr, 0, 16));
+            if (serial->isWritable() && serial->isOpen()) 
+                serial->write(vibr);
+        }
     }
+}
+
+void MainWindow::vibrate_thumb() {
+    MainWindow::vibrate(SENSOR_ID_FINGER_THUMB);
+}
+
+void MainWindow::vibrate_index() {
+    MainWindow::vibrate(SENSOR_ID_FINGER_INDEX);
+}
+
+void MainWindow::vibrate_middle() {
+    MainWindow::vibrate(SENSOR_ID_FINGER_MIDDLE);
+}
+
+void MainWindow::vibrate_ring() {
+    MainWindow::vibrate(SENSOR_ID_FINGER_RING);
+}
+
+void MainWindow::vibrate_pinky() {
+    MainWindow::vibrate(SENSOR_ID_FINGER_PINKY);
 }
