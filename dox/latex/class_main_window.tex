@@ -1,0 +1,470 @@
+\hypertarget{class_main_window}{}\section{Dokumentacja klasy Main\+Window}
+\label{class_main_window}\index{Main\+Window@{Main\+Window}}
+
+
+Klasa definiujaca glowne okno.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+hh$>$}
+
+
+
+Diagram dziedziczenia dla Main\+Window\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_main_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Sloty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_main_window_a8ad6af79d8b18fa2ff69866afbe6ecc7}{action\+\_\+connect\+\_\+click} ()
+\begin{DoxyCompactList}\small\item\em Reakcja na wcisniecie opcji \char`\"{}\+Polacz\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a4660903387809c38a5db5a2d4a0bc55e}{action\+\_\+disconnect\+\_\+click} ()
+\begin{DoxyCompactList}\small\item\em Reakcja na wcisniecie opcji \char`\"{}\+Rozlacz\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a43f1250800036cd68a802a31f225fd9a}{action\+\_\+exit\+\_\+click} ()
+\begin{DoxyCompactList}\small\item\em Reakcja na wcisniecie opcji \char`\"{}\+Wyjdz\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a8ef5ba3cc49d3b686953728b0f32ac25}{serial\+\_\+data\+Available} ()
+\begin{DoxyCompactList}\small\item\em Reakcja na pojawienie sie danych na porcie szeregowym. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a98049227c3d1ee766d9d2a85c057074e}{serial\+\_\+error\+Occurred} (Q\+Serial\+Port\+::\+Serial\+Port\+Error error)
+\begin{DoxyCompactList}\small\item\em Reakcja na pojawienie sie bledu na porcie szeregowym. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a979be71b9bb0355416aee2b4e3d664d4}{device\+\_\+ready} ()
+\begin{DoxyCompactList}\small\item\em Slot określający gotowość urządzenia do pracy. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_ac19d30c65182c2d0e75a5be88471fdbd}{handle\+\_\+data} (const std\+::string \&\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Slot odpowiedzialny za parsowanie ramki danych. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a3412d9c342cff27322e19266191c311a}{vibrate} (const int \&sensor\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Slot odpowiedzialny za wysłanie sygnału wibracji dla określonego palca. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a297ac4c713baaf6eff4bc6aebef110ff}{vibrate\+\_\+thumb} ()
+\begin{DoxyCompactList}\small\item\em Slot odpowiedzialny za wywołanie wibracji na kciuku. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_ad1b286f1dc9b3cd44283491c9356bea2}{vibrate\+\_\+index} ()
+\begin{DoxyCompactList}\small\item\em Slot odpowiedzialny za wywołanie wibracji na palcu wskazującym. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a017e5b2147ea4f7784b5e9f489d3bad3}{vibrate\+\_\+middle} ()
+\begin{DoxyCompactList}\small\item\em Slot odpowiedzialny za wywołanie wibracji na palcu środkowym. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_aa115fb022ec2db4852785d5e41967fa0}{vibrate\+\_\+ring} ()
+\begin{DoxyCompactList}\small\item\em Slot odpowiedzialny za wywołanie wibracji na palcu serdecznym. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_afd646ade55a2b1a61c21c0c1b45c2c67}{vibrate\+\_\+pinky} ()
+\begin{DoxyCompactList}\small\item\em Slot odpowiedzialny za wywołanie wibracji na małym palcu. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_ad15f695d0fd5b0beda1480517cfb0b86}{testrun} ()
+\begin{DoxyCompactList}\small\item\em Uruchomienie testowego zbierania danych. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a9d9abd7a1b1373c715d72c2205088cd3}{testrun\+\_\+timeout\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Reakcja na timeout timera testowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Sygnały}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_main_window_a788aec3f41100b2834e290ad1ebb560c}{disconnect\+\_\+me} ()
+\begin{DoxyCompactList}\small\item\em Sygnal emitowany w celu realizacji rozłączenia urządzenia. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a4ade9bb2a578a8c031b1c0c439771f46}{reconnect} ()
+\begin{DoxyCompactList}\small\item\em Sygnal emitowany w celu realizacji powtornej proby polaczenia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor parametryczny klasy \hyperlink{class_main_window}{Main\+Window}. \end{DoxyCompactList}\item 
+\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \hyperlink{class_main_window}{Main\+Window}. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_abd0de3498ec3287461bbe2ce70791ede}{parse} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Parsuje ramke danych. \end{DoxyCompactList}\item 
+double \hyperlink{class_main_window_ac16a3b21d65b063b89b87e772afcfd0c}{convert\+\_\+touch\+\_\+value} (double touch\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Przelicza wartosci 8 bitowe na wartosci procentowe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_main_window_a4d86826d446cf0ab604eb29d3e5e0473}{set\+\_\+hand\+\_\+visualisation\+\_\+scene} (int sensor\+\_\+type, int sensor\+\_\+id, int sensor\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Ustawia scene wizualizacji. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_ab0b70af5bbf9d5593219262c98fe1c71}{reset\+\_\+hand\+\_\+visualisation\+\_\+scene} ()
+\begin{DoxyCompactList}\small\item\em Resetuje wizualizacje do stanu niepodlaczonego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Graphics\+Scene $\ast$ \hyperlink{class_main_window_a9f7060038c5585a483d5b4f0b5f59a7c}{scene\+\_\+visualisation} = new Q\+Graphics\+Scene
+\item 
+Q\+Graphics\+Scene $\ast$ \hyperlink{class_main_window_ae0596a9c14d7ce17955bdc53aae33b96}{scene\+\_\+orientation} = new Q\+Graphics\+Scene
+\item 
+\hyperlink{class_ui_1_1_main_window}{Ui\+::\+Main\+Window} $\ast$ \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}
+\item 
+\hyperlink{class_connection}{Connection} $\ast$ \hyperlink{class_main_window_acdf7c3f40019c435964111615d084abd}{connection\+Window}
+\item 
+Q\+Serial\+Port $\ast$ \hyperlink{class_main_window_a9029411f21223671e111ff617fcece6a}{serial}
+\item 
+int \hyperlink{class_main_window_a93b6fc6e9f57184aaa853cf6106396be}{timeout\+\_\+counter}
+\item 
+bool \hyperlink{class_main_window_adaeb8abe2aaffe100eea01fea88401bc}{flag\+\_\+is\+Connected}
+\item 
+bool \hyperlink{class_main_window_af8520e13f6dc00d6171c19c995f31c37}{device\+\_\+first\+Word}
+\item 
+bool \hyperlink{class_main_window_abdbd21e2b6eb4addef5b97e7193c3c97}{device\+\_\+is\+Ready}
+\item 
+bool \hyperlink{class_main_window_ac2b317c4138542cc3505a8905ad196ff}{device\+\_\+finished}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_ae660597d87556a5044ec5b869761a22c}{graph\+\_\+time}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_ac69938fc088e26e13a40f09a18720e88}{sensor\+\_\+bend\+\_\+01}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_a3b58d3852e1d110314c09afd2d4c29fc}{sensor\+\_\+bend\+\_\+02}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_a562c97b5ed080b1ab7815fb48f99b720}{sensor\+\_\+bend\+\_\+03}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_a2a37b15b3e71f8ac6cff2123b4fbf985}{sensor\+\_\+bend\+\_\+04}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_a52ba178c00eafa6e8c4fdac74b555637}{sensor\+\_\+bend\+\_\+05}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_a14a4f5ab5630e31668a200d994b7dded}{sensor\+\_\+touch\+\_\+01}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_aa7da8803225f36fc45ed2fa6d614fdba}{sensor\+\_\+touch\+\_\+02}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_a44487fecb5e5621af5af0151723b75df}{sensor\+\_\+touch\+\_\+03}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_a39e38081a07e549ec737a222358ac100}{sensor\+\_\+touch\+\_\+04}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_a3b13b6facc4b919c04365045e64e85e6}{sensor\+\_\+touch\+\_\+05}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_a0af9eda8a9e677a6b69b0b0788149383}{sensor\+\_\+acc\+\_\+x}
+\item 
+Q\+Vector$<$ double $>$ \hyperlink{class_main_window_a675d363bcc0d4a72b27a18cce31958c0}{sensor\+\_\+acc\+\_\+z}
+\item 
+Q\+Vector$<$ Q\+Vector$<$ double $>$ $\ast$ $>$ \hyperlink{class_main_window_adae442bba459aafe03b3761691e26b4b}{pointers\+\_\+bend\+Sensor}
+\item 
+Q\+Vector$<$ Q\+Vector$<$ double $>$ $\ast$ $>$ \hyperlink{class_main_window_a922235380595bb912d0856b548f15f7f}{pointers\+\_\+touch\+Sensor}
+\item 
+Q\+Vector$<$ Q\+Vector$<$ double $>$ $\ast$ $>$ \hyperlink{class_main_window_a7072ba523f562127bf92df3eef1c9d17}{pointers\+\_\+acc\+Sensor}
+\item 
+double \hyperlink{class_main_window_a9b456625e28c62ec7cab475f7a552a2c}{time\+\_\+now}
+\item 
+Q\+Vector$<$ Q\+Pen $>$ \hyperlink{class_main_window_aa4c0759de9124c5cbfb68430255b4567}{pens}
+\item 
+Q\+Vector$<$ Q\+Pen $>$ \hyperlink{class_main_window_aec4ef361224b3332b651f0f1496e6dcc}{pens\+\_\+\+A\+CC}
+\item 
+Q\+Timer $\ast$ \hyperlink{class_main_window_a854823622594d31964edae0a1ea6ab57}{debug\+Timer}
+\item 
+bool \hyperlink{class_main_window_acc93e4640de90d7cf05f44dc6678f412}{debug\+\_\+on}
+\item 
+char $\ast$ \hyperlink{class_main_window_ae56bcafb6e46026ab75940212f9b871d}{debug\+\_\+frame}
+\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Klasa modeluje pojęcie głównego okna programu. 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{Main\+Window(\+Q\+Widget $\ast$parent=nullptr)}{MainWindow(QWidget *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Window\+::\+Main\+Window (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}{}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}
+Konstruktor parametryczny klasy.
+
+Inicjalizuje wszystkie graficzne elementy okna oraz definiuje połączenia między wykorzystywanymi sygnałami i slotami. \index{Main\+Window@{Main\+Window}!````~Main\+Window@{$\sim$\+Main\+Window}}
+\index{````~Main\+Window@{$\sim$\+Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{$\sim$\+Main\+Window()}{~MainWindow()}}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Window\+::$\sim$\+Main\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\index{Main\+Window@{Main\+Window}!action\+\_\+connect\+\_\+click@{action\+\_\+connect\+\_\+click}}
+\index{action\+\_\+connect\+\_\+click@{action\+\_\+connect\+\_\+click}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{action\+\_\+connect\+\_\+click}{action_connect_click}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::action\+\_\+connect\+\_\+click (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a8ad6af79d8b18fa2ff69866afbe6ecc7}{}\label{class_main_window_a8ad6af79d8b18fa2ff69866afbe6ecc7}
+Slot określający reakcję na wciśnięcie przycisku \char`\"{}\+Połącz\char`\"{}.
+
+Uruchamia dodatkowe okno klasy \hyperlink{class_connection}{Connection}, w którym użytkownik określa ustawienia połączenia. Następnie podejmuje próbę połączenia. \index{Main\+Window@{Main\+Window}!action\+\_\+disconnect\+\_\+click@{action\+\_\+disconnect\+\_\+click}}
+\index{action\+\_\+disconnect\+\_\+click@{action\+\_\+disconnect\+\_\+click}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{action\+\_\+disconnect\+\_\+click}{action_disconnect_click}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::action\+\_\+disconnect\+\_\+click (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a4660903387809c38a5db5a2d4a0bc55e}{}\label{class_main_window_a4660903387809c38a5db5a2d4a0bc55e}
+Slot określający reakcję na wciśnięcie przycisku \char`\"{}\+Rozłącz\char`\"{}.
+
+Podejmuje próbę rozłączenia. \index{Main\+Window@{Main\+Window}!action\+\_\+exit\+\_\+click@{action\+\_\+exit\+\_\+click}}
+\index{action\+\_\+exit\+\_\+click@{action\+\_\+exit\+\_\+click}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{action\+\_\+exit\+\_\+click}{action_exit_click}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::action\+\_\+exit\+\_\+click (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a43f1250800036cd68a802a31f225fd9a}{}\label{class_main_window_a43f1250800036cd68a802a31f225fd9a}
+Slot określający reakcję na wciśnięcie przycisku \char`\"{}\+Wyjdź\char`\"{}.
+
+Emituje sygnał załączający slot rozłączenia i wychodzi z programu. \index{Main\+Window@{Main\+Window}!convert\+\_\+touch\+\_\+value@{convert\+\_\+touch\+\_\+value}}
+\index{convert\+\_\+touch\+\_\+value@{convert\+\_\+touch\+\_\+value}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{convert\+\_\+touch\+\_\+value(double touch\+\_\+value)}{convert_touch_value(double touch_value)}}]{\setlength{\rightskip}{0pt plus 5cm}double Main\+Window\+::convert\+\_\+touch\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{double}]{touch\+\_\+value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_main_window_ac16a3b21d65b063b89b87e772afcfd0c}{}\label{class_main_window_ac16a3b21d65b063b89b87e772afcfd0c}
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em wartosc} & 8 bitowa \\
+\hline
+\mbox{\tt out}  & {\em wartosc} & procentowa 0-\/100\% double \\
+\hline
+\end{DoxyParams}
+\index{Main\+Window@{Main\+Window}!device\+\_\+ready@{device\+\_\+ready}}
+\index{device\+\_\+ready@{device\+\_\+ready}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{device\+\_\+ready}{device_ready}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::device\+\_\+ready (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a979be71b9bb0355416aee2b4e3d664d4}{}\label{class_main_window_a979be71b9bb0355416aee2b4e3d664d4}
+Wypisuje w terminalu i na pasku stanu informację o gotowości urządzenia. \index{Main\+Window@{Main\+Window}!disconnect\+\_\+me@{disconnect\+\_\+me}}
+\index{disconnect\+\_\+me@{disconnect\+\_\+me}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{disconnect\+\_\+me}{disconnect_me}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::disconnect\+\_\+me (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_main_window_a788aec3f41100b2834e290ad1ebb560c}{}\label{class_main_window_a788aec3f41100b2834e290ad1ebb560c}
+\index{Main\+Window@{Main\+Window}!handle\+\_\+data@{handle\+\_\+data}}
+\index{handle\+\_\+data@{handle\+\_\+data}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{handle\+\_\+data}{handle_data}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::handle\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{\+\_\+data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_ac19d30c65182c2d0e75a5be88471fdbd}{}\label{class_main_window_ac19d30c65182c2d0e75a5be88471fdbd}
+\index{Main\+Window@{Main\+Window}!parse@{parse}}
+\index{parse@{parse}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{parse(const std\+::string \&)}{parse(const std::string &)}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::parse (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{dataframe\+\_\+chunk}
+\end{DoxyParamCaption}
+)}\hypertarget{class_main_window_abd0de3498ec3287461bbe2ce70791ede}{}\label{class_main_window_abd0de3498ec3287461bbe2ce70791ede}
+\index{Main\+Window@{Main\+Window}!reconnect@{reconnect}}
+\index{reconnect@{reconnect}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{reconnect}{reconnect}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::reconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_main_window_a4ade9bb2a578a8c031b1c0c439771f46}{}\label{class_main_window_a4ade9bb2a578a8c031b1c0c439771f46}
+\index{Main\+Window@{Main\+Window}!reset\+\_\+hand\+\_\+visualisation\+\_\+scene@{reset\+\_\+hand\+\_\+visualisation\+\_\+scene}}
+\index{reset\+\_\+hand\+\_\+visualisation\+\_\+scene@{reset\+\_\+hand\+\_\+visualisation\+\_\+scene}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{reset\+\_\+hand\+\_\+visualisation\+\_\+scene()}{reset_hand_visualisation_scene()}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::reset\+\_\+hand\+\_\+visualisation\+\_\+scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_ab0b70af5bbf9d5593219262c98fe1c71}{}\label{class_main_window_ab0b70af5bbf9d5593219262c98fe1c71}
+\index{Main\+Window@{Main\+Window}!serial\+\_\+data\+Available@{serial\+\_\+data\+Available}}
+\index{serial\+\_\+data\+Available@{serial\+\_\+data\+Available}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{serial\+\_\+data\+Available}{serial_dataAvailable}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::serial\+\_\+data\+Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a8ef5ba3cc49d3b686953728b0f32ac25}{}\label{class_main_window_a8ef5ba3cc49d3b686953728b0f32ac25}
+Slot określający reakcję na pojawienie się danych na porcie szeregowym.
+
+Rozwiązana tu jest kwestia komunikacji między urządzeniem a komputerem. \index{Main\+Window@{Main\+Window}!serial\+\_\+error\+Occurred@{serial\+\_\+error\+Occurred}}
+\index{serial\+\_\+error\+Occurred@{serial\+\_\+error\+Occurred}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{serial\+\_\+error\+Occurred}{serial_errorOccurred}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::serial\+\_\+error\+Occurred (
+\begin{DoxyParamCaption}
+\item[{Q\+Serial\+Port\+::\+Serial\+Port\+Error}]{error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a98049227c3d1ee766d9d2a85c057074e}{}\label{class_main_window_a98049227c3d1ee766d9d2a85c057074e}
+Slot określający reakcję na pojawienie się błędu portu szeregowego.
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em kod} & bledu\\
+\hline
+\end{DoxyParams}
+Wyświetla w terminalu treść błędu. \index{Main\+Window@{Main\+Window}!set\+\_\+hand\+\_\+visualisation\+\_\+scene@{set\+\_\+hand\+\_\+visualisation\+\_\+scene}}
+\index{set\+\_\+hand\+\_\+visualisation\+\_\+scene@{set\+\_\+hand\+\_\+visualisation\+\_\+scene}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{set\+\_\+hand\+\_\+visualisation\+\_\+scene(int sensor\+\_\+type, int sensor\+\_\+id, int sensor\+\_\+value)}{set_hand_visualisation_scene(int sensor_type, int sensor_id, int sensor_value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::set\+\_\+hand\+\_\+visualisation\+\_\+scene (
+\begin{DoxyParamCaption}
+\item[{int}]{sensor\+\_\+type, }
+\item[{int}]{sensor\+\_\+id, }
+\item[{int}]{sensor\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a4d86826d446cf0ab604eb29d3e5e0473}{}\label{class_main_window_a4d86826d446cf0ab604eb29d3e5e0473}
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em int} & typ sensora (1-\/2) \\
+\hline
+\mbox{\tt in}  & {\em int} & id palca (1-\/5) \\
+\hline
+\mbox{\tt in}  & {\em int} & wartosc chwili obecnej (0-\/255) \\
+\hline
+\end{DoxyParams}
+\index{Main\+Window@{Main\+Window}!testrun@{testrun}}
+\index{testrun@{testrun}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{testrun}{testrun}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::testrun (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_ad15f695d0fd5b0beda1480517cfb0b86}{}\label{class_main_window_ad15f695d0fd5b0beda1480517cfb0b86}
+Wypisuje w terminalu i na pasku stanu informacje o uruchomieniu testowego przebiegu. Ignoruje wbudowane flagi -- sluzy za test parsowania ramki i wyswietlania na wykresie danych. \index{Main\+Window@{Main\+Window}!testrun\+\_\+timeout\+Handler@{testrun\+\_\+timeout\+Handler}}
+\index{testrun\+\_\+timeout\+Handler@{testrun\+\_\+timeout\+Handler}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{testrun\+\_\+timeout\+Handler}{testrun_timeoutHandler}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::testrun\+\_\+timeout\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a9d9abd7a1b1373c715d72c2205088cd3}{}\label{class_main_window_a9d9abd7a1b1373c715d72c2205088cd3}
+Generuje dane dla wszystkich mozliwych czujnikow, nastepnie parsuje je i wyswietla na wykresach. \index{Main\+Window@{Main\+Window}!vibrate@{vibrate}}
+\index{vibrate@{vibrate}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{vibrate}{vibrate}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::vibrate (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{sensor\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a3412d9c342cff27322e19266191c311a}{}\label{class_main_window_a3412d9c342cff27322e19266191c311a}
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em ID} & silnika wibracyjnego (palca) \\
+\hline
+\end{DoxyParams}
+\index{Main\+Window@{Main\+Window}!vibrate\+\_\+index@{vibrate\+\_\+index}}
+\index{vibrate\+\_\+index@{vibrate\+\_\+index}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{vibrate\+\_\+index}{vibrate_index}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::vibrate\+\_\+index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_ad1b286f1dc9b3cd44283491c9356bea2}{}\label{class_main_window_ad1b286f1dc9b3cd44283491c9356bea2}
+\index{Main\+Window@{Main\+Window}!vibrate\+\_\+middle@{vibrate\+\_\+middle}}
+\index{vibrate\+\_\+middle@{vibrate\+\_\+middle}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{vibrate\+\_\+middle}{vibrate_middle}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::vibrate\+\_\+middle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a017e5b2147ea4f7784b5e9f489d3bad3}{}\label{class_main_window_a017e5b2147ea4f7784b5e9f489d3bad3}
+\index{Main\+Window@{Main\+Window}!vibrate\+\_\+pinky@{vibrate\+\_\+pinky}}
+\index{vibrate\+\_\+pinky@{vibrate\+\_\+pinky}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{vibrate\+\_\+pinky}{vibrate_pinky}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::vibrate\+\_\+pinky (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_afd646ade55a2b1a61c21c0c1b45c2c67}{}\label{class_main_window_afd646ade55a2b1a61c21c0c1b45c2c67}
+\index{Main\+Window@{Main\+Window}!vibrate\+\_\+ring@{vibrate\+\_\+ring}}
+\index{vibrate\+\_\+ring@{vibrate\+\_\+ring}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{vibrate\+\_\+ring}{vibrate_ring}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::vibrate\+\_\+ring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_aa115fb022ec2db4852785d5e41967fa0}{}\label{class_main_window_aa115fb022ec2db4852785d5e41967fa0}
+\index{Main\+Window@{Main\+Window}!vibrate\+\_\+thumb@{vibrate\+\_\+thumb}}
+\index{vibrate\+\_\+thumb@{vibrate\+\_\+thumb}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{vibrate\+\_\+thumb}{vibrate_thumb}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::vibrate\+\_\+thumb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a297ac4c713baaf6eff4bc6aebef110ff}{}\label{class_main_window_a297ac4c713baaf6eff4bc6aebef110ff}
+
+
+\subsection{Dokumentacja atrybutów składowych}
+\index{Main\+Window@{Main\+Window}!connection\+Window@{connection\+Window}}
+\index{connection\+Window@{connection\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{connection\+Window}{connectionWindow}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Connection}$\ast$ Main\+Window\+::connection\+Window\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_acdf7c3f40019c435964111615d084abd}{}\label{class_main_window_acdf7c3f40019c435964111615d084abd}
+\index{Main\+Window@{Main\+Window}!debug\+\_\+frame@{debug\+\_\+frame}}
+\index{debug\+\_\+frame@{debug\+\_\+frame}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{debug\+\_\+frame}{debug_frame}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Main\+Window\+::debug\+\_\+frame\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_ae56bcafb6e46026ab75940212f9b871d}{}\label{class_main_window_ae56bcafb6e46026ab75940212f9b871d}
+\index{Main\+Window@{Main\+Window}!debug\+\_\+on@{debug\+\_\+on}}
+\index{debug\+\_\+on@{debug\+\_\+on}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{debug\+\_\+on}{debug_on}}]{\setlength{\rightskip}{0pt plus 5cm}bool Main\+Window\+::debug\+\_\+on\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_acc93e4640de90d7cf05f44dc6678f412}{}\label{class_main_window_acc93e4640de90d7cf05f44dc6678f412}
+\index{Main\+Window@{Main\+Window}!debug\+Timer@{debug\+Timer}}
+\index{debug\+Timer@{debug\+Timer}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{debug\+Timer}{debugTimer}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Timer$\ast$ Main\+Window\+::debug\+Timer\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a854823622594d31964edae0a1ea6ab57}{}\label{class_main_window_a854823622594d31964edae0a1ea6ab57}
+\index{Main\+Window@{Main\+Window}!device\+\_\+finished@{device\+\_\+finished}}
+\index{device\+\_\+finished@{device\+\_\+finished}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{device\+\_\+finished}{device_finished}}]{\setlength{\rightskip}{0pt plus 5cm}bool Main\+Window\+::device\+\_\+finished\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_ac2b317c4138542cc3505a8905ad196ff}{}\label{class_main_window_ac2b317c4138542cc3505a8905ad196ff}
+\index{Main\+Window@{Main\+Window}!device\+\_\+first\+Word@{device\+\_\+first\+Word}}
+\index{device\+\_\+first\+Word@{device\+\_\+first\+Word}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{device\+\_\+first\+Word}{device_firstWord}}]{\setlength{\rightskip}{0pt plus 5cm}bool Main\+Window\+::device\+\_\+first\+Word\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_af8520e13f6dc00d6171c19c995f31c37}{}\label{class_main_window_af8520e13f6dc00d6171c19c995f31c37}
+\index{Main\+Window@{Main\+Window}!device\+\_\+is\+Ready@{device\+\_\+is\+Ready}}
+\index{device\+\_\+is\+Ready@{device\+\_\+is\+Ready}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{device\+\_\+is\+Ready}{device_isReady}}]{\setlength{\rightskip}{0pt plus 5cm}bool Main\+Window\+::device\+\_\+is\+Ready\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_abdbd21e2b6eb4addef5b97e7193c3c97}{}\label{class_main_window_abdbd21e2b6eb4addef5b97e7193c3c97}
+\index{Main\+Window@{Main\+Window}!flag\+\_\+is\+Connected@{flag\+\_\+is\+Connected}}
+\index{flag\+\_\+is\+Connected@{flag\+\_\+is\+Connected}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{flag\+\_\+is\+Connected}{flag_isConnected}}]{\setlength{\rightskip}{0pt plus 5cm}bool Main\+Window\+::flag\+\_\+is\+Connected\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_adaeb8abe2aaffe100eea01fea88401bc}{}\label{class_main_window_adaeb8abe2aaffe100eea01fea88401bc}
+\index{Main\+Window@{Main\+Window}!graph\+\_\+time@{graph\+\_\+time}}
+\index{graph\+\_\+time@{graph\+\_\+time}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{graph\+\_\+time}{graph_time}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::graph\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_ae660597d87556a5044ec5b869761a22c}{}\label{class_main_window_ae660597d87556a5044ec5b869761a22c}
+\index{Main\+Window@{Main\+Window}!pens@{pens}}
+\index{pens@{pens}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{pens}{pens}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$Q\+Pen$>$ Main\+Window\+::pens\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_aa4c0759de9124c5cbfb68430255b4567}{}\label{class_main_window_aa4c0759de9124c5cbfb68430255b4567}
+\index{Main\+Window@{Main\+Window}!pens\+\_\+\+A\+CC@{pens\+\_\+\+A\+CC}}
+\index{pens\+\_\+\+A\+CC@{pens\+\_\+\+A\+CC}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{pens\+\_\+\+A\+CC}{pens_ACC}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$Q\+Pen$>$ Main\+Window\+::pens\+\_\+\+A\+CC\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_aec4ef361224b3332b651f0f1496e6dcc}{}\label{class_main_window_aec4ef361224b3332b651f0f1496e6dcc}
+\index{Main\+Window@{Main\+Window}!pointers\+\_\+acc\+Sensor@{pointers\+\_\+acc\+Sensor}}
+\index{pointers\+\_\+acc\+Sensor@{pointers\+\_\+acc\+Sensor}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{pointers\+\_\+acc\+Sensor}{pointers_accSensor}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$Q\+Vector$<$double$>$$\ast$$>$ Main\+Window\+::pointers\+\_\+acc\+Sensor\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a7072ba523f562127bf92df3eef1c9d17}{}\label{class_main_window_a7072ba523f562127bf92df3eef1c9d17}
+\index{Main\+Window@{Main\+Window}!pointers\+\_\+bend\+Sensor@{pointers\+\_\+bend\+Sensor}}
+\index{pointers\+\_\+bend\+Sensor@{pointers\+\_\+bend\+Sensor}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{pointers\+\_\+bend\+Sensor}{pointers_bendSensor}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$Q\+Vector$<$double$>$$\ast$$>$ Main\+Window\+::pointers\+\_\+bend\+Sensor\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_adae442bba459aafe03b3761691e26b4b}{}\label{class_main_window_adae442bba459aafe03b3761691e26b4b}
+\index{Main\+Window@{Main\+Window}!pointers\+\_\+touch\+Sensor@{pointers\+\_\+touch\+Sensor}}
+\index{pointers\+\_\+touch\+Sensor@{pointers\+\_\+touch\+Sensor}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{pointers\+\_\+touch\+Sensor}{pointers_touchSensor}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$Q\+Vector$<$double$>$$\ast$$>$ Main\+Window\+::pointers\+\_\+touch\+Sensor\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a922235380595bb912d0856b548f15f7f}{}\label{class_main_window_a922235380595bb912d0856b548f15f7f}
+\index{Main\+Window@{Main\+Window}!scene\+\_\+orientation@{scene\+\_\+orientation}}
+\index{scene\+\_\+orientation@{scene\+\_\+orientation}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{scene\+\_\+orientation}{scene_orientation}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Graphics\+Scene$\ast$ Main\+Window\+::scene\+\_\+orientation = new Q\+Graphics\+Scene\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_ae0596a9c14d7ce17955bdc53aae33b96}{}\label{class_main_window_ae0596a9c14d7ce17955bdc53aae33b96}
+\index{Main\+Window@{Main\+Window}!scene\+\_\+visualisation@{scene\+\_\+visualisation}}
+\index{scene\+\_\+visualisation@{scene\+\_\+visualisation}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{scene\+\_\+visualisation}{scene_visualisation}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Graphics\+Scene$\ast$ Main\+Window\+::scene\+\_\+visualisation = new Q\+Graphics\+Scene\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a9f7060038c5585a483d5b4f0b5f59a7c}{}\label{class_main_window_a9f7060038c5585a483d5b4f0b5f59a7c}
+\index{Main\+Window@{Main\+Window}!sensor\+\_\+acc\+\_\+x@{sensor\+\_\+acc\+\_\+x}}
+\index{sensor\+\_\+acc\+\_\+x@{sensor\+\_\+acc\+\_\+x}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sensor\+\_\+acc\+\_\+x}{sensor_acc_x}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::sensor\+\_\+acc\+\_\+x\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a0af9eda8a9e677a6b69b0b0788149383}{}\label{class_main_window_a0af9eda8a9e677a6b69b0b0788149383}
+\index{Main\+Window@{Main\+Window}!sensor\+\_\+acc\+\_\+z@{sensor\+\_\+acc\+\_\+z}}
+\index{sensor\+\_\+acc\+\_\+z@{sensor\+\_\+acc\+\_\+z}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sensor\+\_\+acc\+\_\+z}{sensor_acc_z}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::sensor\+\_\+acc\+\_\+z\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a675d363bcc0d4a72b27a18cce31958c0}{}\label{class_main_window_a675d363bcc0d4a72b27a18cce31958c0}
+\index{Main\+Window@{Main\+Window}!sensor\+\_\+bend\+\_\+01@{sensor\+\_\+bend\+\_\+01}}
+\index{sensor\+\_\+bend\+\_\+01@{sensor\+\_\+bend\+\_\+01}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sensor\+\_\+bend\+\_\+01}{sensor_bend_01}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::sensor\+\_\+bend\+\_\+01\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_ac69938fc088e26e13a40f09a18720e88}{}\label{class_main_window_ac69938fc088e26e13a40f09a18720e88}
+\index{Main\+Window@{Main\+Window}!sensor\+\_\+bend\+\_\+02@{sensor\+\_\+bend\+\_\+02}}
+\index{sensor\+\_\+bend\+\_\+02@{sensor\+\_\+bend\+\_\+02}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sensor\+\_\+bend\+\_\+02}{sensor_bend_02}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::sensor\+\_\+bend\+\_\+02\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a3b58d3852e1d110314c09afd2d4c29fc}{}\label{class_main_window_a3b58d3852e1d110314c09afd2d4c29fc}
+\index{Main\+Window@{Main\+Window}!sensor\+\_\+bend\+\_\+03@{sensor\+\_\+bend\+\_\+03}}
+\index{sensor\+\_\+bend\+\_\+03@{sensor\+\_\+bend\+\_\+03}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sensor\+\_\+bend\+\_\+03}{sensor_bend_03}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::sensor\+\_\+bend\+\_\+03\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a562c97b5ed080b1ab7815fb48f99b720}{}\label{class_main_window_a562c97b5ed080b1ab7815fb48f99b720}
+\index{Main\+Window@{Main\+Window}!sensor\+\_\+bend\+\_\+04@{sensor\+\_\+bend\+\_\+04}}
+\index{sensor\+\_\+bend\+\_\+04@{sensor\+\_\+bend\+\_\+04}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sensor\+\_\+bend\+\_\+04}{sensor_bend_04}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::sensor\+\_\+bend\+\_\+04\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a2a37b15b3e71f8ac6cff2123b4fbf985}{}\label{class_main_window_a2a37b15b3e71f8ac6cff2123b4fbf985}
+\index{Main\+Window@{Main\+Window}!sensor\+\_\+bend\+\_\+05@{sensor\+\_\+bend\+\_\+05}}
+\index{sensor\+\_\+bend\+\_\+05@{sensor\+\_\+bend\+\_\+05}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sensor\+\_\+bend\+\_\+05}{sensor_bend_05}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::sensor\+\_\+bend\+\_\+05\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a52ba178c00eafa6e8c4fdac74b555637}{}\label{class_main_window_a52ba178c00eafa6e8c4fdac74b555637}
+\index{Main\+Window@{Main\+Window}!sensor\+\_\+touch\+\_\+01@{sensor\+\_\+touch\+\_\+01}}
+\index{sensor\+\_\+touch\+\_\+01@{sensor\+\_\+touch\+\_\+01}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sensor\+\_\+touch\+\_\+01}{sensor_touch_01}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::sensor\+\_\+touch\+\_\+01\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a14a4f5ab5630e31668a200d994b7dded}{}\label{class_main_window_a14a4f5ab5630e31668a200d994b7dded}
+\index{Main\+Window@{Main\+Window}!sensor\+\_\+touch\+\_\+02@{sensor\+\_\+touch\+\_\+02}}
+\index{sensor\+\_\+touch\+\_\+02@{sensor\+\_\+touch\+\_\+02}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sensor\+\_\+touch\+\_\+02}{sensor_touch_02}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::sensor\+\_\+touch\+\_\+02\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_aa7da8803225f36fc45ed2fa6d614fdba}{}\label{class_main_window_aa7da8803225f36fc45ed2fa6d614fdba}
+\index{Main\+Window@{Main\+Window}!sensor\+\_\+touch\+\_\+03@{sensor\+\_\+touch\+\_\+03}}
+\index{sensor\+\_\+touch\+\_\+03@{sensor\+\_\+touch\+\_\+03}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sensor\+\_\+touch\+\_\+03}{sensor_touch_03}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::sensor\+\_\+touch\+\_\+03\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a44487fecb5e5621af5af0151723b75df}{}\label{class_main_window_a44487fecb5e5621af5af0151723b75df}
+\index{Main\+Window@{Main\+Window}!sensor\+\_\+touch\+\_\+04@{sensor\+\_\+touch\+\_\+04}}
+\index{sensor\+\_\+touch\+\_\+04@{sensor\+\_\+touch\+\_\+04}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sensor\+\_\+touch\+\_\+04}{sensor_touch_04}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::sensor\+\_\+touch\+\_\+04\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a39e38081a07e549ec737a222358ac100}{}\label{class_main_window_a39e38081a07e549ec737a222358ac100}
+\index{Main\+Window@{Main\+Window}!sensor\+\_\+touch\+\_\+05@{sensor\+\_\+touch\+\_\+05}}
+\index{sensor\+\_\+touch\+\_\+05@{sensor\+\_\+touch\+\_\+05}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sensor\+\_\+touch\+\_\+05}{sensor_touch_05}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$double$>$ Main\+Window\+::sensor\+\_\+touch\+\_\+05\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a3b13b6facc4b919c04365045e64e85e6}{}\label{class_main_window_a3b13b6facc4b919c04365045e64e85e6}
+\index{Main\+Window@{Main\+Window}!serial@{serial}}
+\index{serial@{serial}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{serial}{serial}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Serial\+Port$\ast$ Main\+Window\+::serial\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a9029411f21223671e111ff617fcece6a}{}\label{class_main_window_a9029411f21223671e111ff617fcece6a}
+\index{Main\+Window@{Main\+Window}!time\+\_\+now@{time\+\_\+now}}
+\index{time\+\_\+now@{time\+\_\+now}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{time\+\_\+now}{time_now}}]{\setlength{\rightskip}{0pt plus 5cm}double Main\+Window\+::time\+\_\+now\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a9b456625e28c62ec7cab475f7a552a2c}{}\label{class_main_window_a9b456625e28c62ec7cab475f7a552a2c}
+\index{Main\+Window@{Main\+Window}!timeout\+\_\+counter@{timeout\+\_\+counter}}
+\index{timeout\+\_\+counter@{timeout\+\_\+counter}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{timeout\+\_\+counter}{timeout_counter}}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::timeout\+\_\+counter\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a93b6fc6e9f57184aaa853cf6106396be}{}\label{class_main_window_a93b6fc6e9f57184aaa853cf6106396be}
+\index{Main\+Window@{Main\+Window}!ui@{ui}}
+\index{ui@{ui}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{ui}{ui}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ui\+::\+Main\+Window}$\ast$ Main\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a35466a70ed47252a0191168126a352a5}{}\label{class_main_window_a35466a70ed47252a0191168126a352a5}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{mainwindow_8hh}{mainwindow.\+hh}\item 
+\hyperlink{moc__mainwindow_8cpp}{moc\+\_\+mainwindow.\+cpp}\item 
+\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}\end{DoxyCompactItemize}

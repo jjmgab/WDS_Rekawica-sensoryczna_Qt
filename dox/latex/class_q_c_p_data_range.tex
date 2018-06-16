@@ -1,0 +1,286 @@
+\hypertarget{class_q_c_p_data_range}{}\section{Dokumentacja klasy Q\+C\+P\+Data\+Range}
+\label{class_q_c_p_data_range}\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+
+
+Describes a data range given by begin and end index.  
+
+
+
+
+{\ttfamily \#include $<$qcustomplot.\+hh$>$}
+
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_data_range_a49e72fd9bace1da9d875136dcc04c986}{Q\+C\+P\+Data\+Range} ()
+\item 
+\hyperlink{class_q_c_p_data_range_a6c7f4a3684210423270515403060e9cf}{Q\+C\+P\+Data\+Range} (int \hyperlink{class_q_c_p_data_range_a6b14c93d5010e973427b8ecaebf77864}{begin}, int \hyperlink{class_q_c_p_data_range_add50cb7075b68a0dd35fb5c962c81bbf}{end})
+\item 
+bool \hyperlink{class_q_c_p_data_range_a6947b187a6562b98e22e32a5f9663de2}{operator==} (const \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} \&other) const 
+\item 
+bool \hyperlink{class_q_c_p_data_range_a8eaea2a7c791e7ef494b03af547417a4}{operator!=} (const \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} \&other) const 
+\item 
+int \hyperlink{class_q_c_p_data_range_a6b14c93d5010e973427b8ecaebf77864}{begin} () const 
+\item 
+int \hyperlink{class_q_c_p_data_range_add50cb7075b68a0dd35fb5c962c81bbf}{end} () const 
+\item 
+int \hyperlink{class_q_c_p_data_range_aec29c6f4234c01ed7a56c3bb0e75f340}{size} () const 
+\item 
+int \hyperlink{class_q_c_p_data_range_a4e65d1bf09fce82dbc67a7b71b2cf088}{length} () const 
+\item 
+void \hyperlink{class_q_c_p_data_range_a54ff59048e01e46ac4aefafc844626c6}{set\+Begin} (int \hyperlink{class_q_c_p_data_range_a6b14c93d5010e973427b8ecaebf77864}{begin})
+\item 
+void \hyperlink{class_q_c_p_data_range_a277f1a9eafe70b9184d9c00b641ae5de}{set\+End} (int \hyperlink{class_q_c_p_data_range_add50cb7075b68a0dd35fb5c962c81bbf}{end})
+\item 
+bool \hyperlink{class_q_c_p_data_range_a063eeb2c81e86900d974936cbb83f508}{is\+Valid} () const 
+\item 
+bool \hyperlink{class_q_c_p_data_range_a2ab2e0710dbd4493133ab582ef7e5fc3}{is\+Empty} () const 
+\item 
+\hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} \hyperlink{class_q_c_p_data_range_a4de1bec5a6e1145bd332d93ac2cc8327}{bounded} (const \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} \&other) const 
+\item 
+\hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} \hyperlink{class_q_c_p_data_range_a92eb8e85db62f0f833486fa4521fb586}{expanded} (const \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} \&other) const 
+\item 
+\hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} \hyperlink{class_q_c_p_data_range_a2c56cbc35c3beaed34fca1839d570520}{intersection} (const \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} \&other) const 
+\item 
+\hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} \hyperlink{class_q_c_p_data_range_a7a7a144cd3df55a6e011b9a84f0f8b69}{adjusted} (int change\+Begin, int change\+End) const 
+\item 
+bool \hyperlink{class_q_c_p_data_range_afda3603f6ca7cb5c518cdaeea45af267}{intersects} (const \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} \&other) const 
+\item 
+bool \hyperlink{class_q_c_p_data_range_a691620b718e4bcefb77bcdde88bd1b34}{contains} (const \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} \&other) const 
+\end{DoxyCompactItemize}
+\subsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_q_c_p_data_range_a849baf613e8ad866a66aaf45682dde53}{m\+Begin}
+\item 
+int \hyperlink{class_q_c_p_data_range_ac22cfcf2795d5e9f617d788be9fb14a0}{m\+End}
+\end{DoxyCompactItemize}
+\subsection*{Funkcje powiązane}
+(Zauważ, że to nie są metody klas.) \begin{DoxyCompactItemize}
+\item 
+Q\+Debug \hyperlink{class_q_c_p_data_range_a486dd7af8a090ed069672e3510e6a082}{operator$<$$<$} (Q\+Debug d, const \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} \&data\+Range)
+\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+\hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} holds two integers describing the begin (\hyperlink{class_q_c_p_data_range_a54ff59048e01e46ac4aefafc844626c6}{set\+Begin}) and end (\hyperlink{class_q_c_p_data_range_a277f1a9eafe70b9184d9c00b641ae5de}{set\+End}) index of a contiguous set of data points. The end index points to the data point above the last data point that\textquotesingle{}s part of the data range, similarly to the nomenclature used in standard iterators.
+
+Data Ranges are not bound to a certain plottable, thus they can be freely exchanged, created and modified. If a non-\/contiguous data set shall be described, the class \hyperlink{class_q_c_p_data_selection}{Q\+C\+P\+Data\+Selection} is used, which holds and manages multiple instances of \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range}. In most situations, \hyperlink{class_q_c_p_data_selection}{Q\+C\+P\+Data\+Selection} is thus used.
+
+Both \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} and \hyperlink{class_q_c_p_data_selection}{Q\+C\+P\+Data\+Selection} offer convenience methods to work with them, e.\+g. \hyperlink{class_q_c_p_data_range_a4de1bec5a6e1145bd332d93ac2cc8327}{bounded}, \hyperlink{class_q_c_p_data_range_a92eb8e85db62f0f833486fa4521fb586}{expanded}, \hyperlink{class_q_c_p_data_range_afda3603f6ca7cb5c518cdaeea45af267}{intersects}, \hyperlink{class_q_c_p_data_range_a2c56cbc35c3beaed34fca1839d570520}{intersection}, \hyperlink{class_q_c_p_data_range_a7a7a144cd3df55a6e011b9a84f0f8b69}{adjusted}, \hyperlink{class_q_c_p_data_range_a691620b718e4bcefb77bcdde88bd1b34}{contains}. Further, addition and subtraction operators (defined in \hyperlink{class_q_c_p_data_selection}{Q\+C\+P\+Data\+Selection}) can be used to join/subtract data ranges and data selections (or mixtures), to retrieve a corresponding \hyperlink{class_q_c_p_data_selection}{Q\+C\+P\+Data\+Selection}.
+
+Q\+Custom\+Plot\textquotesingle{}s data selection mechanism is based on \hyperlink{class_q_c_p_data_selection}{Q\+C\+P\+Data\+Selection} and \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range}.
+
+\begin{DoxyNote}{Nota}
+Do not confuse \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range} with \hyperlink{class_q_c_p_range}{Q\+C\+P\+Range}. A \hyperlink{class_q_c_p_range}{Q\+C\+P\+Range} describes an interval in floating point plot coordinates, e.\+g. the current axis range. 
+\end{DoxyNote}
+
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{Q\+C\+P\+Data\+Range()}{QCPDataRange()}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Data\+Range\+::\+Q\+C\+P\+Data\+Range (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_q_c_p_data_range_a49e72fd9bace1da9d875136dcc04c986}{}\label{class_q_c_p_data_range_a49e72fd9bace1da9d875136dcc04c986}
+Creates an empty \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range}, with begin and end set to 0. \index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{Q\+C\+P\+Data\+Range(int begin, int end)}{QCPDataRange(int begin, int end)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Data\+Range\+::\+Q\+C\+P\+Data\+Range (
+\begin{DoxyParamCaption}
+\item[{int}]{begin, }
+\item[{int}]{end}
+\end{DoxyParamCaption}
+)}\hypertarget{class_q_c_p_data_range_a6c7f4a3684210423270515403060e9cf}{}\label{class_q_c_p_data_range_a6c7f4a3684210423270515403060e9cf}
+Creates a \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range}, initialized with the specified {\itshape begin} and {\itshape end}.
+
+No checks or corrections are made to ensure the resulting range is valid (\hyperlink{class_q_c_p_data_range_a063eeb2c81e86900d974936cbb83f508}{is\+Valid}). 
+
+\subsection{Dokumentacja funkcji składowych}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!adjusted@{adjusted}}
+\index{adjusted@{adjusted}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{adjusted(int change\+Begin, int change\+End) const }{adjusted(int changeBegin, int changeEnd) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Data\+Range} Q\+C\+P\+Data\+Range\+::adjusted (
+\begin{DoxyParamCaption}
+\item[{int}]{change\+Begin, }
+\item[{int}]{change\+End}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_data_range_a7a7a144cd3df55a6e011b9a84f0f8b69}{}\label{class_q_c_p_data_range_a7a7a144cd3df55a6e011b9a84f0f8b69}
+Returns a data range where {\itshape change\+Begin} and {\itshape change\+End} were added to the begin and end indices, respectively. \index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!begin@{begin}}
+\index{begin@{begin}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{begin() const }{begin() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Data\+Range\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_data_range_a6b14c93d5010e973427b8ecaebf77864}{}\label{class_q_c_p_data_range_a6b14c93d5010e973427b8ecaebf77864}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!bounded@{bounded}}
+\index{bounded@{bounded}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{bounded(const Q\+C\+P\+Data\+Range \&other) const }{bounded(const QCPDataRange &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Data\+Range} Q\+C\+P\+Data\+Range\+::bounded (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Data\+Range} \&}]{other}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_q_c_p_data_range_a4de1bec5a6e1145bd332d93ac2cc8327}{}\label{class_q_c_p_data_range_a4de1bec5a6e1145bd332d93ac2cc8327}
+Returns a data range that matches this data range, except that parts exceeding {\itshape other} are excluded.
+
+This method is very similar to \hyperlink{class_q_c_p_data_range_a2c56cbc35c3beaed34fca1839d570520}{intersection}, with one distinction\+: If this range and the {\itshape other} range share no intersection, the returned data range will be empty with begin and end set to the respective boundary side of {\itshape other}, at which this range is residing. (\hyperlink{class_q_c_p_data_range_a2c56cbc35c3beaed34fca1839d570520}{intersection} would just return a range with begin and end set to 0.) \index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!contains@{contains}}
+\index{contains@{contains}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{contains(const Q\+C\+P\+Data\+Range \&other) const }{contains(const QCPDataRange &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Data\+Range\+::contains (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Data\+Range} \&}]{other}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_q_c_p_data_range_a691620b718e4bcefb77bcdde88bd1b34}{}\label{class_q_c_p_data_range_a691620b718e4bcefb77bcdde88bd1b34}
+Returns whether all data points described by this data range are also in {\itshape other}.
+
+\begin{DoxySeeAlso}{Zobacz również}
+\hyperlink{class_q_c_p_data_range_afda3603f6ca7cb5c518cdaeea45af267}{intersects} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!end@{end}}
+\index{end@{end}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{end() const }{end() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Data\+Range\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_data_range_add50cb7075b68a0dd35fb5c962c81bbf}{}\label{class_q_c_p_data_range_add50cb7075b68a0dd35fb5c962c81bbf}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!expanded@{expanded}}
+\index{expanded@{expanded}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{expanded(const Q\+C\+P\+Data\+Range \&other) const }{expanded(const QCPDataRange &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Data\+Range} Q\+C\+P\+Data\+Range\+::expanded (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Data\+Range} \&}]{other}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_q_c_p_data_range_a92eb8e85db62f0f833486fa4521fb586}{}\label{class_q_c_p_data_range_a92eb8e85db62f0f833486fa4521fb586}
+Returns a data range that contains both this data range as well as {\itshape other}. \index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!intersection@{intersection}}
+\index{intersection@{intersection}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{intersection(const Q\+C\+P\+Data\+Range \&other) const }{intersection(const QCPDataRange &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Data\+Range} Q\+C\+P\+Data\+Range\+::intersection (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Data\+Range} \&}]{other}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_q_c_p_data_range_a2c56cbc35c3beaed34fca1839d570520}{}\label{class_q_c_p_data_range_a2c56cbc35c3beaed34fca1839d570520}
+Returns the data range which is contained in both this data range and {\itshape other}.
+
+This method is very similar to \hyperlink{class_q_c_p_data_range_a4de1bec5a6e1145bd332d93ac2cc8327}{bounded}, with one distinction\+: If this range and the {\itshape other} range share no intersection, the returned data range will be empty with begin and end set to 0. (\hyperlink{class_q_c_p_data_range_a4de1bec5a6e1145bd332d93ac2cc8327}{bounded} would return a range with begin and end set to one of the boundaries of {\itshape other}, depending on which side this range is on.)
+
+\begin{DoxySeeAlso}{Zobacz również}
+\hyperlink{class_q_c_p_data_selection_a08371e0e97001f5f688047223123958b}{Q\+C\+P\+Data\+Selection\+::intersection} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!intersects@{intersects}}
+\index{intersects@{intersects}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{intersects(const Q\+C\+P\+Data\+Range \&other) const }{intersects(const QCPDataRange &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Data\+Range\+::intersects (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Data\+Range} \&}]{other}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_q_c_p_data_range_afda3603f6ca7cb5c518cdaeea45af267}{}\label{class_q_c_p_data_range_afda3603f6ca7cb5c518cdaeea45af267}
+Returns whether this data range and {\itshape other} share common data points.
+
+\begin{DoxySeeAlso}{Zobacz również}
+\hyperlink{class_q_c_p_data_range_a2c56cbc35c3beaed34fca1839d570520}{intersection}, \hyperlink{class_q_c_p_data_range_a691620b718e4bcefb77bcdde88bd1b34}{contains} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{is\+Empty() const }{isEmpty() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Data\+Range\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_data_range_a2ab2e0710dbd4493133ab582ef7e5fc3}{}\label{class_q_c_p_data_range_a2ab2e0710dbd4493133ab582ef7e5fc3}
+Returns whether this range is empty, i.\+e. whether its begin index equals its end index.
+
+\begin{DoxySeeAlso}{Zobacz również}
+\hyperlink{class_q_c_p_data_range_aec29c6f4234c01ed7a56c3bb0e75f340}{size}, \hyperlink{class_q_c_p_data_range_a4e65d1bf09fce82dbc67a7b71b2cf088}{length} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{is\+Valid() const }{isValid() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Data\+Range\+::is\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_data_range_a063eeb2c81e86900d974936cbb83f508}{}\label{class_q_c_p_data_range_a063eeb2c81e86900d974936cbb83f508}
+Returns whether this range is valid. A valid range has a begin index greater or equal to 0, and an end index greater or equal to the begin index.
+
+\begin{DoxyNote}{Nota}
+Invalid ranges should be avoided and are never the result of any of \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot}\textquotesingle{}s methods (unless they are themselves fed with invalid ranges). Do not pass invalid ranges to \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot}\textquotesingle{}s methods. The invalid range is not inherently prevented in \hyperlink{class_q_c_p_data_range}{Q\+C\+P\+Data\+Range}, to allow temporary invalid begin/end values while manipulating the range. An invalid range is not necessarily empty (\hyperlink{class_q_c_p_data_range_a2ab2e0710dbd4493133ab582ef7e5fc3}{is\+Empty}), since its \hyperlink{class_q_c_p_data_range_a4e65d1bf09fce82dbc67a7b71b2cf088}{length} can be negative and thus non-\/zero. 
+\end{DoxyNote}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!length@{length}}
+\index{length@{length}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{length() const }{length() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Data\+Range\+::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_data_range_a4e65d1bf09fce82dbc67a7b71b2cf088}{}\label{class_q_c_p_data_range_a4e65d1bf09fce82dbc67a7b71b2cf088}
+Returns the number of data points described by this data range. Equivalent to \hyperlink{class_q_c_p_data_range_aec29c6f4234c01ed7a56c3bb0e75f340}{size}. \index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{operator"!=(const Q\+C\+P\+Data\+Range \&other) const }{operator!=(const QCPDataRange &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Data\+Range\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Data\+Range} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_data_range_a8eaea2a7c791e7ef494b03af547417a4}{}\label{class_q_c_p_data_range_a8eaea2a7c791e7ef494b03af547417a4}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!operator==@{operator==}}
+\index{operator==@{operator==}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{operator==(const Q\+C\+P\+Data\+Range \&other) const }{operator==(const QCPDataRange &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Data\+Range\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Data\+Range} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_data_range_a6947b187a6562b98e22e32a5f9663de2}{}\label{class_q_c_p_data_range_a6947b187a6562b98e22e32a5f9663de2}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!set\+Begin@{set\+Begin}}
+\index{set\+Begin@{set\+Begin}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{set\+Begin(int begin)}{setBegin(int begin)}}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Data\+Range\+::set\+Begin (
+\begin{DoxyParamCaption}
+\item[{int}]{begin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_data_range_a54ff59048e01e46ac4aefafc844626c6}{}\label{class_q_c_p_data_range_a54ff59048e01e46ac4aefafc844626c6}
+Sets the begin of this data range. The {\itshape begin} index points to the first data point that is part of the data range.
+
+No checks or corrections are made to ensure the resulting range is valid (\hyperlink{class_q_c_p_data_range_a063eeb2c81e86900d974936cbb83f508}{is\+Valid}).
+
+\begin{DoxySeeAlso}{Zobacz również}
+\hyperlink{class_q_c_p_data_range_a277f1a9eafe70b9184d9c00b641ae5de}{set\+End} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!set\+End@{set\+End}}
+\index{set\+End@{set\+End}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{set\+End(int end)}{setEnd(int end)}}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Data\+Range\+::set\+End (
+\begin{DoxyParamCaption}
+\item[{int}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_data_range_a277f1a9eafe70b9184d9c00b641ae5de}{}\label{class_q_c_p_data_range_a277f1a9eafe70b9184d9c00b641ae5de}
+Sets the end of this data range. The {\itshape end} index points to the data point just above the last data point that is part of the data range.
+
+No checks or corrections are made to ensure the resulting range is valid (\hyperlink{class_q_c_p_data_range_a063eeb2c81e86900d974936cbb83f508}{is\+Valid}).
+
+\begin{DoxySeeAlso}{Zobacz również}
+\hyperlink{class_q_c_p_data_range_a54ff59048e01e46ac4aefafc844626c6}{set\+Begin} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!size@{size}}
+\index{size@{size}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Data\+Range\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_data_range_aec29c6f4234c01ed7a56c3bb0e75f340}{}\label{class_q_c_p_data_range_aec29c6f4234c01ed7a56c3bb0e75f340}
+Returns the number of data points described by this data range. This is equal to the end index minus the begin index.
+
+\begin{DoxySeeAlso}{Zobacz również}
+\hyperlink{class_q_c_p_data_range_a4e65d1bf09fce82dbc67a7b71b2cf088}{length} 
+\end{DoxySeeAlso}
+
+
+\subsection{Dokumentacja przyjaciół i funkcji związanych}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(\+Q\+Debug d, const Q\+C\+P\+Data\+Range \&data\+Range)}{operator<<(QDebug d, const QCPDataRange &dataRange)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Debug operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{Q\+Debug}]{d, }
+\item[{const {\bf Q\+C\+P\+Data\+Range} \&}]{data\+Range}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}\hypertarget{class_q_c_p_data_range_a486dd7af8a090ed069672e3510e6a082}{}\label{class_q_c_p_data_range_a486dd7af8a090ed069672e3510e6a082}
+Prints {\itshape data\+Range} in a human readable format to the q\+Debug output. 
+
+\subsection{Dokumentacja atrybutów składowych}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!m\+Begin@{m\+Begin}}
+\index{m\+Begin@{m\+Begin}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{m\+Begin}{mBegin}}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Data\+Range\+::m\+Begin\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_q_c_p_data_range_a849baf613e8ad866a66aaf45682dde53}{}\label{class_q_c_p_data_range_a849baf613e8ad866a66aaf45682dde53}
+\index{Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}!m\+End@{m\+End}}
+\index{m\+End@{m\+End}!Q\+C\+P\+Data\+Range@{Q\+C\+P\+Data\+Range}}
+\subsubsection[{\texorpdfstring{m\+End}{mEnd}}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Data\+Range\+::m\+End\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_q_c_p_data_range_ac22cfcf2795d5e9f617d788be9fb14a0}{}\label{class_q_c_p_data_range_ac22cfcf2795d5e9f617d788be9fb14a0}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{qcustomplot_8hh}{qcustomplot.\+hh}\item 
+\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}

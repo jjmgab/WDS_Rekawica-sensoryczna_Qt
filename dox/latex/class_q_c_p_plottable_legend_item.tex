@@ -1,0 +1,150 @@
+\hypertarget{class_q_c_p_plottable_legend_item}{}\section{Dokumentacja klasy Q\+C\+P\+Plottable\+Legend\+Item}
+\label{class_q_c_p_plottable_legend_item}\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+
+
+A legend item representing a plottable with an icon and the plottable name.  
+
+
+
+
+{\ttfamily \#include $<$qcustomplot.\+hh$>$}
+
+
+
+Diagram dziedziczenia dla Q\+C\+P\+Plottable\+Legend\+Item\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{class_q_c_p_plottable_legend_item__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla Q\+C\+P\+Plottable\+Legend\+Item\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_plottable_legend_item__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_plottable_legend_item_ac1072591fe409d3dabad51b23ee4d6c5}{Q\+C\+P\+Plottable\+Legend\+Item} (\hyperlink{class_q_c_p_legend}{Q\+C\+P\+Legend} $\ast$parent, \hyperlink{class_q_c_p_abstract_plottable}{Q\+C\+P\+Abstract\+Plottable} $\ast$\hyperlink{class_q_c_p_plottable_legend_item_af29e9a2c60b4cba0cac2447b8af7b488}{plottable})
+\item 
+\hyperlink{class_q_c_p_abstract_plottable}{Q\+C\+P\+Abstract\+Plottable} $\ast$ \hyperlink{class_q_c_p_plottable_legend_item_af29e9a2c60b4cba0cac2447b8af7b488}{plottable} ()
+\end{DoxyCompactItemize}
+\subsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_q_c_p_plottable_legend_item_a5838366619200e99680afa6d355d13fa}{draw} (\hyperlink{class_q_c_p_painter}{Q\+C\+P\+Painter} $\ast$painter) \hyperlink{qcustomplot_8hh_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE}
+\item 
+virtual Q\+Size \hyperlink{class_q_c_p_plottable_legend_item_a8b543f3ac32b2fe59326e01c1101b3b8}{minimum\+Outer\+Size\+Hint} () const \hyperlink{qcustomplot_8hh_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE}
+\item 
+Q\+Pen \hyperlink{class_q_c_p_plottable_legend_item_ab36270e6b022a6961fa44136f35c0e4b}{get\+Icon\+Border\+Pen} () const 
+\item 
+Q\+Color \hyperlink{class_q_c_p_plottable_legend_item_ad762b07439c738660ba93e78c1d03667}{get\+Text\+Color} () const 
+\item 
+Q\+Font \hyperlink{class_q_c_p_plottable_legend_item_a8a85c8a25affb4895423d730164d61de}{get\+Font} () const 
+\end{DoxyCompactItemize}
+\subsection*{Atrybuty chronione}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_abstract_plottable}{Q\+C\+P\+Abstract\+Plottable} $\ast$ \hyperlink{class_q_c_p_plottable_legend_item_ada647fb4b22971a1a424e15b4f6af0d9}{m\+Plottable}
+\end{DoxyCompactItemize}
+\subsection*{Dodatkowe Dziedziczone Składowe}
+
+
+\subsection{Opis szczegółowy}
+This is the standard legend item for plottables. It displays an icon of the plottable next to the plottable name. The icon is drawn by the respective plottable itself (\hyperlink{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}{Q\+C\+P\+Abstract\+Plottable\+::draw\+Legend\+Icon}), and tries to give an intuitive symbol for the plottable. For example, the \hyperlink{class_q_c_p_graph}{Q\+C\+P\+Graph} draws a centered horizontal line and/or a single scatter point in the middle.
+
+Legend items of this type are always associated with one plottable (retrievable via the \hyperlink{class_q_c_p_plottable_legend_item_af29e9a2c60b4cba0cac2447b8af7b488}{plottable()} function and settable with the constructor). You may change the font of the plottable name with \hyperlink{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}{set\+Font}. Icon padding and border pen is taken from the parent \hyperlink{class_q_c_p_legend}{Q\+C\+P\+Legend}, see \hyperlink{class_q_c_p_legend_a2f2c93d18a651f4ff294bb3f026f49b8}{Q\+C\+P\+Legend\+::set\+Icon\+Border\+Pen} and \hyperlink{class_q_c_p_legend_a62973bd69d5155e8ea3141366e8968f6}{Q\+C\+P\+Legend\+::set\+Icon\+Text\+Padding}.
+
+The function \hyperlink{class_q_c_p_abstract_plottable_aa64e93cb5b606d8110d2cc0a349bb30f}{Q\+C\+P\+Abstract\+Plottable\+::add\+To\+Legend}/\hyperlink{class_q_c_p_abstract_plottable_a26d936d11852ea08e6bc0edae3a514a2}{Q\+C\+P\+Abstract\+Plottable\+::remove\+From\+Legend} creates/removes legend items of this type.
+
+Since \hyperlink{class_q_c_p_legend}{Q\+C\+P\+Legend} is based on \hyperlink{class_q_c_p_layout_grid}{Q\+C\+P\+Layout\+Grid}, a legend item itself is just a subclass of \hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element}. While it could be added to a legend (or any other layout) via the normal layout interface, \hyperlink{class_q_c_p_legend}{Q\+C\+P\+Legend} has specialized functions for handling legend items conveniently, see the documentation of \hyperlink{class_q_c_p_legend}{Q\+C\+P\+Legend}. 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\subsubsection[{\texorpdfstring{Q\+C\+P\+Plottable\+Legend\+Item(\+Q\+C\+P\+Legend $\ast$parent, Q\+C\+P\+Abstract\+Plottable $\ast$plottable)}{QCPPlottableLegendItem(QCPLegend *parent, QCPAbstractPlottable *plottable)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Plottable\+Legend\+Item\+::\+Q\+C\+P\+Plottable\+Legend\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Legend} $\ast$}]{parent, }
+\item[{{\bf Q\+C\+P\+Abstract\+Plottable} $\ast$}]{plottable}
+\end{DoxyParamCaption}
+)}\hypertarget{class_q_c_p_plottable_legend_item_ac1072591fe409d3dabad51b23ee4d6c5}{}\label{class_q_c_p_plottable_legend_item_ac1072591fe409d3dabad51b23ee4d6c5}
+Creates a new legend item associated with {\itshape plottable}.
+
+Once it\textquotesingle{}s created, it can be added to the legend via \hyperlink{class_q_c_p_legend_a3ab274de52d2951faea45a6d975e6b3f}{Q\+C\+P\+Legend\+::add\+Item}.
+
+A more convenient way of adding/removing a plottable to/from the legend is via the functions \hyperlink{class_q_c_p_abstract_plottable_aa64e93cb5b606d8110d2cc0a349bb30f}{Q\+C\+P\+Abstract\+Plottable\+::add\+To\+Legend} and \hyperlink{class_q_c_p_abstract_plottable_a26d936d11852ea08e6bc0edae3a514a2}{Q\+C\+P\+Abstract\+Plottable\+::remove\+From\+Legend}. 
+
+\subsection{Dokumentacja funkcji składowych}
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!draw@{draw}}
+\index{draw@{draw}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\subsubsection[{\texorpdfstring{draw(\+Q\+C\+P\+Painter $\ast$painter) Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE}{draw(QCPPainter *painter) Q_DECL_OVERRIDE}}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plottable\+Legend\+Item\+::draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Painter} $\ast$}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_q_c_p_plottable_legend_item_a5838366619200e99680afa6d355d13fa}{}\label{class_q_c_p_plottable_legend_item_a5838366619200e99680afa6d355d13fa}
+
+
+Implementuje \hyperlink{class_q_c_p_abstract_legend_item_a14ce0b09f5b814c765a0d790bd838909}{Q\+C\+P\+Abstract\+Legend\+Item}.
+
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!get\+Font@{get\+Font}}
+\index{get\+Font@{get\+Font}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\subsubsection[{\texorpdfstring{get\+Font() const }{getFont() const }}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Font Q\+C\+P\+Plottable\+Legend\+Item\+::get\+Font (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_plottable_legend_item_a8a85c8a25affb4895423d730164d61de}{}\label{class_q_c_p_plottable_legend_item_a8a85c8a25affb4895423d730164d61de}
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!get\+Icon\+Border\+Pen@{get\+Icon\+Border\+Pen}}
+\index{get\+Icon\+Border\+Pen@{get\+Icon\+Border\+Pen}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\subsubsection[{\texorpdfstring{get\+Icon\+Border\+Pen() const }{getIconBorderPen() const }}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Plottable\+Legend\+Item\+::get\+Icon\+Border\+Pen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_plottable_legend_item_ab36270e6b022a6961fa44136f35c0e4b}{}\label{class_q_c_p_plottable_legend_item_ab36270e6b022a6961fa44136f35c0e4b}
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!get\+Text\+Color@{get\+Text\+Color}}
+\index{get\+Text\+Color@{get\+Text\+Color}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\subsubsection[{\texorpdfstring{get\+Text\+Color() const }{getTextColor() const }}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color Q\+C\+P\+Plottable\+Legend\+Item\+::get\+Text\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_plottable_legend_item_ad762b07439c738660ba93e78c1d03667}{}\label{class_q_c_p_plottable_legend_item_ad762b07439c738660ba93e78c1d03667}
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!minimum\+Outer\+Size\+Hint@{minimum\+Outer\+Size\+Hint}}
+\index{minimum\+Outer\+Size\+Hint@{minimum\+Outer\+Size\+Hint}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\subsubsection[{\texorpdfstring{minimum\+Outer\+Size\+Hint() const Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE}{minimumOuterSizeHint() const Q_DECL_OVERRIDE}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size Q\+C\+P\+Plottable\+Legend\+Item\+::minimum\+Outer\+Size\+Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_q_c_p_plottable_legend_item_a8b543f3ac32b2fe59326e01c1101b3b8}{}\label{class_q_c_p_plottable_legend_item_a8b543f3ac32b2fe59326e01c1101b3b8}
+Returns the suggested minimum size this layout element (the \hyperlink{class_q_c_p_layout_element_a60bbddee2d1230c2414bd776f44d17b8}{outer\+Rect}) may be compressed to, if no manual minimum size is set.
+
+if a minimum size (\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}) was not set manually, parent layouts use the returned size (usually indirectly through \hyperlink{class_q_c_p_layout_a864fddc84721f186663faf3683f1fa70}{Q\+C\+P\+Layout\+::get\+Final\+Minimum\+Outer\+Size}) to determine the minimum allowed size of this layout element.
+
+A manual minimum size is considered set if it is non-\/zero.
+
+The default implementation simply returns the sum of the horizontal margins for the width and the sum of the vertical margins for the height. Reimplementations may use their detailed knowledge about the layout element\textquotesingle{}s content to provide size hints. 
+
+Reimplementowana z \hyperlink{class_q_c_p_layout_element_a4c540ba5c686a1494c92c466912e5411}{Q\+C\+P\+Layout\+Element}.
+
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!plottable@{plottable}}
+\index{plottable@{plottable}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\subsubsection[{\texorpdfstring{plottable()}{plottable()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Abstract\+Plottable}$\ast$ Q\+C\+P\+Plottable\+Legend\+Item\+::plottable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_plottable_legend_item_af29e9a2c60b4cba0cac2447b8af7b488}{}\label{class_q_c_p_plottable_legend_item_af29e9a2c60b4cba0cac2447b8af7b488}
+
+
+\subsection{Dokumentacja atrybutów składowych}
+\index{Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}!m\+Plottable@{m\+Plottable}}
+\index{m\+Plottable@{m\+Plottable}!Q\+C\+P\+Plottable\+Legend\+Item@{Q\+C\+P\+Plottable\+Legend\+Item}}
+\subsubsection[{\texorpdfstring{m\+Plottable}{mPlottable}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Abstract\+Plottable}$\ast$ Q\+C\+P\+Plottable\+Legend\+Item\+::m\+Plottable\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_plottable_legend_item_ada647fb4b22971a1a424e15b4f6af0d9}{}\label{class_q_c_p_plottable_legend_item_ada647fb4b22971a1a424e15b4f6af0d9}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{qcustomplot_8hh}{qcustomplot.\+hh}\item 
+\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}

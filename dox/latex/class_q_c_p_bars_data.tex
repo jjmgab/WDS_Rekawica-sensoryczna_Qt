@@ -1,0 +1,140 @@
+\hypertarget{class_q_c_p_bars_data}{}\section{Dokumentacja klasy Q\+C\+P\+Bars\+Data}
+\label{class_q_c_p_bars_data}\index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+
+
+Holds the data of one single data point (one bar) for \hyperlink{class_q_c_p_bars}{Q\+C\+P\+Bars}.  
+
+
+
+
+{\ttfamily \#include $<$qcustomplot.\+hh$>$}
+
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_bars_data_a800794d4c5fea22eeb8bade20798496b}{Q\+C\+P\+Bars\+Data} ()
+\item 
+\hyperlink{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}{Q\+C\+P\+Bars\+Data} (double \hyperlink{class_q_c_p_bars_data_a09b492217dc03ee1c0348a2f2e6e0a04}{key}, double \hyperlink{class_q_c_p_bars_data_ab636644fb40630f3b1b72f44d65ec072}{value})
+\item 
+double \hyperlink{class_q_c_p_bars_data_aec71a3f55d0d52192ff9ad85b04ebf8d}{sort\+Key} () const 
+\item 
+double \hyperlink{class_q_c_p_bars_data_a8d9c33934d75e11d6e205981a4e4b11d}{main\+Key} () const 
+\item 
+double \hyperlink{class_q_c_p_bars_data_a0ee3c777e5df7d5f5f63fe82539845d5}{main\+Value} () const 
+\item 
+\hyperlink{class_q_c_p_range}{Q\+C\+P\+Range} \hyperlink{class_q_c_p_bars_data_a87e9dc820e4b306da4dbec1a993bec14}{value\+Range} () const 
+\end{DoxyCompactItemize}
+\subsection*{Statyczne metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_q_c_p_bars_data}{Q\+C\+P\+Bars\+Data} \hyperlink{class_q_c_p_bars_data_ad170d4e90498005ec319338910252ba8}{from\+Sort\+Key} (double \hyperlink{class_q_c_p_bars_data_aec71a3f55d0d52192ff9ad85b04ebf8d}{sort\+Key})
+\item 
+static bool \hyperlink{class_q_c_p_bars_data_aebaabda335bd4c9f81bd585d16b63aa8}{sort\+Key\+Is\+Main\+Key} ()
+\end{DoxyCompactItemize}
+\subsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_q_c_p_bars_data_a09b492217dc03ee1c0348a2f2e6e0a04}{key}
+\item 
+double \hyperlink{class_q_c_p_bars_data_ab636644fb40630f3b1b72f44d65ec072}{value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+The stored data is\+: \begin{DoxyItemize}
+\item {\itshape key\+:} coordinate on the key axis of this bar (this is the {\itshape main\+Key} and the {\itshape sort\+Key}) \item {\itshape value\+:} height coordinate on the value axis of this bar (this is the {\itshape main\+Value})\end{DoxyItemize}
+The container for storing multiple data points is \hyperlink{qcustomplot_8hh_a52bf589c9fce1baa36c1d40d69785d46}{Q\+C\+P\+Bars\+Data\+Container}. It is a typedef for \hyperlink{class_q_c_p_data_container}{Q\+C\+P\+Data\+Container} with \hyperlink{class_q_c_p_bars_data}{Q\+C\+P\+Bars\+Data} as the Data\+Type template parameter. See the documentation there for an explanation regarding the data type\textquotesingle{}s generic methods.
+
+\begin{DoxySeeAlso}{Zobacz również}
+\hyperlink{qcustomplot_8hh_a52bf589c9fce1baa36c1d40d69785d46}{Q\+C\+P\+Bars\+Data\+Container} 
+\end{DoxySeeAlso}
+
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}!Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+\index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}!Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+\subsubsection[{\texorpdfstring{Q\+C\+P\+Bars\+Data()}{QCPBarsData()}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Bars\+Data\+::\+Q\+C\+P\+Bars\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_q_c_p_bars_data_a800794d4c5fea22eeb8bade20798496b}{}\label{class_q_c_p_bars_data_a800794d4c5fea22eeb8bade20798496b}
+Constructs a bar data point with key and value set to zero. \index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}!Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+\index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}!Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+\subsubsection[{\texorpdfstring{Q\+C\+P\+Bars\+Data(double key, double value)}{QCPBarsData(double key, double value)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Bars\+Data\+::\+Q\+C\+P\+Bars\+Data (
+\begin{DoxyParamCaption}
+\item[{double}]{key, }
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}{}\label{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}
+Constructs a bar data point with the specified {\itshape key} and {\itshape value}. 
+
+\subsection{Dokumentacja funkcji składowych}
+\index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}!from\+Sort\+Key@{from\+Sort\+Key}}
+\index{from\+Sort\+Key@{from\+Sort\+Key}!Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+\subsubsection[{\texorpdfstring{from\+Sort\+Key(double sort\+Key)}{fromSortKey(double sortKey)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Q\+C\+P\+Bars\+Data} Q\+C\+P\+Bars\+Data\+::from\+Sort\+Key (
+\begin{DoxyParamCaption}
+\item[{double}]{sort\+Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_q_c_p_bars_data_ad170d4e90498005ec319338910252ba8}{}\label{class_q_c_p_bars_data_ad170d4e90498005ec319338910252ba8}
+Returns a data point with the specified {\itshape sort\+Key}. All other members are set to zero.
+
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \hyperlink{class_q_c_p_data_container}{Q\+C\+P\+Data\+Container}. \index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}!main\+Key@{main\+Key}}
+\index{main\+Key@{main\+Key}!Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+\subsubsection[{\texorpdfstring{main\+Key() const }{mainKey() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Bars\+Data\+::main\+Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_bars_data_a8d9c33934d75e11d6e205981a4e4b11d}{}\label{class_q_c_p_bars_data_a8d9c33934d75e11d6e205981a4e4b11d}
+Returns the {\itshape key} member of this data point.
+
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \hyperlink{class_q_c_p_data_container}{Q\+C\+P\+Data\+Container}. \index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}!main\+Value@{main\+Value}}
+\index{main\+Value@{main\+Value}!Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+\subsubsection[{\texorpdfstring{main\+Value() const }{mainValue() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Bars\+Data\+::main\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_bars_data_a0ee3c777e5df7d5f5f63fe82539845d5}{}\label{class_q_c_p_bars_data_a0ee3c777e5df7d5f5f63fe82539845d5}
+Returns the {\itshape value} member of this data point.
+
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \hyperlink{class_q_c_p_data_container}{Q\+C\+P\+Data\+Container}. \index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}!sort\+Key@{sort\+Key}}
+\index{sort\+Key@{sort\+Key}!Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+\subsubsection[{\texorpdfstring{sort\+Key() const }{sortKey() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Bars\+Data\+::sort\+Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_bars_data_aec71a3f55d0d52192ff9ad85b04ebf8d}{}\label{class_q_c_p_bars_data_aec71a3f55d0d52192ff9ad85b04ebf8d}
+Returns the {\itshape key} member of this data point.
+
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \hyperlink{class_q_c_p_data_container}{Q\+C\+P\+Data\+Container}. \index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}!sort\+Key\+Is\+Main\+Key@{sort\+Key\+Is\+Main\+Key}}
+\index{sort\+Key\+Is\+Main\+Key@{sort\+Key\+Is\+Main\+Key}!Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+\subsubsection[{\texorpdfstring{sort\+Key\+Is\+Main\+Key()}{sortKeyIsMainKey()}}]{\setlength{\rightskip}{0pt plus 5cm}static static bool Q\+C\+P\+Bars\+Data\+::sort\+Key\+Is\+Main\+Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_q_c_p_bars_data_aebaabda335bd4c9f81bd585d16b63aa8}{}\label{class_q_c_p_bars_data_aebaabda335bd4c9f81bd585d16b63aa8}
+Since the member {\itshape key} is both the data point key coordinate and the data ordering parameter, this method returns true.
+
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \hyperlink{class_q_c_p_data_container}{Q\+C\+P\+Data\+Container}. \index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}!value\+Range@{value\+Range}}
+\index{value\+Range@{value\+Range}!Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+\subsubsection[{\texorpdfstring{value\+Range() const }{valueRange() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Range} Q\+C\+P\+Bars\+Data\+::value\+Range (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_bars_data_a87e9dc820e4b306da4dbec1a993bec14}{}\label{class_q_c_p_bars_data_a87e9dc820e4b306da4dbec1a993bec14}
+Returns a \hyperlink{class_q_c_p_range}{Q\+C\+P\+Range} with both lower and upper boundary set to {\itshape value} of this data point.
+
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \hyperlink{class_q_c_p_data_container}{Q\+C\+P\+Data\+Container}. 
+
+\subsection{Dokumentacja atrybutów składowych}
+\index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}!key@{key}}
+\index{key@{key}!Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+\subsubsection[{\texorpdfstring{key}{key}}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Bars\+Data\+::key}\hypertarget{class_q_c_p_bars_data_a09b492217dc03ee1c0348a2f2e6e0a04}{}\label{class_q_c_p_bars_data_a09b492217dc03ee1c0348a2f2e6e0a04}
+\index{Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}!value@{value}}
+\index{value@{value}!Q\+C\+P\+Bars\+Data@{Q\+C\+P\+Bars\+Data}}
+\subsubsection[{\texorpdfstring{value}{value}}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Bars\+Data\+::value}\hypertarget{class_q_c_p_bars_data_ab636644fb40630f3b1b72f44d65ec072}{}\label{class_q_c_p_bars_data_ab636644fb40630f3b1b72f44d65ec072}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{qcustomplot_8hh}{qcustomplot.\+hh}\item 
+\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}

@@ -9,6 +9,7 @@
 #include <QtSerialPort/QSerialPort>
 #include <QTimer>
 #include <QVector>
+#include <QMessageBox>
 
 #include <stdio.h>
 #include <iostream>
@@ -201,6 +202,13 @@ public slots:
      */
     void vibrate_pinky();
 
+
+    /*!
+     * \brief Slot odpowiedzialny za wyświetlanie okna pomocy
+     * 
+     * Wyświetla okno pomocy w odpowiedzi na wciśnięcie jednego z przycisku na pasku narzędzi.
+     */
+    void show_help();
 
 
     /*!

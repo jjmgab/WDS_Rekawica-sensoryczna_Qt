@@ -1,0 +1,48 @@
+\hypertarget{namespaceresize__script}{}\section{Dokumentacja przestrzeni nazw resize\+\_\+script}
+\label{namespaceresize__script}\index{resize\+\_\+script@{resize\+\_\+script}}
+\subsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespaceresize__script_ae7ea66b65845ff6b9478a056a4a33c5a}{mywidth} = 150
+\item 
+string \hyperlink{namespaceresize__script_aac9c9cf9b8d89c7b8f9634beed5e1ff4}{name} = \char`\"{}hand.\+png\char`\"{}
+\item 
+\hyperlink{namespaceresize__script_abdb2b972c6c1f9e70d543a0a16e25463}{img} = Image.\+open(\hyperlink{namespaceresize__script_aac9c9cf9b8d89c7b8f9634beed5e1ff4}{name})
+\item 
+tuple \hyperlink{namespaceresize__script_a19164b83e4fc883571c218bdc59c3796}{wpercent} = (\hyperlink{namespaceresize__script_ae7ea66b65845ff6b9478a056a4a33c5a}{mywidth}/float(img.\+size\mbox{[}0\mbox{]}))
+\item 
+\hyperlink{namespaceresize__script_a51a5f5ec3dcaae321e76c4b8f46f6134}{hsize} = int((float(img.\+size\mbox{[}1\mbox{]})$\ast$float(\hyperlink{namespaceresize__script_a19164b83e4fc883571c218bdc59c3796}{wpercent})))
+\item 
+list \hyperlink{namespaceresize__script_a5ee40d78c225215ab3915db1fbd7e83f}{palce} = \mbox{[}\char`\"{}index\char`\"{}, \char`\"{}middle\char`\"{}, \char`\"{}ring\char`\"{}, \char`\"{}thumb\char`\"{}, \char`\"{}pinky\char`\"{}\mbox{]}
+\item 
+list \hyperlink{namespaceresize__script_a0988989e1e7bc7ece1be39f8d52beaa9}{status} = \mbox{[}\char`\"{}active\char`\"{}, \char`\"{}disconnected\char`\"{}\mbox{]};
+\item 
+list \hyperlink{namespaceresize__script_a66105bd89de1722c111fceca24ab88c1}{sensor} = \mbox{[}\char`\"{}touch\char`\"{}, \char`\"{}bend\char`\"{}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja zmiennych}
+\index{resize\+\_\+script@{resize\+\_\+script}!hsize@{hsize}}
+\index{hsize@{hsize}!resize\+\_\+script@{resize\+\_\+script}}
+\subsubsection[{\texorpdfstring{hsize}{hsize}}]{\setlength{\rightskip}{0pt plus 5cm}resize\+\_\+script.\+hsize = int((float(img.\+size\mbox{[}1\mbox{]})$\ast$float({\bf wpercent})))}\hypertarget{namespaceresize__script_a51a5f5ec3dcaae321e76c4b8f46f6134}{}\label{namespaceresize__script_a51a5f5ec3dcaae321e76c4b8f46f6134}
+\index{resize\+\_\+script@{resize\+\_\+script}!img@{img}}
+\index{img@{img}!resize\+\_\+script@{resize\+\_\+script}}
+\subsubsection[{\texorpdfstring{img}{img}}]{\setlength{\rightskip}{0pt plus 5cm}resize\+\_\+script.\+img = Image.\+open({\bf name})}\hypertarget{namespaceresize__script_abdb2b972c6c1f9e70d543a0a16e25463}{}\label{namespaceresize__script_abdb2b972c6c1f9e70d543a0a16e25463}
+\index{resize\+\_\+script@{resize\+\_\+script}!mywidth@{mywidth}}
+\index{mywidth@{mywidth}!resize\+\_\+script@{resize\+\_\+script}}
+\subsubsection[{\texorpdfstring{mywidth}{mywidth}}]{\setlength{\rightskip}{0pt plus 5cm}int resize\+\_\+script.\+mywidth = 150}\hypertarget{namespaceresize__script_ae7ea66b65845ff6b9478a056a4a33c5a}{}\label{namespaceresize__script_ae7ea66b65845ff6b9478a056a4a33c5a}
+\index{resize\+\_\+script@{resize\+\_\+script}!name@{name}}
+\index{name@{name}!resize\+\_\+script@{resize\+\_\+script}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}string resize\+\_\+script.\+name = \char`\"{}hand.\+png\char`\"{}}\hypertarget{namespaceresize__script_aac9c9cf9b8d89c7b8f9634beed5e1ff4}{}\label{namespaceresize__script_aac9c9cf9b8d89c7b8f9634beed5e1ff4}
+\index{resize\+\_\+script@{resize\+\_\+script}!palce@{palce}}
+\index{palce@{palce}!resize\+\_\+script@{resize\+\_\+script}}
+\subsubsection[{\texorpdfstring{palce}{palce}}]{\setlength{\rightskip}{0pt plus 5cm}list resize\+\_\+script.\+palce = \mbox{[}\char`\"{}index\char`\"{}, \char`\"{}middle\char`\"{}, \char`\"{}ring\char`\"{}, \char`\"{}thumb\char`\"{}, \char`\"{}pinky\char`\"{}\mbox{]}}\hypertarget{namespaceresize__script_a5ee40d78c225215ab3915db1fbd7e83f}{}\label{namespaceresize__script_a5ee40d78c225215ab3915db1fbd7e83f}
+\index{resize\+\_\+script@{resize\+\_\+script}!sensor@{sensor}}
+\index{sensor@{sensor}!resize\+\_\+script@{resize\+\_\+script}}
+\subsubsection[{\texorpdfstring{sensor}{sensor}}]{\setlength{\rightskip}{0pt plus 5cm}list resize\+\_\+script.\+sensor = \mbox{[}\char`\"{}touch\char`\"{}, \char`\"{}bend\char`\"{}\mbox{]}}\hypertarget{namespaceresize__script_a66105bd89de1722c111fceca24ab88c1}{}\label{namespaceresize__script_a66105bd89de1722c111fceca24ab88c1}
+\index{resize\+\_\+script@{resize\+\_\+script}!status@{status}}
+\index{status@{status}!resize\+\_\+script@{resize\+\_\+script}}
+\subsubsection[{\texorpdfstring{status}{status}}]{\setlength{\rightskip}{0pt plus 5cm}list resize\+\_\+script.\+status = \mbox{[}\char`\"{}active\char`\"{}, \char`\"{}disconnected\char`\"{}\mbox{]};}\hypertarget{namespaceresize__script_a0988989e1e7bc7ece1be39f8d52beaa9}{}\label{namespaceresize__script_a0988989e1e7bc7ece1be39f8d52beaa9}
+\index{resize\+\_\+script@{resize\+\_\+script}!wpercent@{wpercent}}
+\index{wpercent@{wpercent}!resize\+\_\+script@{resize\+\_\+script}}
+\subsubsection[{\texorpdfstring{wpercent}{wpercent}}]{\setlength{\rightskip}{0pt plus 5cm}tuple resize\+\_\+script.\+wpercent = ({\bf mywidth}/float(img.\+size\mbox{[}0\mbox{]}))}\hypertarget{namespaceresize__script_a19164b83e4fc883571c218bdc59c3796}{}\label{namespaceresize__script_a19164b83e4fc883571c218bdc59c3796}

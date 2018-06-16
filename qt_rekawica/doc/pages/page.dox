@@ -1,0 +1,16 @@
+/*!
+	\mainpage Wizualizacja konfiguracji dłoni oraz jej interakcji z otoczeniem
+
+	\author Jakub Gabała
+	\author Jakub Król
+	\date 16.06.2018
+	\version 1.0
+
+	Aplikacja umożliwia przetwarzanie otrzymanych poprzez port szeregowy ramki w określonym formacie oraz wizualizowania wyodrębnionych z niej danych. Jest ona rezultatem projektu zrealizowanego w ramach kursu "Wizualizacja Danych Sensorycznych".
+
+	\section najwazniejsze-cechy Najważniejsze cechy i możliwości aplikacji
+
+	Aplikacja daje możliwość połączenia się z urządzeniem zbierającym dane podłączonym do komputera poprzez port USB. Z racji tego, że docelowym urządzeniem jest mikrokontroler będący częścią rękawicy sensorycznej (posiadającej czujniki zgięcia, nacisku oraz akcelerometr mierzący odchylenie urządzenia obracającego się wokół osi poziomej poprzecznej oraz wzdłużnej), w aplikacji wyświetlane są wykresy, na których rysowane są otrzymane dane dotyczące wymienionych czujników.
+
+
+*/

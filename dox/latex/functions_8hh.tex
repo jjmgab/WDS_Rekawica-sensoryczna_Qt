@@ -1,0 +1,93 @@
+\hypertarget{functions_8hh}{}\section{Dokumentacja pliku functions.\+hh}
+\label{functions_8hh}\index{functions.\+hh@{functions.\+hh}}
+{\ttfamily \#include $<$Qt\+Global$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+Wykres zależności załączania dla functions.\+hh\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{functions_8hh__incl}
+\end{center}
+\end{figure}
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8hh__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{functions_8hh_a134694e9ad39570ad22ae4d3ab15da30}{random\+\_\+value} (int range\+\_\+min, int range\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Zwraca pseudolosowa wartosc z podanego zakresu. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{functions_8hh_add18f5d9ace3ce376453930fc77a4a93}{generate\+\_\+data} (int sensor\+\_\+type, int sensor\+\_\+id, int sensor\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Generuje string z fragmentem koncowej ramki danych. \end{DoxyCompactList}\item 
+double \hyperlink{functions_8hh_a7716aac0a1beea49c4bccf279c84a823}{map} (double x, double in\+\_\+min, double in\+\_\+max, double out\+\_\+min, double out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Przelicza wartosci z zakresu wejsciowego na zakres wyjsciowy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja funkcji}
+\index{functions.\+hh@{functions.\+hh}!generate\+\_\+data@{generate\+\_\+data}}
+\index{generate\+\_\+data@{generate\+\_\+data}!functions.\+hh@{functions.\+hh}}
+\subsubsection[{\texorpdfstring{generate\+\_\+data(int sensor\+\_\+type, int sensor\+\_\+id, int sensor\+\_\+value)}{generate_data(int sensor_type, int sensor_id, int sensor_value)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string generate\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{int}]{sensor\+\_\+type, }
+\item[{int}]{sensor\+\_\+id, }
+\item[{int}]{sensor\+\_\+value}
+\end{DoxyParamCaption}
+)}\hypertarget{functions_8hh_add18f5d9ace3ce376453930fc77a4a93}{}\label{functions_8hh_add18f5d9ace3ce376453930fc77a4a93}
+Potrzebne do debugowania parsera i wykresow. 
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em typ} & sensora \\
+\hline
+\mbox{\tt in}  & {\em id} & sensora \\
+\hline
+\mbox{\tt in}  & {\em wartosc} & odczytu sensora \\
+\hline
+\mbox{\tt out}  & {\em string} & z fragmentem ramki \\
+\hline
+\end{DoxyParams}
+\index{functions.\+hh@{functions.\+hh}!map@{map}}
+\index{map@{map}!functions.\+hh@{functions.\+hh}}
+\subsubsection[{\texorpdfstring{map(double x, double in\+\_\+min, double in\+\_\+max, double out\+\_\+min, double out\+\_\+max)}{map(double x, double in_min, double in_max, double out_min, double out_max)}}]{\setlength{\rightskip}{0pt plus 5cm}double map (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{in\+\_\+min, }
+\item[{double}]{in\+\_\+max, }
+\item[{double}]{out\+\_\+min, }
+\item[{double}]{out\+\_\+max}
+\end{DoxyParamCaption}
+)}\hypertarget{functions_8hh_a7716aac0a1beea49c4bccf279c84a823}{}\label{functions_8hh_a7716aac0a1beea49c4bccf279c84a823}
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em wartosc} & \\
+\hline
+\mbox{\tt in}  & {\em wejscie\+\_\+minimalne} & \\
+\hline
+\mbox{\tt in}  & {\em wejscie\+\_\+maksymalne} & \\
+\hline
+\mbox{\tt in}  & {\em wyjscie\+\_\+minimalne} & \\
+\hline
+\mbox{\tt in}  & {\em wyjscie\+\_\+maksymalne} & \\
+\hline
+\mbox{\tt out}  & {\em przeliczona} & wartosc na nowy zakres (double) \\
+\hline
+\end{DoxyParams}
+\index{functions.\+hh@{functions.\+hh}!random\+\_\+value@{random\+\_\+value}}
+\index{random\+\_\+value@{random\+\_\+value}!functions.\+hh@{functions.\+hh}}
+\subsubsection[{\texorpdfstring{random\+\_\+value(int range\+\_\+min, int range\+\_\+max)}{random_value(int range_min, int range_max)}}]{\setlength{\rightskip}{0pt plus 5cm}int random\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{int}]{range\+\_\+min, }
+\item[{int}]{range\+\_\+max}
+\end{DoxyParamCaption}
+)}\hypertarget{functions_8hh_a134694e9ad39570ad22ae4d3ab15da30}{}\label{functions_8hh_a134694e9ad39570ad22ae4d3ab15da30}
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em Dolny} & zakres przedzialu \\
+\hline
+\mbox{\tt in}  & {\em Gorny} & zakres przedzialu \\
+\hline
+\mbox{\tt out}  & {\em Wartosc} & pseudolosowa \\
+\hline
+\end{DoxyParams}

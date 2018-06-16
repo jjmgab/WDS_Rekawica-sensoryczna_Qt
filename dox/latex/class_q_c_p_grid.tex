@@ -1,0 +1,275 @@
+\hypertarget{class_q_c_p_grid}{}\section{Dokumentacja klasy Q\+C\+P\+Grid}
+\label{class_q_c_p_grid}\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+
+
+Responsible for drawing the grid of a \hyperlink{class_q_c_p_axis}{Q\+C\+P\+Axis}.  
+
+
+
+
+{\ttfamily \#include $<$qcustomplot.\+hh$>$}
+
+
+
+Diagram dziedziczenia dla Q\+C\+P\+Grid\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_q_c_p_grid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla Q\+C\+P\+Grid\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_grid__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_grid_acd1cdd2909625388a13048b698494a17}{Q\+C\+P\+Grid} (\hyperlink{class_q_c_p_axis}{Q\+C\+P\+Axis} $\ast$parent\+Axis)
+\item 
+bool \hyperlink{class_q_c_p_grid_a0a8963e384d53cd77cbab7df96147458}{sub\+Grid\+Visible} () const 
+\item 
+bool \hyperlink{class_q_c_p_grid_abfa6c638a05b45b2ed31b680fc9b31fc}{antialiased\+Sub\+Grid} () const 
+\item 
+bool \hyperlink{class_q_c_p_grid_a4dfbc1cee989d8cae1434b765ab2a13b}{antialiased\+Zero\+Line} () const 
+\item 
+Q\+Pen \hyperlink{class_q_c_p_grid_aca20b67548e3ae31fd02e6398ffd6cb9}{pen} () const 
+\item 
+Q\+Pen \hyperlink{class_q_c_p_grid_ac698f8c6864b1d8f0e2af97ca4b39cc6}{sub\+Grid\+Pen} () const 
+\item 
+Q\+Pen \hyperlink{class_q_c_p_grid_a06ea986b651860446e1224d2097259b9}{zero\+Line\+Pen} () const 
+\item 
+void \hyperlink{class_q_c_p_grid_ad4ad6bf714ec45e08845456355a1b700}{set\+Sub\+Grid\+Visible} (bool \hyperlink{class_q_c_p_layerable_a10a3cc92e0fa63e4a929e61d34e275a7}{visible})
+\item 
+void \hyperlink{class_q_c_p_grid_a5692310ba183721a413d60951407d114}{set\+Antialiased\+Sub\+Grid} (bool enabled)
+\item 
+void \hyperlink{class_q_c_p_grid_a3cc6d54647393ee71afb6da56af07aa4}{set\+Antialiased\+Zero\+Line} (bool enabled)
+\item 
+void \hyperlink{class_q_c_p_grid_aa05ab9816ffb440908171e45e833b593}{set\+Pen} (const Q\+Pen \&\hyperlink{class_q_c_p_grid_aca20b67548e3ae31fd02e6398ffd6cb9}{pen})
+\item 
+void \hyperlink{class_q_c_p_grid_a9edd3593f384d1f0b0202a39cef4453d}{set\+Sub\+Grid\+Pen} (const Q\+Pen \&\hyperlink{class_q_c_p_grid_aca20b67548e3ae31fd02e6398ffd6cb9}{pen})
+\item 
+void \hyperlink{class_q_c_p_grid_a209f40fdb252397b418b82d3494d8ea0}{set\+Zero\+Line\+Pen} (const Q\+Pen \&\hyperlink{class_q_c_p_grid_aca20b67548e3ae31fd02e6398ffd6cb9}{pen})
+\end{DoxyCompactItemize}
+\subsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_q_c_p_grid_a64fa48e16b4629f5df2a5029ab6e761c}{apply\+Default\+Antialiasing\+Hint} (\hyperlink{class_q_c_p_painter}{Q\+C\+P\+Painter} $\ast$painter) const \hyperlink{qcustomplot_8hh_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE}
+\item 
+virtual void \hyperlink{class_q_c_p_grid_aad9a312d998e2d170956334d4cb80be2}{draw} (\hyperlink{class_q_c_p_painter}{Q\+C\+P\+Painter} $\ast$painter) \hyperlink{qcustomplot_8hh_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE}
+\item 
+void \hyperlink{class_q_c_p_grid_a3aff10e993f6625e255c19e4f97a09d8}{draw\+Grid\+Lines} (\hyperlink{class_q_c_p_painter}{Q\+C\+P\+Painter} $\ast$painter) const 
+\item 
+void \hyperlink{class_q_c_p_grid_afa5d9d12de419e881f381f2ab7cb414d}{draw\+Sub\+Grid\+Lines} (\hyperlink{class_q_c_p_painter}{Q\+C\+P\+Painter} $\ast$painter) const 
+\end{DoxyCompactItemize}
+\subsection*{Atrybuty chronione}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_q_c_p_grid_a4e4a0400d6319bb44c06341f6298c87b}{m\+Sub\+Grid\+Visible}
+\item 
+bool \hyperlink{class_q_c_p_grid_a71b7051f833f0c5de3094998d6afdd87}{m\+Antialiased\+Sub\+Grid}
+\item 
+bool \hyperlink{class_q_c_p_grid_a8c0df56ae86440408c050895dcdb922b}{m\+Antialiased\+Zero\+Line}
+\item 
+Q\+Pen \hyperlink{class_q_c_p_grid_a1cdc4a3bccf6a40c2d4360def9fefa40}{m\+Pen}
+\item 
+Q\+Pen \hyperlink{class_q_c_p_grid_aa9004bc139ad3ea92629f0aaae81d83f}{m\+Sub\+Grid\+Pen}
+\item 
+Q\+Pen \hyperlink{class_q_c_p_grid_a379481871f17655c27eda30af233554f}{m\+Zero\+Line\+Pen}
+\item 
+\hyperlink{class_q_c_p_axis}{Q\+C\+P\+Axis} $\ast$ \hyperlink{class_q_c_p_grid_a9a8a76731e6e737b65b929fd1995cc88}{m\+Parent\+Axis}
+\end{DoxyCompactItemize}
+\subsection*{Przyjaciele}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_q_c_p_grid_af123edeca169ec7a31958a1d714e1a8a}{Q\+C\+P\+Axis}
+\end{DoxyCompactItemize}
+\subsection*{Dodatkowe Dziedziczone Składowe}
+
+
+\subsection{Opis szczegółowy}
+This class is tightly bound to \hyperlink{class_q_c_p_axis}{Q\+C\+P\+Axis}. Every axis owns a grid instance and uses it to draw the grid lines, sub grid lines and zero-\/line. You can interact with the grid of an axis via \hyperlink{class_q_c_p_axis_ac4fb913cce3072b5e75a4635e0f6cd04}{Q\+C\+P\+Axis\+::grid}. Normally, you don\textquotesingle{}t need to create an instance of \hyperlink{class_q_c_p_grid}{Q\+C\+P\+Grid} yourself.
+
+The axis and grid drawing was split into two classes to allow them to be placed on different layers (both \hyperlink{class_q_c_p_axis}{Q\+C\+P\+Axis} and \hyperlink{class_q_c_p_grid}{Q\+C\+P\+Grid} inherit from \hyperlink{class_q_c_p_layerable}{Q\+C\+P\+Layerable}). Thus it is possible to have the grid in the background and the axes in the foreground, and any plottables/items in between. This described situation is the default setup, see the \hyperlink{class_q_c_p_layer}{Q\+C\+P\+Layer} documentation. 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{Q\+C\+P\+Grid(\+Q\+C\+P\+Axis $\ast$parent\+Axis)}{QCPGrid(QCPAxis *parentAxis)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Grid\+::\+Q\+C\+P\+Grid (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Axis} $\ast$}]{parent\+Axis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_q_c_p_grid_acd1cdd2909625388a13048b698494a17}{}\label{class_q_c_p_grid_acd1cdd2909625388a13048b698494a17}
+Creates a \hyperlink{class_q_c_p_grid}{Q\+C\+P\+Grid} instance and sets default values.
+
+You shouldn\textquotesingle{}t instantiate grids on their own, since every \hyperlink{class_q_c_p_axis}{Q\+C\+P\+Axis} brings its own \hyperlink{class_q_c_p_grid}{Q\+C\+P\+Grid}. 
+
+\subsection{Dokumentacja funkcji składowych}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!antialiased\+Sub\+Grid@{antialiased\+Sub\+Grid}}
+\index{antialiased\+Sub\+Grid@{antialiased\+Sub\+Grid}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{antialiased\+Sub\+Grid() const }{antialiasedSubGrid() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Grid\+::antialiased\+Sub\+Grid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_grid_abfa6c638a05b45b2ed31b680fc9b31fc}{}\label{class_q_c_p_grid_abfa6c638a05b45b2ed31b680fc9b31fc}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!antialiased\+Zero\+Line@{antialiased\+Zero\+Line}}
+\index{antialiased\+Zero\+Line@{antialiased\+Zero\+Line}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{antialiased\+Zero\+Line() const }{antialiasedZeroLine() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Grid\+::antialiased\+Zero\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_grid_a4dfbc1cee989d8cae1434b765ab2a13b}{}\label{class_q_c_p_grid_a4dfbc1cee989d8cae1434b765ab2a13b}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!apply\+Default\+Antialiasing\+Hint@{apply\+Default\+Antialiasing\+Hint}}
+\index{apply\+Default\+Antialiasing\+Hint@{apply\+Default\+Antialiasing\+Hint}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{apply\+Default\+Antialiasing\+Hint(\+Q\+C\+P\+Painter $\ast$painter) const Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE}{applyDefaultAntialiasingHint(QCPPainter *painter) const Q_DECL_OVERRIDE}}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::apply\+Default\+Antialiasing\+Hint (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Painter} $\ast$}]{painter}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_q_c_p_grid_a64fa48e16b4629f5df2a5029ab6e761c}{}\label{class_q_c_p_grid_a64fa48e16b4629f5df2a5029ab6e761c}
+
+
+Implementuje \hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{Q\+C\+P\+Layerable}.
+
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!draw@{draw}}
+\index{draw@{draw}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{draw(\+Q\+C\+P\+Painter $\ast$painter) Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE}{draw(QCPPainter *painter) Q_DECL_OVERRIDE}}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Painter} $\ast$}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_q_c_p_grid_aad9a312d998e2d170956334d4cb80be2}{}\label{class_q_c_p_grid_aad9a312d998e2d170956334d4cb80be2}
+
+
+Implementuje \hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{Q\+C\+P\+Layerable}.
+
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!draw\+Grid\+Lines@{draw\+Grid\+Lines}}
+\index{draw\+Grid\+Lines@{draw\+Grid\+Lines}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{draw\+Grid\+Lines(\+Q\+C\+P\+Painter $\ast$painter) const }{drawGridLines(QCPPainter *painter) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::draw\+Grid\+Lines (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Painter} $\ast$}]{painter}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_grid_a3aff10e993f6625e255c19e4f97a09d8}{}\label{class_q_c_p_grid_a3aff10e993f6625e255c19e4f97a09d8}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!draw\+Sub\+Grid\+Lines@{draw\+Sub\+Grid\+Lines}}
+\index{draw\+Sub\+Grid\+Lines@{draw\+Sub\+Grid\+Lines}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{draw\+Sub\+Grid\+Lines(\+Q\+C\+P\+Painter $\ast$painter) const }{drawSubGridLines(QCPPainter *painter) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::draw\+Sub\+Grid\+Lines (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Painter} $\ast$}]{painter}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_grid_afa5d9d12de419e881f381f2ab7cb414d}{}\label{class_q_c_p_grid_afa5d9d12de419e881f381f2ab7cb414d}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!pen@{pen}}
+\index{pen@{pen}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{pen() const }{pen() const }}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Grid\+::pen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_grid_aca20b67548e3ae31fd02e6398ffd6cb9}{}\label{class_q_c_p_grid_aca20b67548e3ae31fd02e6398ffd6cb9}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!set\+Antialiased\+Sub\+Grid@{set\+Antialiased\+Sub\+Grid}}
+\index{set\+Antialiased\+Sub\+Grid@{set\+Antialiased\+Sub\+Grid}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{set\+Antialiased\+Sub\+Grid(bool enabled)}{setAntialiasedSubGrid(bool enabled)}}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::set\+Antialiased\+Sub\+Grid (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}\hypertarget{class_q_c_p_grid_a5692310ba183721a413d60951407d114}{}\label{class_q_c_p_grid_a5692310ba183721a413d60951407d114}
+Sets whether sub grid lines are drawn antialiased. \index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!set\+Antialiased\+Zero\+Line@{set\+Antialiased\+Zero\+Line}}
+\index{set\+Antialiased\+Zero\+Line@{set\+Antialiased\+Zero\+Line}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{set\+Antialiased\+Zero\+Line(bool enabled)}{setAntialiasedZeroLine(bool enabled)}}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::set\+Antialiased\+Zero\+Line (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}\hypertarget{class_q_c_p_grid_a3cc6d54647393ee71afb6da56af07aa4}{}\label{class_q_c_p_grid_a3cc6d54647393ee71afb6da56af07aa4}
+Sets whether zero lines are drawn antialiased. \index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!set\+Pen@{set\+Pen}}
+\index{set\+Pen@{set\+Pen}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{set\+Pen(const Q\+Pen \&pen)}{setPen(const QPen &pen)}}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::set\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\hypertarget{class_q_c_p_grid_aa05ab9816ffb440908171e45e833b593}{}\label{class_q_c_p_grid_aa05ab9816ffb440908171e45e833b593}
+Sets the pen with which (major) grid lines are drawn. \index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!set\+Sub\+Grid\+Pen@{set\+Sub\+Grid\+Pen}}
+\index{set\+Sub\+Grid\+Pen@{set\+Sub\+Grid\+Pen}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{set\+Sub\+Grid\+Pen(const Q\+Pen \&pen)}{setSubGridPen(const QPen &pen)}}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::set\+Sub\+Grid\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\hypertarget{class_q_c_p_grid_a9edd3593f384d1f0b0202a39cef4453d}{}\label{class_q_c_p_grid_a9edd3593f384d1f0b0202a39cef4453d}
+Sets the pen with which sub grid lines are drawn. \index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!set\+Sub\+Grid\+Visible@{set\+Sub\+Grid\+Visible}}
+\index{set\+Sub\+Grid\+Visible@{set\+Sub\+Grid\+Visible}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{set\+Sub\+Grid\+Visible(bool visible)}{setSubGridVisible(bool visible)}}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::set\+Sub\+Grid\+Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)}\hypertarget{class_q_c_p_grid_ad4ad6bf714ec45e08845456355a1b700}{}\label{class_q_c_p_grid_ad4ad6bf714ec45e08845456355a1b700}
+Sets whether grid lines at sub tick marks are drawn.
+
+\begin{DoxySeeAlso}{Zobacz również}
+\hyperlink{class_q_c_p_grid_a9edd3593f384d1f0b0202a39cef4453d}{set\+Sub\+Grid\+Pen} 
+\end{DoxySeeAlso}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!set\+Zero\+Line\+Pen@{set\+Zero\+Line\+Pen}}
+\index{set\+Zero\+Line\+Pen@{set\+Zero\+Line\+Pen}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{set\+Zero\+Line\+Pen(const Q\+Pen \&pen)}{setZeroLinePen(const QPen &pen)}}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Grid\+::set\+Zero\+Line\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\hypertarget{class_q_c_p_grid_a209f40fdb252397b418b82d3494d8ea0}{}\label{class_q_c_p_grid_a209f40fdb252397b418b82d3494d8ea0}
+Sets the pen with which zero lines are drawn.
+
+Zero lines are lines at value coordinate 0 which may be drawn with a different pen than other grid lines. To disable zero lines and just draw normal grid lines at zero, set {\itshape pen} to Qt\+::\+No\+Pen. \index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!sub\+Grid\+Pen@{sub\+Grid\+Pen}}
+\index{sub\+Grid\+Pen@{sub\+Grid\+Pen}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{sub\+Grid\+Pen() const }{subGridPen() const }}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Grid\+::sub\+Grid\+Pen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_grid_ac698f8c6864b1d8f0e2af97ca4b39cc6}{}\label{class_q_c_p_grid_ac698f8c6864b1d8f0e2af97ca4b39cc6}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!sub\+Grid\+Visible@{sub\+Grid\+Visible}}
+\index{sub\+Grid\+Visible@{sub\+Grid\+Visible}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{sub\+Grid\+Visible() const }{subGridVisible() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Grid\+::sub\+Grid\+Visible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_grid_a0a8963e384d53cd77cbab7df96147458}{}\label{class_q_c_p_grid_a0a8963e384d53cd77cbab7df96147458}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!zero\+Line\+Pen@{zero\+Line\+Pen}}
+\index{zero\+Line\+Pen@{zero\+Line\+Pen}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{zero\+Line\+Pen() const }{zeroLinePen() const }}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Grid\+::zero\+Line\+Pen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_q_c_p_grid_a06ea986b651860446e1224d2097259b9}{}\label{class_q_c_p_grid_a06ea986b651860446e1224d2097259b9}
+
+
+\subsection{Dokumentacja przyjaciół i funkcji związanych}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!Q\+C\+P\+Axis@{Q\+C\+P\+Axis}}
+\index{Q\+C\+P\+Axis@{Q\+C\+P\+Axis}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{Q\+C\+P\+Axis}{QCPAxis}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Q\+C\+P\+Axis}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{class_q_c_p_grid_af123edeca169ec7a31958a1d714e1a8a}{}\label{class_q_c_p_grid_af123edeca169ec7a31958a1d714e1a8a}
+
+
+\subsection{Dokumentacja atrybutów składowych}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!m\+Antialiased\+Sub\+Grid@{m\+Antialiased\+Sub\+Grid}}
+\index{m\+Antialiased\+Sub\+Grid@{m\+Antialiased\+Sub\+Grid}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{m\+Antialiased\+Sub\+Grid}{mAntialiasedSubGrid}}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Grid\+::m\+Antialiased\+Sub\+Grid\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_grid_a71b7051f833f0c5de3094998d6afdd87}{}\label{class_q_c_p_grid_a71b7051f833f0c5de3094998d6afdd87}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!m\+Antialiased\+Zero\+Line@{m\+Antialiased\+Zero\+Line}}
+\index{m\+Antialiased\+Zero\+Line@{m\+Antialiased\+Zero\+Line}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{m\+Antialiased\+Zero\+Line}{mAntialiasedZeroLine}}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Grid\+::m\+Antialiased\+Zero\+Line\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_grid_a8c0df56ae86440408c050895dcdb922b}{}\label{class_q_c_p_grid_a8c0df56ae86440408c050895dcdb922b}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!m\+Parent\+Axis@{m\+Parent\+Axis}}
+\index{m\+Parent\+Axis@{m\+Parent\+Axis}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{m\+Parent\+Axis}{mParentAxis}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Axis}$\ast$ Q\+C\+P\+Grid\+::m\+Parent\+Axis\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_grid_a9a8a76731e6e737b65b929fd1995cc88}{}\label{class_q_c_p_grid_a9a8a76731e6e737b65b929fd1995cc88}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!m\+Pen@{m\+Pen}}
+\index{m\+Pen@{m\+Pen}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{m\+Pen}{mPen}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Grid\+::m\+Pen\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_grid_a1cdc4a3bccf6a40c2d4360def9fefa40}{}\label{class_q_c_p_grid_a1cdc4a3bccf6a40c2d4360def9fefa40}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!m\+Sub\+Grid\+Pen@{m\+Sub\+Grid\+Pen}}
+\index{m\+Sub\+Grid\+Pen@{m\+Sub\+Grid\+Pen}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{m\+Sub\+Grid\+Pen}{mSubGridPen}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Grid\+::m\+Sub\+Grid\+Pen\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_grid_aa9004bc139ad3ea92629f0aaae81d83f}{}\label{class_q_c_p_grid_aa9004bc139ad3ea92629f0aaae81d83f}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!m\+Sub\+Grid\+Visible@{m\+Sub\+Grid\+Visible}}
+\index{m\+Sub\+Grid\+Visible@{m\+Sub\+Grid\+Visible}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{m\+Sub\+Grid\+Visible}{mSubGridVisible}}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Grid\+::m\+Sub\+Grid\+Visible\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_grid_a4e4a0400d6319bb44c06341f6298c87b}{}\label{class_q_c_p_grid_a4e4a0400d6319bb44c06341f6298c87b}
+\index{Q\+C\+P\+Grid@{Q\+C\+P\+Grid}!m\+Zero\+Line\+Pen@{m\+Zero\+Line\+Pen}}
+\index{m\+Zero\+Line\+Pen@{m\+Zero\+Line\+Pen}!Q\+C\+P\+Grid@{Q\+C\+P\+Grid}}
+\subsubsection[{\texorpdfstring{m\+Zero\+Line\+Pen}{mZeroLinePen}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Grid\+::m\+Zero\+Line\+Pen\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_q_c_p_grid_a379481871f17655c27eda30af233554f}{}\label{class_q_c_p_grid_a379481871f17655c27eda30af233554f}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{qcustomplot_8hh}{qcustomplot.\+hh}\item 
+\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}

@@ -177,6 +177,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->graphics_finger_3, SIGNAL(clicked()), this, SLOT(vibrate_middle()));
     QObject::connect(ui->graphics_finger_4, SIGNAL(clicked()), this, SLOT(vibrate_ring()));
     QObject::connect(ui->graphics_finger_5, SIGNAL(clicked()), this, SLOT(vibrate_pinky()));
+
+    QObject::connect(ui->action_info, SIGNAL(triggered()), this, SLOT(show_help()));
 }
 
 /*!
@@ -185,23 +187,23 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow() {
     debugTimer->stop();
 
-    std::cout << "~serial" << std::endl;
+    std::cout << "~SERIAL PORT" << std::endl;
     if (serial != nullptr) delete serial;
 
-    std::cout << "~connectionWindow" << std::endl;
+    std::cout << "~CONNECTIONWINDOW" << std::endl;
     if (connectionWindow != nullptr) delete connectionWindow;
 
-    std::cout << "~debugTimer" << std::endl;
+    std::cout << "~DEBUGTIMER" << std::endl;
     if (debugTimer != nullptr) delete debugTimer;
     
-    std::cout << "~scenes" << std::endl;
+    std::cout << "~SCENES" << std::endl;
     if (scene_visualisation != nullptr) delete scene_visualisation;
     if (scene_orientation != nullptr) delete scene_orientation;
 
-    std::cout << "~ui" << std::endl;
+    std::cout << "~UI" << std::endl;
     delete ui;
 
-    std::cout << "destruktory - sukces!" << std::endl;
+    std::cout << "DESTRUCTORS -- SUCCESS!" << std::endl;
 }
 
 /*!
@@ -941,4 +943,13 @@ void MainWindow::vibrate_ring() {
 
 void MainWindow::vibrate_pinky() {
     MainWindow::vibrate(SENSOR_ID_FINGER_PINKY);
+}
+
+void MainWindow::show_help() {
+    QMessageBox::about(nullptr, tr("O aplikacji"),
+    tr("<center><b><font size=5>Wizualizacja konfiguracji dłoni</font></b><br>"
+    "<i><font size=2>Version: 1.0</font></i></center><br>"
+    "<b>Autorzy:</b><br>"
+    "Jakub Gabała<br>"
+    "Jakub Król<br>"));
 }
